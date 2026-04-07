@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pablo Solari | Estrategia y Control</title>
+    <title>Pablo Solari | Estrategia y Control de Gestión</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root { 
@@ -60,7 +60,7 @@
             font-weight: 300;
             color: var(--text-muted);
             line-height: 1.6;
-            max-width: 600px;
+            max-width: 650px;
         }
 
         /* Bloque Video */
@@ -68,10 +68,10 @@
         .video-wrapper { width: 100%; border-radius: 12px; overflow: hidden; border: 1px solid #444; background: #000; }
         video { width: 100%; display: block; }
 
-        /* --- NUEVO CONTENEDOR DE TABLERO (ESTILO SOFTWARE) --- */
+        /* Contenedor de Tablero Estilo Software */
         .item-dashboard {
             grid-column: 1 / 4;
-            padding: 0; /* Quitamos padding para que la "ventana" ocupe todo */
+            padding: 0;
             background: none;
             border: none;
         }
@@ -86,32 +86,32 @@
 
         .window-header {
             background: #2d2d2d;
-            padding: 10px 15px;
+            padding: 12px 18px;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
-        .dot { width: 10px; height: 10px; border-radius: 50%; }
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
         .dot.red { background: #ff5f56; }
         .dot.yellow { background: #ffbd2e; }
         .dot.green { background: #27c93f; }
-        .window-title { margin-left: 10px; font-size: 0.7rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+        .window-title { margin-left: 15px; font-size: 0.75rem; color: #aaa; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 500; }
 
         .window-content img {
             width: 100%;
             display: block;
-            filter: saturate(1.1); /* Le damos un poco más de vida al color del BI */
+            filter: contrast(1.05) saturate(1.1);
         }
 
-        /* Servicios */
-        .service-card { padding: 25px; border-radius: 16px; border: 1px solid var(--border); background: var(--bg-card); }
-        .service-card h3 { font-family: 'Montserrat', sans-serif; color: var(--accent); margin-bottom: 12px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
-        .service-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
+        /* Cards de Servicios */
+        .service-card { padding: 30px; border-radius: 16px; border: 1px solid var(--border); background: var(--bg-card); }
+        .service-card h3 { font-family: 'Montserrat', sans-serif; color: var(--accent); margin-bottom: 15px; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1.5px; }
+        .service-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
 
         .cta { grid-column: 1 / 4; text-align: center; padding: 40px 0; }
-        .btn { padding: 18px 40px; background: #fff; color: #000; text-decoration: none; font-weight: 700; border-radius: 50px; text-transform: uppercase; font-size: 0.85rem; transition: 0.3s; }
-        .btn:hover { background: var(--accent); color: #fff; }
+        .btn { padding: 20px 45px; background: #fff; color: #000; text-decoration: none; font-weight: 700; border-radius: 50px; text-transform: uppercase; font-size: 0.9rem; transition: 0.3s; }
+        .btn:hover { background: var(--accent); color: #fff; transform: translateY(-3px); }
 
         @media (max-width: 900px) {
             .bento-grid { grid-template-columns: 1fr; }
@@ -124,7 +124,7 @@
     <div class="bento-grid">
         
         <section class="bento-item item-hero">
-            <p style="color: var(--accent); font-weight: 600; letter-spacing: 3px; margin-bottom: 15px; font-size: 0.8rem;">ESTRATEGIA & CONTROL DE GESTIÓN</p>
+            <p style="color: var(--accent); font-weight: 600; letter-spacing: 3px; margin-bottom: 15px; font-size: 0.85rem;">ESTRATEGIA & CONTROL DE GESTIÓN</p>
             <h1>Pablo Solari.</h1>
             <p class="proposal-text">
                 Profesionalizo el <strong>control de tu empresa</strong> para que el crecimiento no se convierta en caos. 
@@ -138,7 +138,7 @@
                     <source src="video.mp4" type="video/mp4">
                 </video>
             </div>
-            <p style="text-align: center; font-size: 0.65rem; color: #555; margin-top: 10px; text-transform: uppercase; letter-spacing: 1px;">Mensaje Directo</p>
+            <p style="text-align: center; font-size: 0.65rem; color: #555; margin-top: 12px; text-transform: uppercase; letter-spacing: 1px;">Mensaje Directo</p>
         </section>
 
         <section class="bento-item item-dashboard">
@@ -147,29 +147,29 @@
                     <div class="dot red"></div>
                     <div class="dot yellow"></div>
                     <div class="dot green"></div>
-                    <span class="window-title">Análisis de Rentabilidad y Ventas - Business Intelligence</span>
+                    <span class="window-title">Business Intelligence - Panel de Control Estratégico</span>
                 </div>
                 <div class="window-content">
-                    <img src="image_6cc62d.png" alt="Reporte de Gestión">
+                    <img src="image_6cc62d.png" alt="Dashboard de Gestión Pablo Solari">
                 </div>
             </div>
         </section>
 
         <div class="service-card">
             <h3>Estrategia de Capital</h3>
-            <p>Análisis profundo de flujos de caja y rentabilidad (TIR/VAN) para asegurar la liquidez.</p>
+            <p>Optimización de flujos de fondos y análisis de rentabilidad estratégica para asegurar la liquidez del negocio.</p>
         </div>
         <div class="service-card">
             <h3>Reporting Crítico</h3>
-            <p>Sistemas de información mensual diseñados para la alta dirección y toma de decisiones.</p>
+            <p>Diseño de sistemas de información mensual para la alta dirección, transformando datos en decisiones.</p>
         </div>
         <div class="service-card">
             <h3>Control Interno</h3>
-            <p>Mapeo de procesos y reducción de riesgos operacionales bajo estándares internacionales.</p>
+            <p>Mapeo de procesos y reducción de riesgos operacionales para profesionalizar la estructura organizacional.</p>
         </div>
 
         <div class="cta">
-            <a href="https://wa.me/5493512589176" class="btn">Agendar Diagnóstico</a>
+            <a href="https://wa.me/5493512589176" class="btn" target="_blank">Agendar Diagnóstico —</a>
         </div>
 
     </div>
