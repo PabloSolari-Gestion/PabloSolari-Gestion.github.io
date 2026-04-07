@@ -2,22 +2,84 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Mi Portfolio - Nombre Apellido</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pablo Solari | Gestión de Negocios</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        body { margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #000; color: white; font-family: sans-serif; }
-        video { max-width: 100%; height: auto; box-shadow: 0 0 20px rgba(255,255,255,0.2); }
-        .info { position: absolute; bottom: 20px; text-align: center; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background-color: #0a0a0a; /* Negro profundo */
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+            text-transform: none; /* Estilo moderno */
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: #888; /* Gris suave para el subtítulo */
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .divider {
+            width: 50px;
+            height: 2px;
+            background-color: #333;
+            margin: 20px auto;
+        }
+
+        .contact-links {
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border: 1px solid #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #ffffff;
+            color: #000000;
+            border-color: #ffffff;
+        }
     </style>
 </head>
 <body>
 
-    <video autoplay muted loop playsinline style="position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%; z-index: -1; object-fit: cover;">
-    <source src="video.mp4" type="video/mp4">
-</video>
+    <div class="container">
+        <h1>Pablo Solari</h1>
+        <div class="divider"></div>
+        <p class="subtitle">Contador Público<br>Estratega en Gestión de Negocios</p>
+        
+        <div class="contact-links">
+            <a href="https://wa.me/tu-numero-aqui" class="btn" target="_blank">Contactar</a>
+        </div>
+    </div>
 
-<div style="position: relative; z-index: 1; color: white; text-align: center; padding-top: 20vh; font-family: sans-serif;">
-    <h1>Pablo Solari</h1>
-    <p>Contador Público | Consultoría Estratégica</p>
-</div>
 </body>
 </html>
