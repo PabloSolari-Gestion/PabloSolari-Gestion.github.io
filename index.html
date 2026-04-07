@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pablo Solari | Dashboard de Negocios</title>
+    <title>Pablo Solari | Estrategia y Control de Gestión</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root { 
-            --bg-body: #0a0a0a; /* Negro muy profundo para el fondo */
-            --bg-card: #141414; /* Gris ultra-oscuro para los "cuadritos" */
-            --accent: #007bff; /* Azul corporativo */
-            --border: #2a2a2a; /* Borde sutil para definir los cuadritos */
+            --bg-body: #0a0a0a; 
+            --bg-card: #141414; 
+            --accent: #007bff; 
+            --border: #2a2a2a; 
             --text-main: #f0f0f0;
             --text-muted: #888;
         }
@@ -25,217 +25,159 @@
             padding: 40px;
         }
 
-        /* Contenedor Principal Bento-style */
         .bento-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: auto auto auto;
             gap: 20px;
-            max-width: 1300px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        /* Estilo base para cada "cuadrito" (Bento Item) */
         .bento-item {
             background-color: var(--bg-card);
-            border-radius: 12px;
+            border-radius: 16px;
             border: 1px solid var(--border);
-            padding: 30px;
-            transition: 0.3s ease;
+            padding: 40px;
             display: flex;
             flex-direction: column;
+            transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
         .bento-item:hover {
-            border-color: #444; /* Resalta un poco al pasar el mouse */
+            border-color: #444;
         }
 
-        /* --- Cuadrito 1: Identidad (Pablo Solari) --- */
+        /* Bloque Principal: Identidad y Propuesta */
         .item-hero {
             grid-column: 1 / 3;
-            grid-row: 1 / 2;
             justify-content: center;
+        }
+
+        .tagline {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 15px;
         }
 
         h1 {
             font-family: 'Montserrat', sans-serif;
-            font-size: clamp(3rem, 6vw, 5rem);
+            font-size: clamp(3rem, 6vw, 5.5rem);
             font-weight: 900;
-            line-height: 0.8;
-            letter-spacing: -3px;
-            margin-bottom: 20px;
+            line-height: 0.85;
+            letter-spacing: -4px;
+            margin-bottom: 30px;
         }
 
-        .tagline {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: var(--accent);
-            font-weight: 600;
+        .proposal-text {
+            font-size: 1.25rem;
+            font-weight: 300;
+            color: #ccc;
+            line-height: 1.6;
+            max-width: 600px;
         }
 
-        /* --- Cuadrito 2: Video Mensaje --- */
+        .proposal-text strong {
+            color: #fff;
+            font-weight: 500;
+        }
+
+        /* Bloque Video */
         .item-video {
             grid-column: 3 / 4;
-            grid-row: 1 / 3;
-            justify-content: center;
-            align-items: center;
             padding: 20px;
+            justify-content: center;
         }
 
         .video-wrapper {
             width: 100%;
-            height: 100%;
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
             border: 1px solid #333;
+            background: #000;
         }
 
-        video { width: 100%; height: 100%; object-fit: cover; }
+        video { width: 100%; display: block; }
 
-        /* --- Cuadrito 3: Propuesta de Valor --- */
-        .item-proposal {
-            grid-column: 1 / 3;
-            grid-row: 2 / 3;
-        }
-
-        .proposal-text {
-            font-size: clamp(1.1rem, 3vw, 1.5rem);
-            font-weight: 300;
-            color: #ccc;
-        }
-
-        /* --- Cuadrito 4: Tu Reporte de BI (El más grande) --- */
+        /* Bloque Power BI Showcase */
         .item-bi {
             grid-column: 1 / 4;
-            grid-row: 3 / 4;
-            padding: 20px;
+            padding: 30px;
+            text-align: center;
         }
 
-        .bi-showcase {
+        .bi-img {
             width: 100%;
+            max-width: 1000px;
             border-radius: 8px;
+            margin: 0 auto 20px;
             border: 1px solid #333;
-            margin-bottom: 15px;
-            filter: saturate(70%) brightness(90%); /* Look más integrado */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        /* --- Cards de Servicios (Ahora como una fila Bento) --- */
-        .item-services {
+        /* Bloque Servicios */
+        .services-container {
             grid-column: 1 / 4;
-            grid-row: 4 / 5;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
-            background: none; /* Quitamos el fondo para usar los internos */
-            border: none;
-            padding: 0;
         }
 
         .service-card {
-            background-color: var(--bg-card);
-            border-radius: 12px;
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 16px;
             border: 1px solid var(--border);
-            padding: 25px;
         }
 
         .service-card h3 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
+            font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             color: var(--accent);
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
-        .service-card p { font-size: 0.85rem; color: var(--text-muted); }
+        .service-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
 
         /* Botón de Acción */
-        .btn-container {
+        .cta-container {
             grid-column: 1 / 4;
-            grid-row: 5 / 6;
             text-align: center;
-            margin-top: 20px;
+            padding: 40px 0;
         }
 
         .btn {
             display: inline-block;
-            padding: 18px 40px;
+            padding: 20px 50px;
             background: #fff;
             color: #000;
             text-decoration: none;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-            border-radius: 4px;
+            border-radius: 50px;
             transition: 0.3s;
         }
 
-        .btn:hover { background: var(--accent); color: #fff; }
+        .btn:hover {
+            background: var(--accent);
+            color: #fff;
+            transform: translateY(-3px);
+        }
 
-        /* Responsive para celular */
         @media (max-width: 900px) {
             body { padding: 20px; }
-            .bento-grid {
-                grid-template-columns: 1fr;
-                grid-template-rows: auto;
-            }
-            .item-hero, .item-video, .item-proposal, .item-bi, .item-services, .btn-container {
-                grid-column: 1 / 2;
-                grid-row: auto;
-            }
-            .item-services {
-                grid-template-columns: 1fr;
-            }
+            .bento-grid { grid-template-columns: 1fr; }
+            .item-hero, .item-video, .item-bi, .services-container { grid-column: 1 / 2; }
+            .services-container { grid-template-columns: 1fr; }
+            h1 { font-size: 4rem; }
         }
     </style>
-</head>
-<body>
-
-    <div class="bento-grid">
-        
-        <div class="bento-item item-hero">
-            <h1>Pablo<br>Solari.</h1>
-            <p class="tagline">Contador Público | Estrategia de Negocios</p>
-        </div>
-
-        <div class="bento-item item-video">
-            <div class="video-wrapper">
-                <video controls>
-                    <source src="video.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-
-        <div class="bento-item item-proposal">
-            <p class="proposal-text">Transformo el caos administrativo en un sistema de decisiones rentable, profesionalizando Pymes con el estándar de una multinacional.</p>
-        </div>
-
-        <div class="bento-item item-bi">
-            <img src="dashboard-pablo.png" alt="Dashboard de Ventas Acumuladas Pablo Solari" class="bi-showcase">
-            <p style="font-size: 0.8rem; color: var(--text-muted); text-align: center;">Ejemplo de Reporting Mensual de Rentabilidad (Power BI)</p>
-        </div>
-
-        <div class="bento-item item-services">
-            <div class="service-card">
-                <h3>Estrategia de Capital</h3>
-                <p>Optimización de flujos de fondos y liquidez estratégica.</p>
-            </div>
-            <div class="service-card">
-                <h3>Diagnóstico & Reporting</h3>
-                <p>Información crítica para decisiones eficientes.</p>
-            </div>
-            <div class="service-card">
-                <h3>Control Interno</h3>
-                <p>Mapeo de procesos y reducción de riesgos operacionales.</p>
-            </div>
-        </div>
-
-        <div class="btn-container">
-            <a href="https://wa.me/5493512589176" class="btn" target="_blank">Agendar Diagnóstico —</a>
-        </div>
-
-    </div>
-
-</body>
-</html>
