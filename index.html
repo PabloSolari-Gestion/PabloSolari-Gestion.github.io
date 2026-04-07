@@ -3,73 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pablo Solari | Gestión de Negocios</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Pablo Solari | Consultoría Estratégica</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        :root { --bg: #080808; --accent: #007bff; --text-muted: #888; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
-            background-color: #0d0d0d;
-            color: #ffffff;
+            background-color: var(--bg);
+            color: #fff;
             font-family: 'Inter', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        .container {
-            padding: 20px;
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 5% 10%;
+        }
+
+        .tagline {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-weight: 600;
         }
 
         h1 {
-            font-size: 3.5rem;
-            font-weight: 600;
-            letter-spacing: -2px;
-            margin-bottom: 5px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(3.5rem, 12vw, 7rem);
+            font-weight: 900;
+            line-height: 0.85;
+            letter-spacing: -5px;
+            margin-bottom: 40px;
         }
 
-        .subtitle {
-            font-size: 1.1rem;
+        .proposal {
+            font-size: clamp(1.2rem, 4vw, 2rem);
             font-weight: 300;
-            color: #a0a0a0;
-            margin-bottom: 40px;
-            letter-spacing: 2px;
+            max-width: 900px;
+            color: #ccc;
+            margin-bottom: 60px;
+            border-left: 3px solid var(--accent);
+            padding-left: 30px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .card {
+            padding: 30px;
+            background: #111;
+            border: 1px solid #222;
+            transition: 0.3s;
+        }
+
+        .card:hover { border-color: var(--accent); }
+
+        .card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
             text-transform: uppercase;
+        }
+
+        .card p { font-size: 0.95rem; color: var(--text-muted); }
+
+        .methodology {
+            margin-top: 100px;
+            padding: 60px 0;
+            border-top: 1px solid #222;
+        }
+
+        .step { margin-bottom: 30px; }
+        .step-num { color: var(--accent); font-weight: 700; margin-right: 10px; }
+
+        .cta-section {
+            margin-top: 80px;
+            padding-bottom: 100px;
         }
 
         .btn {
             display: inline-block;
-            padding: 15px 35px;
-            border: 1px solid #404040;
-            color: white;
+            padding: 20px 40px;
+            background: #fff;
+            color: #000;
             text-decoration: none;
-            border-radius: 2px;
-            font-size: 0.85rem;
-            font-weight: 400;
-            letter-spacing: 1.5px;
+            font-weight: 700;
             text-transform: uppercase;
-            transition: all 0.4s ease;
+            letter-spacing: 2px;
+            transition: 0.3s;
         }
 
-        .btn:hover {
-            background-color: #ffffff;
-            color: #000000;
-            border-color: #ffffff;
+        .btn:hover { background: var(--accent); color: #fff; }
+
+        @media (max-width: 768px) {
+            .hero { padding: 10% 5%; }
+            h1 { letter-spacing: -2px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Pablo Solari</h1>
-        <p class="subtitle">Contador Público<br>Gestión de Negocios</p>
+    <section class="hero">
+        <p class="tagline">Contador Público | Córdoba, AR</p>
+        <h1>Pablo<br>Solari.</h1>
         
-        <div class="contact-links">
-            <a href="https://wa.me/5493512589176" class="btn" target="_blank">Contactar</a>
+        <div class="proposal">
+            Llevá tu Pyme al nivel de una multinacional: implementá los procesos y el reporting de alta eficiencia que usan los líderes de la industria.
         </div>
-    </div>
+
+        <div class="grid">
+            <div class="card">
+                <h3>Diagnóstico & Reporting</h3>
+                <p>Evaluación de estructura organizacional y generación de información crítica para la toma de decisiones estratégicas[cite: 6, 7].</p>
+            </div>
+            <div class="card">
+                <h3>Optimización Financiera</h3>
+                <p>Gestión de flujos de caja, control de tesorería y análisis de rentabilidad (TIR/VAN) para proteger tu margen[cite: 8, 10, 21].</p>
+            </div>
+            <div class="card">
+                <h3>Control de Procesos</h3>
+                <p>Mapeo de procedimientos para identificar riesgos operacionales y asegurar el cumplimiento (Compliance)[cite: 13, 15, 38].</p>
+            </div>
+        </div>
+
+        <div class="methodology">
+            <div class="step"><span class="step-num">01</span> Relevamiento y Mapeo de la situación actual (1-2 semanas)[cite: 25, 29].</div>
+            <div class="step"><span class="step-num">02</span> Análisis de GAPS y evaluación de riesgos financieros (1-2 semanas)[cite: 30, 33].</div>
+            <div class="step"><span class="step-num">03</span> Informe final con planes de acción y propuesta de mejora continua (2-3 semanas)[cite: 34, 36, 39].</div>
+        </div>
+
+        <div class="cta-section">
+            <a href="https://wa.me/5493512589176" class="btn" target="_blank">Agendar Diagnóstico</a>
+        </div>
+    </section>
 
 </body>
 </html>
