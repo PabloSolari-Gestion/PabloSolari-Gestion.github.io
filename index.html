@@ -7,8 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root { 
-            --bg: #cbd5e1; 
-            --card: #ffffff; 
+            --bg: #cbd5e1; /* Gris acero de fondo */
+            --card: #ffffff; /* Cajas blancas puras */
             --text-dark: #0f172a; 
             --emerald: #10b981; 
             --border: #94a3b8;
@@ -20,8 +20,8 @@
             background-color: var(--bg);
             color: var(--text-dark);
             font-family: 'Inter', sans-serif;
-            padding: 70px 20px 20px; /* Todo sube un poco más */
-            line-height: 1.3;
+            padding: 70px 20px 20px;
+            line-height: 1.2;
         }
 
         .navbar {
@@ -46,34 +46,34 @@
 
         .card {
             background: var(--card); border-radius: 20px;
-            padding: 18px; /* Cuadros más compactos */
+            padding: 15px; /* Más compacto todavía */
             border: 1px solid var(--border);
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        /* CUADRO SUPERIOR ACHICADO */
+        /* HERO ACHICADO COMO PEDISTE */
         .hero { grid-column: 1 / 4; }
-        .hero h1 { font-family: 'Montserrat'; font-size: 40px; letter-spacing: -2px; line-height: 1; margin-bottom: 5px; }
-        .hero p.sub { font-weight: 600; color: #475569; font-size: 14px; margin-bottom: 12px; }
+        .hero h1 { font-family: 'Montserrat'; font-size: 38px; letter-spacing: -2px; line-height: 1; margin-bottom: 5px; }
+        .hero p.sub { font-weight: 600; color: #475569; font-size: 13px; margin-bottom: 10px; }
 
         .pilares-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
-            border-top: 1px solid #cbd5e1; padding-top: 12px;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+            border-top: 1px solid #cbd5e1; padding-top: 10px;
         }
 
         .pilar {
-            background: #f1f5f9; padding: 10px; border-radius: 10px;
+            background: #f8fafc; padding: 8px; border-radius: 10px;
             border-left: 5px solid var(--emerald);
         }
-        .pilar h3 { font-size: 10px; color: var(--emerald); text-transform: uppercase; margin-bottom: 2px; }
-        .pilar p { font-size: 13px; font-weight: 700; }
+        .pilar h3 { font-size: 9px; color: var(--emerald); text-transform: uppercase; margin-bottom: 2px; }
+        .pilar p { font-size: 12px; font-weight: 700; color: var(--text-dark); }
 
         /* VIDEO ACHICADO VERTICALMENTE */
         .sidebar { grid-column: 4 / 5; }
         .video-box { 
             background: #000; border-radius: 15px; overflow: hidden; 
             aspect-ratio: 9/16; width: 100%; border: 1px solid var(--border);
-            max-height: 350px; /* Altura máxima reducida para que suba lo de abajo */
+            max-height: 320px; /* Video más corto para que todo suba */
         }
         video { width: 100%; height: 100%; object-fit: cover; }
 
@@ -81,19 +81,19 @@
             display: block; text-align: center; margin-top: 8px;
             font-weight: 700; color: var(--text-dark); text-decoration: none;
             border: 1px solid var(--border); padding: 8px; border-radius: 10px;
-            background: white; font-size: 13px;
+            background: white; font-size: 12px;
         }
 
-        /* GRÁFICOS Y TAGS SUBEN */
+        /* GRAFICOS Y TAGS SUBEN */
         .dash-row { grid-column: 1 / 3; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .window { background: #f8fafc; border-radius: 15px; height: 130px; overflow: hidden; border: 1px solid var(--border); }
+        .window { background: white; border-radius: 15px; height: 120px; overflow: hidden; border: 1px solid var(--border); }
         .window img { width: 100%; height: 100%; object-fit: cover; }
 
         .trayectoria { grid-column: 3 / 4; text-align: center; display: flex; flex-direction: column; justify-content: center; }
-        .trayectoria b { font-size: 38px; color: var(--emerald); font-family: 'Montserrat'; line-height: 1; }
+        .trayectoria b { font-size: 34px; color: var(--emerald); font-family: 'Montserrat'; line-height: 1; }
         .trayectoria span { font-size: 9px; font-weight: 800; text-transform: uppercase; color: #475569; }
 
-        .tags { grid-column: 4 / 5; display: flex; flex-wrap: wrap; gap: 5px; align-content: center; justify-content: center; }
+        .tags { grid-column: 4 / 5; display: flex; flex-wrap: wrap; gap: 4px; align-content: center; justify-content: center; }
         .tag { background: white; border: 1px solid var(--border); padding: 4px 8px; border-radius: 8px; font-size: 9px; font-weight: 700; }
 
         @media (max-width: 850px) {
@@ -105,7 +105,7 @@
 <body>
 
     <nav class="navbar">
-        <a href="https://wa.me/5493512589176" class="btn-cta">Consultar Ahora</a>
+        <a href="https://wa.me/5493512589176" class="btn-cta" target="_blank">Agendar Diagnóstico</a>
     </nav>
 
     <div class="container">
