@@ -68,14 +68,9 @@
             border-left: 5px solid var(--emerald);
             position: relative;
             cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            z-index: 1;
+            transition: transform 0.3s ease;
         }
-        .pilar:hover {
-            transform: scale(1.03);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-            z-index: 10;
-        }
+        .pilar:hover { transform: translateY(-3px); }
         .pilar i { position: absolute; top: 12px; right: 12px; font-size: 16px; opacity: 0.9; }
         .pilar h3 { font-size: 9px; color: var(--emerald); text-transform: uppercase; margin-bottom: 4px; padding-right: 25px; }
         .pilar p { font-size: 11px; font-weight: 700; color: var(--text-dark); line-height: 1.2; }
@@ -95,21 +90,33 @@
             background: white; font-size: 12px;
         }
 
-        /* FILA DE DASHBOARDS */
+        /* TABLEROS */
         .dash-row { grid-column: 1 / 3; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
         .window { 
             background: white; border-radius: 15px; height: 125px; overflow: hidden; 
             border: 1px solid var(--border); position: relative;
-            cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;
-            z-index: 1;
+            cursor: pointer; transition: transform 0.3s ease;
         }
-        .window:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            z-index: 10;
-        }
+        .window:hover { transform: scale(1.02); }
         .window img { width: 100%; height: 100%; object-fit: cover; }
         .window .label { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(15, 23, 42, 0.8); color: white; padding: 4px; font-size: 9px; font-weight: 700; text-align: center; }
+
+        /* ESTILOS DEL AMPLIADOR (MODAL) */
+        #modal {
+            display: none;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9); z-index: 2000;
+            justify-content: center; align-items: center; cursor: zoom-out;
+        }
+        #modal img { 
+            max-width: 90%; max-height: 90%; 
+            border-radius: 10px; border: 2px solid white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+        }
+        #modal .close {
+            position: absolute; top: 20px; right: 30px;
+            color: white; font-size: 40px; font-weight: bold; cursor: pointer;
+        }
 
         .trayectoria { grid-column: 3 / 4; text-align: center; display: flex; flex-direction: column; justify-content: center; }
         .trayectoria b { font-size: 34px; color: var(--emerald); font-family: 'Montserrat'; line-height: 1; }
@@ -121,7 +128,6 @@
         @media (max-width: 850px) {
             .container { grid-template-columns: 1fr; }
             .hero, .sidebar, .dash-row, .trayectoria, .tags { grid-column: 1 / -1; }
-            .window:hover, .pilar:hover { transform: none; }
         }
     </style>
 </head>
@@ -130,6 +136,11 @@
     <nav class="navbar">
         <a href="https://wa.me/5493512589176" class="btn-cta" target="_blank">Agendar Diagnóstico</a>
     </nav>
+
+    <div id="modal" onclick="this.style.display='none'">
+        <span class="close">&times;</span>
+        <img id="modal-img" src="" alt="Dashboard ampliado">
+    </div>
 
     <div class="container">
         <div class="card hero">
@@ -163,34 +174,4 @@
             <div class="card" style="padding: 10px;">
                 <div class="video-box">
                     <video autoplay muted loop playsinline controls>
-                        <source src="video.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <a href="https://www.linkedin.com/in/solari-pablo/" class="link-ln" target="_blank">LinkedIn</a>
-            </div>
-        </div>
-
-        <div class="dash-row">
-            <div class="window">
-                <img src="image_6cc62d.png">
-                <div class="label">DASHBOARD RENTABILIDAD</div>
-            </div>
-            <div class="window">
-                <img src="image_segunda.png">
-                <div class="label">DASHBOARD VENTAS</div>
-            </div>
-        </div>
-
-        <div class="card trayectoria">
-            <b>+18 años</b>
-            <span>Trayectoria Industrial</span>
-        </div>
-
-        <div class="tags">
-            <span class="tag">PROCESOS</span>
-            <span class="tag">RENTABILIDAD</span>
-            <span class="tag">CASH FLOW</span>
-        </div>
-    </div>
-</body>
-</html>
+                        <source src
