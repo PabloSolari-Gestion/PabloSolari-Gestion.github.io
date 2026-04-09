@@ -21,7 +21,7 @@
             background-color: var(--bg);
             color: var(--white);
             font-family: 'Inter', sans-serif;
-            padding: 80px 20px 20px;
+            padding: 70px 15px 15px;
             min-height: 100vh;
         }
 
@@ -29,7 +29,7 @@
         .navbar {
             position: fixed;
             top: 0; left: 0; right: 0;
-            padding: 15px 5%;
+            padding: 10px 5%;
             display: flex;
             justify-content: flex-end;
             z-index: 1000;
@@ -39,14 +39,14 @@
         }
 
         .btn-nav {
-            padding: 10px 20px;
+            padding: 8px 18px;
             background: var(--white);
             color: #000;
             text-decoration: none;
             font-weight: 700;
             border-radius: 50px;
             text-transform: uppercase;
-            font-size: 0.7rem;
+            font-size: 0.6rem;
             letter-spacing: 1px;
             transition: 0.3s;
         }
@@ -55,119 +55,102 @@
         .bento-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: auto auto;
-            gap: 15px;
-            max-width: 1300px;
+            gap: 10px;
+            max-width: 1250px;
             margin: 0 auto;
         }
 
         .bento-item {
             background-color: var(--card);
-            border-radius: 16px;
+            border-radius: 14px;
             border: 1px solid var(--border);
-            padding: 20px;
+            padding: 18px;
             display: flex;
             flex-direction: column;
         }
 
-        /* HERO (IZQUIERDA ARRIBA) */
-        .item-hero { 
-            grid-column: 1 / 4; 
-        }
+        /* HERO - LOS 4 PILARES */
+        .item-hero { grid-column: 1 / 4; }
         h1 {
             font-family: 'Montserrat', sans-serif;
-            font-size: clamp(1.8rem, 4vw, 3rem);
-            line-height: 1.1;
-            margin-bottom: 12px;
+            font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+            line-height: 1.0;
+            margin-bottom: 10px;
             letter-spacing: -1.5px;
         }
-        .proposal-text { font-size: 1rem; color: var(--muted); line-height: 1.5; max-width: 650px; margin-bottom: 25px; }
+        .proposal-text { font-size: 0.9rem; color: var(--muted); line-height: 1.4; max-width: 600px; margin-bottom: 15px; }
         
-        /* GRILLA DE PILARES */
         .grid-pilares { 
             display: grid; 
             grid-template-columns: 1fr 1fr; 
-            gap: 20px; 
-            margin-bottom: 25px;
+            gap: 12px; 
+            margin-bottom: 15px;
             border-top: 1px solid #222;
-            padding-top: 20px;
+            padding-top: 15px;
         }
-        .pilar h3 { font-size: 0.8rem; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
-        .pilar p { font-size: 0.85rem; color: var(--muted); line-height: 1.4; }
+        .pilar h3 { font-size: 0.7rem; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+        .pilar p { font-size: 0.75rem; color: var(--muted); line-height: 1.3; }
 
-        .badges-container { display: flex; gap: 10px; flex-wrap: wrap; }
-        .badges-container img { height: 25px; border-radius: 5px; }
+        .badges-container { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+        .badges-container img { height: 20px; border-radius: 3px; }
 
-        /* COLUMNA DERECHA (VIDEO + LINKEDIN) */
+        /* SIDEBAR COMPACTO (Video + Metodología + LinkedIn) */
         .item-sidebar { 
             grid-column: 4 / 5; 
             display: flex;
             flex-direction: column;
-            gap: 15px;
-            background: transparent;
-            border: none;
-            padding: 0;
+            gap: 10px;
         }
-        .video-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 15px;
-            flex-grow: 1;
+        .video-box-small { 
+            width: 100%; 
+            border-radius: 10px; 
+            overflow: hidden; 
+            border: 1px solid #444; 
+            aspect-ratio: 16/9;
         }
-        .video-box { width: 100%; border-radius: 10px; overflow: hidden; border: 1px solid #444; aspect-ratio: 16/9; margin-bottom: 15px; }
         video { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-        .linkedin-link {
+        .linkedin-btn-small {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            padding: 12px;
+            padding: 8px;
             background: #0077b5;
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 0.85rem;
+            border-radius: 8px;
             transition: 0.3s;
         }
-        .linkedin-link:hover { background: #005a8a; }
+        .linkedin-btn-small:hover { background: #005a8a; }
 
-        /* DASHBOARDS (ABAJO IZQUIERDA) */
+        /* DASHBOARDS */
         .item-dashboards { 
             grid-column: 1 / 3; 
             display: grid; 
             grid-template-columns: 1fr 1fr; 
-            gap: 15px; 
-            background: transparent;
-            border: none;
-            padding: 0;
+            gap: 10px; 
         }
-        .window { background: #1e1e1e; border-radius: 12px; border: 1px solid #444; overflow: hidden; height: 180px; }
-        .window-header { background: #2d2d2d; padding: 8px; display: flex; gap: 5px; align-items: center; }
-        .dot { width: 7px; height: 7px; border-radius: 50%; }
+        .window { background: #1e1e1e; border-radius: 10px; border: 1px solid #444; overflow: hidden; height: 140px; }
+        .window-header { background: #2d2d2d; padding: 6px; display: flex; gap: 4px; align-items: center; }
+        .dot { width: 6px; height: 6px; border-radius: 50%; }
         .red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
-        .window-content img { width: 100%; display: block; filter: blur(2px); transition: 0.4s; }
+        .window-content img { width: 100%; display: block; filter: blur(3px); transition: 0.4s; }
         .window:hover .window-content img { filter: blur(0); }
 
-        /* INFO (ABAJO DERECHA) */
-        .item-info-footer { 
-            grid-column: 3 / 5; 
-            display: flex; 
-            gap: 15px; 
-            background: transparent; 
-            border: none; 
-            padding: 0; 
+        /* INFO FOOTER */
+        .item-footer-info {
+            grid-column: 3 / 4;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
         }
-        .sub-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 20px; flex: 1; display: flex; flex-direction: column; justify-content: center; }
-        .count { font-size: 1.8rem; font-weight: 900; line-height: 1; }
-        .label { font-size: 0.65rem; color: var(--accent); text-transform: uppercase; margin-top: 6px; letter-spacing: 1.2px; }
-        .tag { font-size: 0.65rem; background: #222; padding: 4px 10px; border-radius: 5px; display: inline-block; margin: 2px; border: 1px solid #333; color: var(--muted); }
+        .count { font-size: 1.4rem; font-weight: 900; line-height: 1; }
+        .label { font-size: 0.55rem; color: var(--accent); text-transform: uppercase; margin-top: 4px; }
 
-        @media (max-width: 1100px) {
+        .tag { font-size: 0.55rem; background: #222; padding: 2px 6px; border-radius: 4px; display: inline-block; margin: 1px; border: 1px solid #333; color: var(--muted); }
+
+        @media (max-width: 1000px) {
             .bento-grid { grid-template-columns: 1fr; }
-            .item-hero, .item-sidebar, .item-dashboards, .item-info-footer { grid-column: 1 / -1; }
+            .item-hero, .item-sidebar, .item-dashboards, .item-footer-info { grid-column: 1 / -1; }
         }
     </style>
 </head>
@@ -180,26 +163,26 @@
     <div class="bento-grid">
         
         <section class="bento-item item-hero">
-            <p style="color: var(--accent); font-weight: 600; letter-spacing: 2px; margin-bottom: 10px; font-size: 0.7rem;">ESTRATEGIA & CONTROL</p>
+            <p style="color: var(--accent); font-weight: 600; letter-spacing: 2px; margin-bottom: 8px; font-size: 0.6rem;">ESTRATEGIA & CONTROL</p>
             <h1>Pablo Solari.</h1>
-            <p class="proposal-text">Transformo la complejidad operativa en claridad estratégica. Utilizo datos para profesionalizar el control de tu empresa y asegurar una operación rentable.</p>
+            <p class="proposal-text">Profesionalizo el control de tu empresa para que el crecimiento no se convierta en caos. Rigor técnico para una operación rentable.</p>
             
             <div class="grid-pilares">
                 <div class="pilar">
                     <h3>Diagnóstico Operativo</h3>
-                    <p>Auditoría de flujos y optimización de controles internos basándome en mi trayectoria en manufactura.</p>
+                    <p>Auditoría de flujos y optimización de controles internos basándome en mi trayectoria industrial.</p>
                 </div>
                 <div class="pilar">
                     <h3>Eliminación de Manuales</h3>
-                    <p>Transformo planillas aisladas en sistemas integrados mediante soluciones ágiles en <strong>AppSheet</strong>.</p>
+                    <p>Transformación de planillas aisladas en sistemas integrados mediante soluciones en <strong>AppSheet</strong>.</p>
                 </div>
                 <div class="pilar">
                     <h3>Visibilidad Estratégica</h3>
-                    <p>Modelos dinámicos en <strong>Power BI</strong> para entender rentabilidad real y puntos de equilibrio por unidad.</p>
+                    <p>Modelos dinámicos en <strong>Power BI</strong> para entender rentabilidad real y puntos de equilibrio.</p>
                 </div>
                 <div class="pilar">
-                    <h3>Gestión de Manufactura</h3>
-                    <p>Consultoría especializada en planificación, costos y estrategia de compras para el sector industrial.</p>
+                    <h3>Estrategia Industrial</h3>
+                    <p>Consultoría especializada en planificación, costos de manufactura y estrategia de compras.</p>
                 </div>
             </div>
 
@@ -207,18 +190,25 @@
                 <img src="https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=microsoftpowerbi&logoColor=black" alt="Power BI">
                 <img src="https://img.shields.io/badge/AppSheet-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="AppSheet">
                 <img src="https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white" alt="Excel">
-                <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
             </div>
         </section>
 
         <div class="item-sidebar">
-            <div class="video-card">
-                <div class="video-box">
+            <div class="bento-item" style="padding: 10px;">
+                <div class="video-box-small">
                     <video controls><source src="video.mp4" type="video/mp4"></video>
                 </div>
-                <a href="https://www.linkedin.com/in/pablo-solari-contador/" class="linkedin-link" target="_blank">
-                    Conectar en LinkedIn
+                <a href="https://www.linkedin.com/in/pablo-solari-contador/" target="_blank" class="linkedin-btn-small" style="margin-top: 8px;">
+                    <img src="https://img.shields.io/badge/-LinkedIn-white?style=flat-square&logo=linkedin&logoColor=0077b5" alt="LinkedIn">
                 </a>
+            </div>
+            
+            <div class="bento-item" style="flex-grow: 1; justify-content: center;">
+                <h3 style="font-size: 0.6rem; margin-bottom: 8px; font-family: 'Montserrat'; text-transform: uppercase; color: var(--accent);">Metodología</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+                    <span class="tag">Diagnóstico</span> <span class="tag">Procesos</span> 
+                    <span class="tag">Tableros BI</span> <span class="tag">Resultados</span>
+                </div>
             </div>
         </div>
 
@@ -233,18 +223,9 @@
             </div>
         </div>
 
-        <div class="item-info-footer">
-            <div class="sub-card" style="text-align: center;">
-                <span class="count">+18 años</span>
-                <span class="label">Trayectoria Corporativa</span>
-            </div>
-            <div class="sub-card">
-                <h3 style="font-size: 0.7rem; margin-bottom: 8px; font-family: 'Montserrat'; text-transform: uppercase;">Metodología</h3>
-                <div>
-                    <span class="tag">Diagnóstico</span> <span class="tag">Procesos</span> 
-                    <span class="tag">Tableros BI</span> <span class="tag">Resultados</span>
-                </div>
-            </div>
+        <div class="bento-item item-footer-info">
+            <span class="count">+18 años</span>
+            <span class="label">Trayectoria Corporativa</span>
         </div>
 
     </div>
