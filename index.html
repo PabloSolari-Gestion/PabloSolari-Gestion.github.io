@@ -7,13 +7,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root { 
-            --bg: #0f172a; /* Azul noche muy oscuro (estilo moderno) */
-            --card: #1e293b; /* Gris azulado oscuro para las tarjetas */
-            --text-main: #f8fafc; 
-            --text-muted: #94a3b8; 
-            --accent: #10b981; /* Verde esmeralda (estilo Gonzalo) */
-            --border: #334155; 
-            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            --bg: #f1f5f9; /* Gris suave (Slate 100) */
+            --card: #ffffff; /* Tarjetas blancas para contraste */
+            --text-main: #1e293b; /* Texto casi negro */
+            --text-muted: #64748b; /* Texto secundario gris */
+            --accent: #10b981; /* El verde esmeralda que te gustó */
+            --border: #cbd5e1; /* Bordes sutiles */
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -22,7 +22,7 @@
             background-color: var(--bg);
             color: var(--text-main);
             font-family: 'Inter', sans-serif;
-            padding: 60px 15px 15px; /* Compactado superior */
+            padding: 65px 15px 15px;
             min-height: 100vh;
         }
 
@@ -34,15 +34,15 @@
             display: flex;
             justify-content: flex-end;
             z-index: 1000;
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border);
         }
 
         .btn-nav {
-            padding: 8px 18px;
+            padding: 8px 20px;
             background: var(--accent);
-            color: #0f172a;
+            color: #ffffff;
             text-decoration: none;
             font-weight: 700;
             border-radius: 50px;
@@ -51,7 +51,7 @@
             letter-spacing: 1px;
             transition: 0.3s;
         }
-        .btn-nav:hover { transform: translateY(-2px); box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
+        .btn-nav:hover { background: #059669; transform: translateY(-1px); }
 
         /* GRID */
         .bento-grid {
@@ -73,14 +73,14 @@
         }
 
         /* HERO */
-        .item-hero { grid-column: 1 / 4; position: relative; overflow: hidden; }
+        .item-hero { grid-column: 1 / 4; }
         h1 {
             font-family: 'Montserrat', sans-serif;
             font-size: clamp(1.6rem, 3.8vw, 2.8rem);
             line-height: 1.0;
             margin-bottom: 10px;
             letter-spacing: -1.5px;
-            color: #fff;
+            color: var(--text-main);
         }
         .proposal-text { font-size: 0.95rem; color: var(--text-muted); line-height: 1.5; max-width: 600px; margin-bottom: 20px; }
         
@@ -89,19 +89,18 @@
             grid-template-columns: 1fr 1fr; 
             gap: 15px; 
             margin-bottom: 20px;
-            border-top: 1px solid var(--border);
+            border-top: 1px solid #e2e8f0;
             padding-top: 15px;
         }
         .pilar h3 { font-size: 0.7rem; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; font-weight: 700; }
         .pilar p { font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; }
 
         .badges-container { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
-        .badges-container img { height: 18px; filter: grayscale(1) brightness(1.5); transition: 0.3s; }
-        .badges-container img:hover { filter: grayscale(0) brightness(1); }
+        .badges-container img { height: 18px; border-radius: 3px; }
 
         /* SIDEBAR */
         .item-sidebar { grid-column: 4 / 5; display: flex; flex-direction: column; gap: 10px; }
-        .video-box-small { width: 100%; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); aspect-ratio: 16/9; background: #000; }
+        .video-box-small { width: 100%; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); aspect-ratio: 16/9; background: #f8fafc; }
         video { width: 100%; height: 100%; object-fit: cover; }
 
         .linkedin-link-new {
@@ -110,7 +109,7 @@
             justify-content: center;
             gap: 8px;
             padding: 10px;
-            background: rgba(255, 255, 255, 0.05);
+            background: #fff;
             border: 1px solid var(--border);
             border-radius: 10px;
             text-decoration: none;
@@ -119,16 +118,16 @@
             font-weight: 600;
             transition: 0.3s;
         }
-        .linkedin-link-new:hover { background: rgba(16, 185, 129, 0.1); border-color: var(--accent); color: var(--accent); }
+        .linkedin-link-new:hover { border-color: var(--accent); color: var(--accent); }
 
         /* DASHBOARDS */
         .item-dashboards { grid-column: 1 / 3; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-        .window { background: #0f172a; border-radius: 12px; border: 1px solid var(--border); overflow: hidden; height: 140px; }
-        .window-header { background: #1e293b; padding: 6px; display: flex; gap: 5px; align-items: center; border-bottom: 1px solid var(--border); }
+        .window { background: #f8fafc; border-radius: 12px; border: 1px solid var(--border); overflow: hidden; height: 140px; }
+        .window-header { background: #f1f5f9; padding: 6px; display: flex; gap: 5px; align-items: center; border-bottom: 1px solid var(--border); }
         .dot { width: 6px; height: 6px; border-radius: 50%; }
         .red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
-        .window-content img { width: 100%; display: block; opacity: 0.6; filter: blur(2px); transition: 0.5s; }
-        .window:hover .window-content img { opacity: 1; filter: blur(0); }
+        .window-content img { width: 100%; display: block; filter: blur(3px); transition: 0.4s; }
+        .window:hover .window-content img { filter: blur(0); }
 
         /* FOOTER INFO */
         .item-footer-info {
@@ -139,9 +138,9 @@
             text-align: center;
         }
         .count { font-size: 1.8rem; font-weight: 900; line-height: 1; color: var(--accent); }
-        .label { font-size: 0.6rem; color: var(--text-main); text-transform: uppercase; margin-top: 5px; font-weight: 700; letter-spacing: 1px; }
+        .label { font-size: 0.6rem; color: var(--text-main); text-transform: uppercase; margin-top: 5px; font-weight: 700; }
 
-        .tag { font-size: 0.6rem; background: rgba(255,255,255,0.05); padding: 4px 10px; border-radius: 6px; display: inline-block; border: 1px solid var(--border); color: var(--text-muted); }
+        .tag { font-size: 0.6rem; background: #f1f5f9; padding: 4px 10px; border-radius: 6px; display: inline-block; border: 1px solid var(--border); color: var(--text-muted); }
 
         @media (max-width: 1000px) {
             .bento-grid { grid-template-columns: 1fr; }
@@ -152,79 +151,4 @@
 <body>
 
     <nav class="navbar">
-        <a href="https://wa.me/5493512589176" class="btn-nav" target="_blank">Agendar Diagnóstico</a>
-    </nav>
-
-    <div class="bento-grid">
-        
-        <section class="bento-item item-hero">
-            <p style="color: var(--accent); font-weight: 700; letter-spacing: 2px; margin-bottom: 8px; font-size: 0.65rem; text-transform: uppercase;">Estrategia & Control</p>
-            <h1>Pablo Solari.</h1>
-            <p class="proposal-text">Profesionalizo el control de tu empresa para que el crecimiento no se convierta en caos. Rigor técnico para una operación rentable.</p>
-            
-            <div class="grid-pilares">
-                <div class="pilar">
-                    <h3>Diagnóstico Operativo</h3>
-                    <p>Auditoría de flujos y optimización de controles internos basándome en mi trayectoria corporativa.</p>
-                </div>
-                <div class="pilar">
-                    <h3>Eliminación de Manuales</h3>
-                    <p>Transformación de planillas aisladas en sistemas integrados mediante soluciones en <strong>AppSheet</strong>.</p>
-                </div>
-                <div class="pilar">
-                    <h3>Visibilidad Estratégica</h3>
-                    <p>Modelos dinámicos en <strong>Power BI</strong> para entender rentabilidad real y puntos de equilibrio.</p>
-                </div>
-                <div class="pilar">
-                    <h3>Estrategia Industrial</h3>
-                    <p>Consultoría especializada en planificación, costos de manufactura y estrategia de compras.</p>
-                </div>
-            </div>
-
-            <div class="badges-container">
-                <img src="https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=microsoftpowerbi&logoColor=black" alt="Power BI">
-                <img src="https://img.shields.io/badge/AppSheet-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="AppSheet">
-                <img src="https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white" alt="Excel">
-            </div>
-        </section>
-
-        <div class="item-sidebar">
-            <div class="bento-item" style="padding: 12px; background: #0f172a;">
-                <div class="video-box-small">
-                    <video controls><source src="video.mp4" type="video/mp4"></video>
-                </div>
-                <a href="https://www.linkedin.com/in/pablo-solari-contador/" target="_blank" class="linkedin-link-new" style="margin-top: 10px;">
-                    <svg style="height: 16px; width: 16px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                    LinkedIn
-                </a>
-            </div>
-            
-            <div class="bento-item" style="flex-grow: 1; justify-content: center; text-align: center; padding: 15px;">
-                <h3 style="font-size: 0.65rem; margin-bottom: 10px; font-family: 'Montserrat'; text-transform: uppercase; color: var(--accent); font-weight: 700;">Metodología</h3>
-                <div style="display: flex; flex-wrap: wrap; gap: 5px; justify-content: center;">
-                    <span class="tag">Diagnóstico</span> <span class="tag">Procesos</span> 
-                    <span class="tag">Tableros BI</span> <span class="tag">Resultados</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="item-dashboards">
-            <div class="window">
-                <div class="window-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
-                <div class="window-content"><img src="image_6cc62d.png"></div>
-            </div>
-            <div class="window">
-                <div class="window-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
-                <div class="window-content"><img src="image_6cc62d.png"></div>
-            </div>
-        </div>
-
-        <div class="bento-item item-footer-info">
-            <span class="count">+18 años</span>
-            <span class="label">Trayectoria</span>
-        </div>
-
-    </div>
-
-</body>
-</html>
+        <a href="
