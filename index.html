@@ -7,13 +7,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root { 
-            --bg: #f4f7f6; /* Gris pizarra muy claro */
-            --card: #ffffff; /* Blanco puro */
-            --text-main: #1a202c; /* Azul marino profundo */
-            --text-muted: #4a5568; /* Gris medio */
-            --accent: #007bff; /* Azul eléctrico */
-            --border: #e2e8f0; /* Gris azulado muy claro */
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --bg: #0f172a; /* Azul noche muy oscuro (estilo moderno) */
+            --card: #1e293b; /* Gris azulado oscuro para las tarjetas */
+            --text-main: #f8fafc; 
+            --text-muted: #94a3b8; 
+            --accent: #10b981; /* Verde esmeralda (estilo Gonzalo) */
+            --border: #334155; 
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -22,44 +22,43 @@
             background-color: var(--bg);
             color: var(--text-main);
             font-family: 'Inter', sans-serif;
-            padding: 90px 20px 20px;
+            padding: 60px 15px 15px; /* Compactado superior */
             min-height: 100vh;
         }
 
-        /* NAVBAR PREMIUM */
+        /* NAVBAR */
         .navbar {
             position: fixed;
             top: 0; left: 0; right: 0;
-            padding: 15px 5%;
+            padding: 10px 5%;
             display: flex;
             justify-content: flex-end;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
 
         .btn-nav {
-            padding: 10px 22px;
+            padding: 8px 18px;
             background: var(--accent);
-            color: #ffffff;
+            color: #0f172a;
             text-decoration: none;
             font-weight: 700;
             border-radius: 50px;
             text-transform: uppercase;
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             letter-spacing: 1px;
             transition: 0.3s;
         }
-        .btn-nav:hover { background: #0056b3; }
+        .btn-nav:hover { transform: translateY(-2px); box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
 
-        /* GRID PRINCIPAL */
+        /* GRID */
         .bento-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            max-width: 1300px;
+            gap: 12px;
+            max-width: 1250px;
             margin: 0 auto;
         }
 
@@ -67,104 +66,84 @@
             background-color: var(--card);
             border-radius: 16px;
             border: 1px solid var(--border);
-            padding: 22px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             box-shadow: var(--shadow);
         }
 
-        /* HERO - LOS 4 PILARES */
-        .item-hero { grid-column: 1 / 4; }
+        /* HERO */
+        .item-hero { grid-column: 1 / 4; position: relative; overflow: hidden; }
         h1 {
             font-family: 'Montserrat', sans-serif;
-            font-size: clamp(1.8rem, 4vw, 3rem);
-            line-height: 1.1;
-            margin-bottom: 15px;
+            font-size: clamp(1.6rem, 3.8vw, 2.8rem);
+            line-height: 1.0;
+            margin-bottom: 10px;
             letter-spacing: -1.5px;
-            color: var(--text-main);
+            color: #fff;
         }
-        .proposal-text { font-size: 1rem; color: var(--text-muted); line-height: 1.5; max-width: 650px; margin-bottom: 25px; }
+        .proposal-text { font-size: 0.95rem; color: var(--text-muted); line-height: 1.5; max-width: 600px; margin-bottom: 20px; }
         
         .grid-pilares { 
             display: grid; 
             grid-template-columns: 1fr 1fr; 
-            gap: 20px; 
-            margin-bottom: 25px;
+            gap: 15px; 
+            margin-bottom: 20px;
             border-top: 1px solid var(--border);
-            padding-top: 20px;
+            padding-top: 15px;
         }
-        .pilar h3 { font-size: 0.75rem; color: var(--accent); text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 5px; font-weight: 700;}
-        .pilar p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; }
+        .pilar h3 { font-size: 0.7rem; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; font-weight: 700; }
+        .pilar p { font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; }
 
-        .badges-container { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
-        .badges-container img { height: 22px; border-radius: 4px; }
+        .badges-container { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+        .badges-container img { height: 18px; filter: grayscale(1) brightness(1.5); transition: 0.3s; }
+        .badges-container img:hover { filter: grayscale(0) brightness(1); }
 
-        /* SIDEBAR COMPACTO */
-        .item-sidebar { 
-            grid-column: 4 / 5; 
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        .video-box-small { 
-            width: 100%; 
-            border-radius: 12px; 
-            overflow: hidden; 
-            border: 1px solid var(--border); 
-            aspect-ratio: 16/9;
-        }
-        video { width: 100%; height: 100%; object-fit: cover; display: block; }
+        /* SIDEBAR */
+        .item-sidebar { grid-column: 4 / 5; display: flex; flex-direction: column; gap: 10px; }
+        .video-box-small { width: 100%; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); aspect-ratio: 16/9; background: #000; }
+        video { width: 100%; height: 100%; object-fit: cover; }
 
-        /* LINKEDIN ELEGANTE (CORREGIDO) */
         .linkedin-link-new {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
             padding: 10px;
-            background: #ffffff;
+            background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border);
             border-radius: 10px;
             text-decoration: none;
             color: var(--text-main);
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 600;
             transition: 0.3s;
-            margin-top: 10px;
         }
-        .linkedin-link-new:hover { background: #f8fafc; border-color: #cbd5e1; }
-        .linkedin-icon { height: 18px; width: 18px; }
+        .linkedin-link-new:hover { background: rgba(16, 185, 129, 0.1); border-color: var(--accent); color: var(--accent); }
 
-        /* DASHBOARDS PREMIUM */
-        .item-dashboards { 
-            grid-column: 1 / 3; 
-            display: grid; 
-            grid-template-columns: 1fr 1fr; 
-            gap: 15px; 
-        }
-        .window { background: #ffffff; border-radius: 12px; border: 1px solid var(--border); overflow: hidden; height: 160px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); }
-        .window-header { background: #f8fafc; padding: 8px; display: flex; gap: 5px; align-items: center; border-bottom: 1px solid var(--border); }
-        .dot { width: 7px; height: 7px; border-radius: 50%; }
+        /* DASHBOARDS */
+        .item-dashboards { grid-column: 1 / 3; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .window { background: #0f172a; border-radius: 12px; border: 1px solid var(--border); overflow: hidden; height: 140px; }
+        .window-header { background: #1e293b; padding: 6px; display: flex; gap: 5px; align-items: center; border-bottom: 1px solid var(--border); }
+        .dot { width: 6px; height: 6px; border-radius: 50%; }
         .red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
-        .window-content img { width: 100%; display: block; filter: blur(4px); transition: 0.4s; }
-        .window:hover .window-content img { filter: blur(0); }
+        .window-content img { width: 100%; display: block; opacity: 0.6; filter: blur(2px); transition: 0.5s; }
+        .window:hover .window-content img { opacity: 1; filter: blur(0); }
 
-        /* INFO FOOTER */
+        /* FOOTER INFO */
         .item-footer-info {
             grid-column: 3 / 4;
             display: flex;
             flex-direction: column;
             justify-content: center;
             text-align: center;
-            padding: 20px;
         }
-        .count { font-size: 1.8rem; font-weight: 900; line-height: 1; color: var(--text-main); }
-        .label { font-size: 0.6rem; color: var(--accent); text-transform: uppercase; margin-top: 6px; font-weight: 700; letter-spacing: 1px;}
+        .count { font-size: 1.8rem; font-weight: 900; line-height: 1; color: var(--accent); }
+        .label { font-size: 0.6rem; color: var(--text-main); text-transform: uppercase; margin-top: 5px; font-weight: 700; letter-spacing: 1px; }
 
-        .tags-container { display: flex; flex-wrap: wrap; gap: 5px; justify-content: center; }
-        .tag { font-size: 0.6rem; background: #f1f5f9; padding: 4px 10px; border-radius: 6px; display: inline-block; border: 1px solid var(--border); color: var(--text-muted); font-weight: 500;}
+        .tag { font-size: 0.6rem; background: rgba(255,255,255,0.05); padding: 4px 10px; border-radius: 6px; display: inline-block; border: 1px solid var(--border); color: var(--text-muted); }
 
-        @media (max-width: 1100px) {
+        @media (max-width: 1000px) {
             .bento-grid { grid-template-columns: 1fr; }
             .item-hero, .item-sidebar, .item-dashboards, .item-footer-info { grid-column: 1 / -1; }
         }
@@ -179,14 +158,14 @@
     <div class="bento-grid">
         
         <section class="bento-item item-hero">
-            <p style="color: var(--accent); font-weight: 700; letter-spacing: 2px; margin-bottom: 10px; font-size: 0.65rem; text-transform: uppercase;">Estrategia & Control</p>
+            <p style="color: var(--accent); font-weight: 700; letter-spacing: 2px; margin-bottom: 8px; font-size: 0.65rem; text-transform: uppercase;">Estrategia & Control</p>
             <h1>Pablo Solari.</h1>
-            <p class="proposal-text">Transformo la complejidad operativa en claridad estratégica. Utilizo datos para profesionalizar el control de tu empresa y asegurar una operación rentable.</p>
+            <p class="proposal-text">Profesionalizo el control de tu empresa para que el crecimiento no se convierta en caos. Rigor técnico para una operación rentable.</p>
             
             <div class="grid-pilares">
                 <div class="pilar">
                     <h3>Diagnóstico Operativo</h3>
-                    <p>Auditoría de flujos y optimización de controles internos basándome en mi trayectoria industrial.</p>
+                    <p>Auditoría de flujos y optimización de controles internos basándome en mi trayectoria corporativa.</p>
                 </div>
                 <div class="pilar">
                     <h3>Eliminación de Manuales</h3>
@@ -210,20 +189,19 @@
         </section>
 
         <div class="item-sidebar">
-            <div class="bento-item" style="padding: 12px;">
+            <div class="bento-item" style="padding: 12px; background: #0f172a;">
                 <div class="video-box-small">
                     <video controls><source src="video.mp4" type="video/mp4"></video>
                 </div>
-                
-                <a href="https://www.linkedin.com/in/pablo-solari-contador/" target="_blank" class="linkedin-link-new">
-                    <svg class="linkedin-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#0077b5"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                    Ver perfil profesional
+                <a href="https://www.linkedin.com/in/pablo-solari-contador/" target="_blank" class="linkedin-link-new" style="margin-top: 10px;">
+                    <svg style="height: 16px; width: 16px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    LinkedIn
                 </a>
             </div>
             
-            <div class="bento-item" style="flex-grow: 1; justify-content: center; text-align: center;">
+            <div class="bento-item" style="flex-grow: 1; justify-content: center; text-align: center; padding: 15px;">
                 <h3 style="font-size: 0.65rem; margin-bottom: 10px; font-family: 'Montserrat'; text-transform: uppercase; color: var(--accent); font-weight: 700;">Metodología</h3>
-                <div class="tags-container">
+                <div style="display: flex; flex-wrap: wrap; gap: 5px; justify-content: center;">
                     <span class="tag">Diagnóstico</span> <span class="tag">Procesos</span> 
                     <span class="tag">Tableros BI</span> <span class="tag">Resultados</span>
                 </div>
@@ -243,7 +221,7 @@
 
         <div class="bento-item item-footer-info">
             <span class="count">+18 años</span>
-            <span class="label">Trayectoria Industrial</span>
+            <span class="label">Trayectoria</span>
         </div>
 
     </div>
