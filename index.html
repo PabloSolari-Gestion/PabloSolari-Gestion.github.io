@@ -6,15 +6,15 @@
     <title>Pablo Solari | Estrategia y Control</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* --- VARIABLES Y RESET (PALETA DARK PREMIUM) --- */
+        /* --- VARIABLES Y RESET (PALETA CLARA PREMIUM) --- */
         :root { 
-            --bg: #0f172a; /* Azul noche muy oscuro (Fondo principal) */
-            --card: #1e293b; /* Gris azulado oscuro (Tarjetas) */
-            --text-main: #f1f5f9; /* Blanco grisáceo (Texto principal) */
-            --text-muted: #94a3b8; /* Gris medio (Texto secundario) */
-            --accent: #10b981; /* Verde esmeralda vibrante (Acentos y CTA) */
-            --border: #334155; /* Gris oscuro para bordes sutiles */
-            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            --bg: #f1f5f9; /* Gris Niebla muy claro (Fondo principal) */
+            --card: #ffffff; /* Blanco puro (Forndo de Recuadros) */
+            --text-main: #1e293b; /* Gris Pizarra Oscuro (Texto principal) */
+            --text-muted: #64748b; /* Gris medio (Texto secundario) */
+            --accent: #10b981; /* Verde esmeralda (Acentos y CTA) */
+            --border: #e2e8f0; /* Gris muy claro para bordes sutiles */
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -30,8 +30,8 @@
         /* --- NAVBAR --- */
         .navbar {
             position: fixed; top: 0; left: 0; right: 0;
-            background: rgba(15, 23, 42, 0.8); /* Fondo navbar semi-transparente */
-            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
             padding: 15px 5%;
             display: flex; justify-content: flex-end;
             border-bottom: 1px solid var(--border);
@@ -39,8 +39,8 @@
         }
 
         .btn-cta {
-            background: var(--accent); /* Botón principal en verde */
-            color: var(--bg); /* Texto del botón en oscuro para contraste */
+            background: var(--accent);
+            color: white;
             padding: 10px 20px;
             border-radius: 10px;
             text-decoration: none;
@@ -48,9 +48,8 @@
             font-size: 0.75rem;
             text-transform: uppercase;
             transition: 0.3s;
-            box-shadow: 0 0 15px rgba(16, 185, 129, 0.3); /* Brillo sutil verde */
         }
-        .btn-cta:hover { background: #fff; color: var(--bg); box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
+        .btn-cta:hover { background: #059669; }
 
         /* --- CONTENEDOR PRINCIPAL (BENTO GRID) --- */
         .container {
@@ -70,15 +69,15 @@
             box-shadow: var(--shadow);
             display: flex;
             flex-direction: column;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .card:hover { transform: translateY(-3px); border-color: var(--accent); }
+        .card:hover { transform: translateY(-3px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
 
         /* --- HERO (PABLO SOLARI) --- */
         .hero { grid-column: 1 / 4; }
         
         .hero .tagline { color: var(--accent); font-weight: 700; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; }
-        h1 { font-family: 'Montserrat', sans-serif; font-size: clamp(2rem, 5vw, 3rem); line-height: 1; margin-bottom: 15px; letter-spacing: -1.5px; color: #fff; }
+        h1 { font-family: 'Montserrat', sans-serif; font-size: clamp(2rem, 5vw, 3rem); line-height: 1; margin-bottom: 15px; letter-spacing: -1.5px; color: var(--text-main); }
         .intro { font-size: 1rem; color: var(--text-muted); margin-bottom: 25px; max-width: 550px; }
 
         .pilares {
@@ -99,40 +98,40 @@
 
         .linkedin-btn {
             display: flex; align-items: center; justify-content: center; gap: 10px;
-            padding: 12px; border-radius: 12px; background: rgba(255, 255, 255, 0.05); /* Fondo botón sutil */
+            padding: 12px; border-radius: 12px; background: #f8fafc;
             text-decoration: none; color: var(--text-main); font-weight: 700;
             border: 1px solid var(--border); font-size: 0.8rem;
             transition: 0.3s;
         }
-        .linkedin-btn:hover { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+        .linkedin-btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
 
-        /* --- DASHBOARDS (ESTILO VENTANA) --- */
+        /* --- DASHBOARDS (ESTILO VENTANA CLARA) --- */
         .dash-row { grid-column: 1 / 3; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         
         .window { 
-            background: #0f172a; border-radius: 15px; border: 1px solid var(--border); 
+            background: #f8fafc; border-radius: 15px; border: 1px solid var(--border); 
             height: 160px; overflow: hidden; box-shadow: var(--shadow);
             position: relative;
         }
-        .window-head { background: #1e293b; padding: 8px; display: flex; gap: 5px; border-bottom: 1px solid var(--border); }
-        .dot { width: 6px; height: 6px; border-radius: 50%; background: #334155; }
+        .window-head { background: #e2e8f0; padding: 8px; display: flex; gap: 5px; border-bottom: 1px solid var(--border); }
+        .dot { width: 6px; height: 6px; border-radius: 50%; background: #cbd5e1; }
         
         .window img { 
             width: 100%; height: 100%; object-fit: cover; 
-            opacity: 0.6; /* Imagen atenuada por defecto */
-            filter: grayscale(100%); /* Imagen en blanco y negro */
+            opacity: 0.8;
+            filter: grayscale(100%); 
             transition: 0.5s ease;
         }
-        .window:hover img { opacity: 1; filter: grayscale(0%); transform: scale(1.05); }
+        .window:hover img { opacity: 1; filter: grayscale(0%); transform: scale(1.03); }
 
         /* --- TRAYECTORIA --- */
-        .trayectoria { grid-column: 3 / 4; text-align: center; justify-content: center; background: var(--card); color: var(--text-main); border: 1px solid var(--border); }
+        .trayectoria { grid-column: 3 / 4; text-align: center; justify-content: center; }
         .trayectoria b { font-size: 2.5rem; color: var(--accent); display: block; font-family: 'Montserrat'; }
         .trayectoria span { font-size: 0.7rem; text-transform: uppercase; opacity: 0.8; color: var(--text-muted); }
 
         /* --- METODOLOGIA --- */
         .metodologia { grid-column: 4 / 5; display: flex; flex-wrap: wrap; gap: 6px; align-content: center; justify-content: center; }
-        .tag { background: rgba(255, 255, 255, 0.05); padding: 5px 10px; border-radius: 8px; font-size: 0.65rem; font-weight: 700; color: var(--accent); border: 1px solid var(--border); }
+        .tag { background: #f1f5f9; padding: 5px 10px; border-radius: 8px; font-size: 0.65rem; font-weight: 700; color: var(--text-muted); border: 1px solid var(--border); }
 
         /* --- RESPONSIVE --- */
         @media (max-width: 900px) {
@@ -175,7 +174,7 @@
         </section>
 
         <div class="sidebar">
-            <div class="card" style="padding: 10px; background: #0f172a;">
+            <div class="card" style="padding: 10px; background: #fff;">
                 <div class="video-box">
                     <video controls poster="image_aa5525.png">
                         <source src="video.mp4" type="video/mp4">
