@@ -10,8 +10,9 @@
         
         body {
             font-family: 'Outfit', sans-serif;
-            background: #0f172a; /* Fondo sólido por si falla el gradiente */
-            background: radial-gradient(circle at center, #1e293b, #0f172a);
+            /* Fondo Gris Slate más claro y profesional */
+            background: #334155; 
+            background: radial-gradient(circle at center, #475569, #1e293b);
             color: white;
             min-height: 100vh;
             padding: 20px;
@@ -37,11 +38,13 @@
         }
 
         .bento-item {
-            background: rgba(255, 255, 255, 0.05);
+            /* Tarjetas con un poco más de contraste sobre el fondo gris */
+            background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(10px);
             border-radius: 20px;
             padding: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
         /* Video */
@@ -50,6 +53,7 @@
             overflow: hidden;
             margin-bottom: 15px;
             background: #000;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         video { width: 100%; display: block; }
 
@@ -64,7 +68,7 @@
         }
 
         .service-tag {
-            background: rgba(255,255,255,0.03);
+            background: rgba(255,255,255,0.05);
             padding: 10px;
             border-radius: 10px;
             border-left: 3px solid #00d2ff;
@@ -103,10 +107,12 @@
             text-decoration: none;
             font-weight: bold;
             margin-top: 20px;
+            transition: 0.3s;
         }
+        .btn-wa:hover { transform: scale(1.02); background: #1eb954; }
 
         h2 { color: #00d2ff; margin-bottom: 10px; font-size: 1.4rem; }
-        p { color: #cbd5e1; line-height: 1.5; font-size: 0.95rem; }
+        p { color: #e2e8f0; line-height: 1.5; font-size: 0.95rem; }
 
         @media (max-width: 800px) {
             .main-layout { grid-template-columns: 1fr; }
