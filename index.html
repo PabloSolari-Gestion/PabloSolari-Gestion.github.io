@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pablo Solari | Estrategia & Gestión</title>
+    <title>Pablo Solari | Estrategia & Gestión Digital</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -12,130 +12,178 @@
             --primary: #00d2ff;
             --secondary: #3a7bd5;
             --dark: #0f172a;
+            --glass: rgba(255, 255, 255, 0.05);
         }
 
         body {
             font-family: 'Outfit', sans-serif;
-            background: #0f172a;
+            background: radial-gradient(circle at center, #1e293b, #0f172a);
             color: white;
-            overflow-x: hidden;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
+            height: 100vh;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 2rem;
-            text-align: center;
-            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+            padding: 2vh;
+            overflow: hidden;
         }
 
-        .video-container {
+        .dashboard-container {
             width: 100%;
-            max-width: 800px;
+            max-width: 1400px;
+            height: 94vh;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 20px;
+            background: rgba(0,0,0,0.4);
+            border-radius: 30px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+        }
+
+        /* Panel Izquierdo Fijo */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .video-box {
+            width: 100%;
             border-radius: 20px;
             overflow: hidden;
-            border: 2px solid rgba(0, 210, 255, 0.3);
-            box-shadow: 0 0 30px rgba(0, 210, 255, 0.2);
-            margin-bottom: 2rem;
+            border: 2px solid var(--primary);
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.2);
         }
 
         video { width: 100%; display: block; }
 
-        h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            background: linear-gradient(to right, #fff, var(--primary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            color: #94a3b8;
-            margin: 1rem 0 2rem;
-        }
-
-        /* Grid de Imágenes */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 4rem 1.5rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 1.5rem;
-            padding: 1.5rem;
+        .btn-wa {
+            background: #25d366;
+            color: white;
+            padding: 12px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
             transition: 0.3s;
         }
 
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary);
+        /* Panel Derecho Scrolleable */
+        .main-content {
+            overflow-y: auto;
+            padding-right: 15px;
         }
 
-        .card img {
+        /* Estilo para el scrollbar */
+        .main-content::-webkit-scrollbar { width: 6px; }
+        .main-content::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
+
+        .section-box {
+            background: var(--glass);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .grid-charts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .chart-card img {
             width: 100%;
-            border-radius: 1rem;
-            margin-bottom: 1rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
-        /* Botón WhatsApp */
-        .btn-wa {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: #25d366;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-            z-index: 100;
+        h2 { color: var(--primary); margin-bottom: 15px; font-size: 1.5rem; }
+        h3 { color: #fff; margin: 10px 0; font-size: 1.1rem; }
+        p { color: #94a3b8; font-size: 0.95rem; line-height: 1.5; }
+
+        .badge {
+            display: inline-block;
+            background: rgba(0, 210, 255, 0.1);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
         }
 
+        @media (max-width: 900px) {
+            .dashboard-container { grid-template-columns: 1fr; overflow-y: auto; height: auto; }
+            body { overflow: auto; height: auto; }
+        }
     </style>
 </head>
 <body>
 
-    <section class="hero">
-        <div class="video-container">
-            <video autoplay muted loop playsinline>
-                <source src="video.mp4" type="video/mp4">
-            </video>
-        </div>
-        <h1>Pablo Solari</h1>
-        <p class="subtitle">Estrategia y Control de Gestión para PyMEs y Proyectos Tecnológicos.</p>
-    </section>
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="video-box">
+                <video autoplay muted loop playsinline>
+                    <source src="video.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div>
+                <h1 style="font-size: 1.8rem;">Pablo Solari</h1>
+                <p>Contador & Consultor de Gestión</p>
+            </div>
+            <a href="https://wa.me/5493512589176" class="btn-wa">Contactar ahora</a>
+        </aside>
 
-    <div class="container">
-        <h2 style="margin-bottom: 2rem; text-align: center;">Dashboards de Gestión</h2>
-        <div class="grid">
-            <div class="card">
-                <img src="image_6cc62d.png" alt="Dashboard 1">
-                <h3>Análisis de Costos</h3>
-                <p>Optimización de procesos operativos.</p>
-            </div>
-            <div class="card">
-                <img src="image_segunda.png" alt="Dashboard 2">
-                <h3>Control Comercial</h3>
-                <p>KPIs dinámicos en tiempo real.</p>
-            </div>
-        </div>
+        <main class="main-content">
+            
+            <section class="section-box">
+                <h2>Business Intelligence</h2>
+                <div class="grid-charts">
+                    <div class="chart-card">
+                        <img src="image_6cc62d.png" alt="Dashboard Gestión">
+                        <h3>Control de Costos</h3>
+                    </div>
+                    <div class="chart-card">
+                        <img src="image_segunda.png" alt="Dashboard Comercial">
+                        <h3>Análisis Comercial</h3>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-box">
+                <span class="badge">Experiencia de 18 años</span>
+                <h2>Trayectoria Profesional</h2>
+                <p>Especialista en <strong>Control de Gestión y Procesos</strong> con casi dos décadas de carrera en multinacionales manufactureras (Ex-Arcor).</p>
+                <br>
+                <p>Mi enfoque actual se centra en la optimización de rentabilidad para PyMEs, aplicando metodologías corporativas de alto nivel a estructuras dinámicas.</p>
+            </section>
+
+            <section class="section-box">
+                <h2>Servicios de Consultoría</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div>
+                        <h3 style="color:var(--primary)">• Gestión de Costos</h3>
+                        <p>Mapeo de procesos y reducción de desvíos operativos.</p>
+                    </div>
+                    <div>
+                        <h3 style="color:var(--primary)">• Power BI</h3>
+                        <p>Tableros dinámicos para decisiones basadas en datos.</p>
+                    </div>
+                    <div>
+                        <h3 style="color:var(--primary)">• Control Interno</h3>
+                        <p>Auditoría y diseño de procesos administrativos.</p>
+                    </div>
+                    <div>
+                        <h3 style="color:var(--primary)">• Finanzas PyME</h3>
+                        <p>Planeamiento financiero y manejo de flujo de fondos.</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
     </div>
-
-    <a href="https://wa.me/5493512589176" class="btn-wa">WhatsApp Consultas</a>
 
 </body>
 </html>
