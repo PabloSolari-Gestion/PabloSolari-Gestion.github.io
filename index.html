@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pablo Solari | Estrategia & Gestión Digital</title>
+    <title>Pablo Solari | Consultoría de Gestión</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -11,178 +11,178 @@
         :root {
             --primary: #00d2ff;
             --secondary: #3a7bd5;
-            --dark: #0f172a;
             --glass: rgba(255, 255, 255, 0.05);
+            --border: rgba(255, 255, 255, 0.1);
         }
 
         body {
             font-family: 'Outfit', sans-serif;
             background: radial-gradient(circle at center, #1e293b, #0f172a);
             color: white;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2vh;
-            overflow: hidden;
-        }
-
-        .dashboard-container {
-            width: 100%;
-            max-width: 1400px;
-            height: 94vh;
-            display: grid;
-            grid-template-columns: 320px 1fr;
-            gap: 20px;
-            background: rgba(0,0,0,0.4);
-            border-radius: 30px;
-            padding: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-        }
-
-        /* Panel Izquierdo Fijo */
-        .sidebar {
+            min-height: 100vh;
+            padding: 20px;
             display: flex;
             flex-direction: column;
+            align-items: center;
+        }
+
+        /* Nombre arriba y grande */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+
+        header h1 {
+            font-size: clamp(3rem, 7vw, 4.5rem);
+            background: linear-gradient(to right, #fff, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            opacity: 0.8;
+        }
+
+        /* Contenedor Principal */
+        .main-layout {
+            max-width: 1300px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr; /* Video izq, Info der */
             gap: 20px;
         }
 
-        .video-box {
-            width: 100%;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 2px solid var(--primary);
-            box-shadow: 0 0 20px rgba(0, 210, 255, 0.2);
+        /* Bloques Estilo Bento */
+        .bento-item {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 25px;
+            border: 1px solid var(--border);
+            transition: 0.3s;
         }
 
+        .bento-item:hover { border-color: var(--primary); }
+
+        /* Video */
+        .video-wrapper {
+            width: 100%;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
         video { width: 100%; display: block; }
 
+        /* Info combinada */
+        .info-grid {
+            display: grid;
+            grid-template-rows: auto auto;
+            gap: 20px;
+        }
+
+        .services-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .service-tag {
+            background: rgba(255,255,255,0.03);
+            padding: 10px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            border-left: 3px solid var(--primary);
+        }
+
+        /* Dashboards abajo ancho completo */
+        .dashboards-row {
+            grid-column: span 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .dash-card img {
+            width: 100%;
+            border-radius: 15px;
+            margin-top: 15px;
+        }
+
+        h2 { color: var(--primary); font-size: 1.4rem; margin-bottom: 10px; }
+        p { color: #94a3b8; line-height: 1.5; font-size: 0.95rem; }
+
+        /* Botón WhatsApp */
         .btn-wa {
+            display: block;
+            margin-top: 20px;
             background: #25d366;
             color: white;
+            text-align: center;
             padding: 12px;
             border-radius: 12px;
             text-decoration: none;
             font-weight: bold;
-            text-align: center;
-            transition: 0.3s;
-        }
-
-        /* Panel Derecho Scrolleable */
-        .main-content {
-            overflow-y: auto;
-            padding-right: 15px;
-        }
-
-        /* Estilo para el scrollbar */
-        .main-content::-webkit-scrollbar { width: 6px; }
-        .main-content::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
-
-        .section-box {
-            background: var(--glass);
-            border-radius: 20px;
-            padding: 25px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .grid-charts {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .chart-card img {
-            width: 100%;
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        h2 { color: var(--primary); margin-bottom: 15px; font-size: 1.5rem; }
-        h3 { color: #fff; margin: 10px 0; font-size: 1.1rem; }
-        p { color: #94a3b8; font-size: 0.95rem; line-height: 1.5; }
-
-        .badge {
-            display: inline-block;
-            background: rgba(0, 210, 255, 0.1);
-            color: var(--primary);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-bottom: 10px;
         }
 
         @media (max-width: 900px) {
-            .dashboard-container { grid-template-columns: 1fr; overflow-y: auto; height: auto; }
-            body { overflow: auto; height: auto; }
+            .main-layout { grid-template-columns: 1fr; }
+            .dashboards-row { grid-template-columns: 1fr; grid-column: span 1; }
         }
     </style>
 </head>
 <body>
 
-    <div class="dashboard-container">
+    <header>
+        <h1>Pablo Solari</h1>
+        <p>Estrategia & Control de Gestión</p>
+    </header>
+
+    <div class="main-layout">
         
-        <aside class="sidebar">
-            <div class="video-box">
+        <div class="bento-item">
+            <div class="video-wrapper">
                 <video autoplay muted loop playsinline>
                     <source src="video.mp4" type="video/mp4">
                 </video>
             </div>
-            <div>
-                <h1 style="font-size: 1.8rem;">Pablo Solari</h1>
-                <p>Contador & Consultor de Gestión</p>
-            </div>
-            <a href="https://wa.me/5493512589176" class="btn-wa">Contactar ahora</a>
-        </aside>
+            <a href="https://wa.me/5493512589176" class="btn-wa">Agendar Consultoría</a>
+        </div>
 
-        <main class="main-content">
-            
-            <section class="section-box">
-                <h2>Business Intelligence</h2>
-                <div class="grid-charts">
-                    <div class="chart-card">
-                        <img src="image_6cc62d.png" alt="Dashboard Gestión">
-                        <h3>Control de Costos</h3>
-                    </div>
-                    <div class="chart-card">
-                        <img src="image_segunda.png" alt="Dashboard Comercial">
-                        <h3>Análisis Comercial</h3>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section-box">
-                <span class="badge">Experiencia de 18 años</span>
+        <div class="info-grid">
+            <div class="bento-item">
                 <h2>Trayectoria Profesional</h2>
-                <p>Especialista en <strong>Control de Gestión y Procesos</strong> con casi dos décadas de carrera en multinacionales manufactureras (Ex-Arcor).</p>
-                <br>
-                <p>Mi enfoque actual se centra en la optimización de rentabilidad para PyMEs, aplicando metodologías corporativas de alto nivel a estructuras dinámicas.</p>
-            </section>
-
-            <section class="section-box">
-                <h2>Servicios de Consultoría</h2>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                    <div>
-                        <h3 style="color:var(--primary)">• Gestión de Costos</h3>
-                        <p>Mapeo de procesos y reducción de desvíos operativos.</p>
-                    </div>
-                    <div>
-                        <h3 style="color:var(--primary)">• Power BI</h3>
-                        <p>Tableros dinámicos para decisiones basadas en datos.</p>
-                    </div>
-                    <div>
-                        <h3 style="color:var(--primary)">• Control Interno</h3>
-                        <p>Auditoría y diseño de procesos administrativos.</p>
-                    </div>
-                    <div>
-                        <h3 style="color:var(--primary)">• Finanzas PyME</h3>
-                        <p>Planeamiento financiero y manejo de flujo de fondos.</p>
-                    </div>
+                <p>Especialista en procesos con <strong>18 años de carrera</strong> en multinacionales (Ex-Arcor). Hoy enfocado en transformar la rentabilidad de PyMEs mediante gestión basada en datos.</p>
+            </div>
+            <div class="bento-item">
+                <h2>Servicios Especializados</h2>
+                <div class="services-list">
+                    <div class="service-tag">Costos y Procesos</div>
+                    <div class="service-tag">Power BI & Dashboards</div>
+                    <div class="service-tag">Finanzas y Cashflow</div>
+                    <div class="service-tag">Control Interno</div>
                 </div>
-            </section>
+            </div>
+        </div>
 
-        </main>
+        <div class="dashboards-row">
+            <div class="bento-item dash-card">
+                <h2>Business Intelligence</h2>
+                <img src="image_6cc62d.png" alt="Dashboard Gestión">
+            </div>
+            <div class="bento-item dash-card">
+                <h2>Control de Ventas</h2>
+                <img src="image_segunda.png" alt="Dashboard Comercial">
+            </div>
+        </div>
+
     </div>
 
 </body>
