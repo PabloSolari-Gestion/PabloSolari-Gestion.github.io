@@ -10,7 +10,7 @@
         
         body {
             font-family: 'Outfit', sans-serif;
-            /* Fondo intermedio: más cuerpo que el anterior */
+            /* Fondo intermedio con más carácter */
             background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
             color: #1e293b;
             min-height: 100vh;
@@ -26,16 +26,16 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 20px;
+            padding: 15px 20px;
         }
 
-        .header-titles h1 { font-size: 1.7rem; font-weight: 700; color: #0f172a; }
+        .header-titles h1 { font-size: 1.8rem; font-weight: 700; color: #0f172a; }
         .header-titles p { font-size: 0.7rem; letter-spacing: 2px; color: #475569; font-weight: 700; text-transform: uppercase; }
         
         .btn-header {
             background: #16a34a;
             color: white;
-            padding: 12px 22px;
+            padding: 12px 24px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 700;
@@ -53,55 +53,55 @@
             margin-bottom: 5px;
         }
         .clients-banner span { font-size: 0.7rem; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-right: 10px; }
-        .clients-list { font-weight: 700; font-size: 0.85rem; color: #334155; display: inline-block; }
+        .clients-list { font-weight: 700; font-size: 0.9rem; color: #334155; display: inline-block; }
 
-        .hero { text-align: center; margin: 5px 0 15px 0; }
-        .hero h2 { font-size: clamp(2rem, 4.5vw, 3rem); color: #0f172a; font-weight: 700; line-height: 1.1; }
+        .hero { text-align: center; margin: 10px 0 20px 0; }
+        .hero h2 { font-size: clamp(2rem, 5vw, 3.2rem); color: #0f172a; font-weight: 700; line-height: 1.1; }
         .hero h2 span { color: #2563eb; }
 
         .main-layout {
             max-width: 1200px;
             width: 100%;
             display: grid;
-            /* Invertimos proporciones: más espacio a la izquierda para el video */
-            grid-template-columns: 1.3fr 1fr; 
-            gap: 20px;
+            /* Video con más lugar (1.4fr) */
+            grid-template-columns: 1.4fr 1fr; 
+            gap: 25px;
             padding: 0 20px;
         }
 
         .bento-item {
             background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 25px;
+            border-radius: 24px;
+            padding: 30px;
             border: 1px solid #cbd5e1;
-            box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
         .video-wrapper {
-            border-radius: 12px;
+            border-radius: 16px;
             overflow: hidden;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             background: #000;
             aspect-ratio: 16/9;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
         video { width: 100%; height: 100%; object-fit: cover; }
 
         .services-list {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 10px;
-            margin: 15px 0;
+            gap: 12px;
+            margin: 20px 0;
         }
         .service-tag {
             background: #f1f5f9;
-            padding: 12px 15px;
-            border-radius: 10px;
-            border-left: 5px solid #2563eb;
-            font-size: 0.9rem;
+            padding: 14px 18px;
+            border-radius: 12px;
+            border-left: 6px solid #2563eb;
+            font-size: 0.95rem;
             color: #1e293b;
             font-weight: 700;
         }
@@ -110,102 +110,28 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 12px;
-            filter: blur(4px);
+            filter: blur(5px);
             opacity: 0.6;
             transition: 0.5s ease;
         }
         .services-container:hover .preview-dashboards { filter: blur(0); opacity: 1; }
-        .preview-dashboards img { width: 100%; border-radius: 8px; max-height: 110px; object-fit: cover; background: white; }
+        .preview-dashboards img { width: 100%; border-radius: 10px; max-height: 120px; object-fit: cover; background: white; }
 
         .impact-section {
             max-width: 1200px;
             width: 100%;
-            margin-top: 20px;
+            margin-top: 30px;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            padding: 0 20px 25px 20px;
+            gap: 20px;
+            padding: 0 20px 30px 20px;
         }
         .impact-card {
             background: rgba(255,255,255,0.8);
-            padding: 18px;
-            border-radius: 15px;
+            padding: 20px;
+            border-radius: 18px;
             text-align: center;
-            border-bottom: 4px solid #2563eb;
-            transition: 0.3s;
+            border-bottom: 5px solid #2563eb;
         }
-        .impact-card:hover { transform: translateY(-3px); background: #fff; }
-        .impact-card h4 { font-size: 1.1rem; color: #0f172a; margin-bottom: 5px; font-weight: 700; }
-        .impact-card p { font-size: 0.85rem; color: #475569; line-height: 1.4; }
-
-        @media (max-width: 850px) {
-            .main-layout { grid-template-columns: 1fr; }
-            .impact-section { grid-template-columns: 1fr; }
-            header { flex-direction: column; gap: 15px; }
-            .hero h2 { font-size: 2rem; }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="header-titles">
-            <h1>Pablo Solari</h1>
-            <p>Gestión Estratégica de Negocios</p>
-        </div>
-        <a href="https://wa.me/5493517300117?text=Hola%20Pablo,%20vengo%20de%20tu%20web%20y%20quiero%20solicitar%20un%20diagnóstico%20de%20negocio." class="btn-header">
-            Solicitar Diagnóstico →
-        </a>
-    </header>
-
-    <div class="clients-banner">
-        <span>Trayectoria en:</span>
-        <div class="clients-list">Arcor • Abea Neumáticos • Monarca Granollas • Footwork Lab</div>
-    </div>
-
-    <div class="hero">
-        <h2>Tome el control de su <span>Rentabilidad.</span></h2>
-    </div>
-
-    <div class="main-layout">
-        <div class="bento-item">
-            <div class="video-wrapper">
-                <video autoplay muted loop playsinline>
-                    <source src="video.mp4" type="video/mp4">
-                </video>
-            </div>
-            <h3 style="color:#2563eb; font-size: 1.2rem; margin-bottom: 10px;">Visión de Alta Dirección</h3>
-            <p style="font-size: 1rem; line-height: 1.5;">Tras 18 años en la dirección financiera corporativa, implemento la estructura que usan los grandes para profesionalizar su PyME.</p>
-        </div>
-
-        <div class="bento-item services-container">
-            <h3 style="color:#2563eb; font-size: 1.2rem; margin-bottom: 10px;">Soluciones de Gestión</h3>
-            <div class="services-list">
-                <div class="service-tag">Ingeniería de Costos & Márgenes</div>
-                <div class="service-tag">Tableros de Comando (Power BI)</div>
-                <div class="service-tag">Estrategia & Control Interno</div>
-            </div>
-            <div class="preview-dashboards">
-                <img src="image_6cc62d.png" alt="BI 1">
-                <img src="image_segunda.png" alt="BI 2">
-            </div>
-        </div>
-    </div>
-
-    <div class="impact-section">
-        <div class="impact-card">
-            <h4>Rentabilidad</h4>
-            <p>Optimización genuina de su estructura operativa.</p>
-        </div>
-        <div class="impact-card">
-            <h4>Control</h4>
-            <p>Decisiones basadas en datos, no en adivinanzas.</p>
-        </div>
-        <div class="impact-card">
-            <h4>Escala</h4>
-            <p>Procesos corporativos aplicados a su crecimiento.</p>
-        </div>
-    </div>
-
-</body>
-</html>
+        .impact-card h4 { font-size: 1.2rem; color: #0f172a; margin-bottom: 6px; font-weight: 700; }
+        .impact-card p { font-size: 0.9rem; color: #475
