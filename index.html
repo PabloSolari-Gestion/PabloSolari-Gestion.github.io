@@ -1,16 +1,15 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pablo Solari | Estrategia & Gestión</title>
+    <title>Pablo Solari | Estrategia & Gestión de Negocios</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: 'Outfit', sans-serif;
-            /* Fondo Gris Claro / Medio - Mucho más luminoso */
             background: #64748b; 
             background: linear-gradient(135deg, #94a3b8 0%, #475569 100%);
             color: #f8fafc;
@@ -37,16 +36,14 @@
         }
 
         .bento-item {
-            /* Tarjetas más opacas para resaltar sobre el fondo claro */
             background: rgba(15, 23, 42, 0.4); 
             backdrop-filter: blur(12px);
             border-radius: 20px;
-            padding: 20px;
+            padding: 25px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
-        /* Video */
         .video-wrapper {
             border-radius: 15px;
             overflow: hidden;
@@ -56,26 +53,24 @@
         }
         video { width: 100%; display: block; }
 
-        /* Servicios e Interacción */
         .services-container { cursor: pointer; }
         
         .services-list {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin: 15px 0;
+            gap: 12px;
+            margin: 20px 0;
         }
 
         .service-tag {
             background: rgba(255,255,255,0.1);
-            padding: 10px;
+            padding: 12px;
             border-radius: 10px;
             border-left: 4px solid #00d2ff;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: #ffffff;
         }
 
-        /* Dashboards Esfumados */
         .preview-dashboards {
             margin-top: 20px;
             display: grid;
@@ -95,7 +90,7 @@
             width: 100%;
             border-radius: 10px;
             border: 1px solid #00d2ff;
-            background: white; /* Por si las imágenes tienen transparencia */
+            background: white;
         }
 
         .btn-wa {
@@ -103,17 +98,18 @@
             background: #22c55e;
             color: white;
             text-align: center;
-            padding: 15px;
+            padding: 18px;
             border-radius: 12px;
             text-decoration: none;
             font-weight: bold;
-            margin-top: 20px;
+            margin-top: 25px;
             transition: 0.3s;
+            font-size: 1.1rem;
         }
-        .btn-wa:hover { background: #16a34a; transform: translateY(-2px); }
+        .btn-wa:hover { background: #16a34a; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(34, 197, 94, 0.3); }
 
-        h2 { color: #00d2ff; margin-bottom: 10px; font-size: 1.4rem; }
-        p { color: #f1f5f9; line-height: 1.5; font-size: 0.95rem; }
+        h2 { color: #00d2ff; margin-bottom: 15px; font-size: 1.6rem; }
+        p { color: #f1f5f9; line-height: 1.6; font-size: 1rem; }
 
         @media (max-width: 800px) {
             .main-layout { grid-template-columns: 1fr; }
@@ -125,7 +121,7 @@
 
     <header>
         <h1>Pablo Solari</h1>
-        <p style="color: #f1f5f9; letter-spacing: 2px; opacity: 0.9;">ESTRATEGIA & GESTIÓN</p>
+        <p style="color: #f1f5f9; letter-spacing: 3px; opacity: 0.9; font-weight: 300;">ESTRATEGIA & GESTIÓN DE NEGOCIOS</p>
     </header>
 
     <div class="main-layout">
@@ -136,28 +132,37 @@
                     <source src="video.mp4" type="video/mp4">
                 </video>
             </div>
-            <h2>Trayectoria</h2>
-            <p>Especialista en procesos con <strong>18 años de experiencia</strong> en multinacionales (Ex-Arcor).</p>
+            <h2>Visión Estratégica</h2>
+            <p>Especialista en dirección financiera y procesos con <strong>18 años de trayectoria</strong> en gestión corporativa multinacional.</p>
             <br>
-            <p>Optimización de rentabilidad basada en datos para PyMEs.</p>
-            <a href="https://wa.me/5493512589176" class="btn-wa">WhatsApp Directo</a>
+            <p>Transformo la complejidad operativa en estructuras rentables, aplicando criterio de alta dirección para potenciar el valor de su negocio.</p>
+            
+            <a href="https://wa.me/5493512589176?text=Hola%20Pablo,%20me%20gustaría%20solicitar%20un%20diagnóstico%20para%20revisar%20los%20desafíos%20de%20mi%20negocio" class="btn-wa">
+                Solicitar Diagnóstico de Negocio
+            </a>
         </div>
 
         <div class="bento-item services-container">
-            <h2>Servicios Especializados</h2>
+            <h2>Soluciones de Negocio</h2>
+            <p>Profesionalización integral para empresas que buscan escala y control.</p>
+            
             <div class="services-list">
-                <div class="service-tag">Costos y Procesos</div>
-                <div class="service-tag">Power BI BI</div>
-                <div class="service-tag">Control Interno</div>
-                <div class="service-tag">Finanzas PyME</div>
+                <div class="service-tag">Estrategia de Negocios</div>
+                <div class="service-tag">Ingeniería de Costos</div>
+                <div class="service-tag">Control de Gestión</div>
+                <div class="service-tag">Business Intelligence</div>
             </div>
 
             <div class="preview-dashboards">
-                <img src="image_6cc62d.png" alt="Dash 1">
-                <img src="image_segunda.png" alt="Dash 2">
+                <img src="image_6cc62d.png" alt="Análisis Estratégico 1">
+                <img src="image_segunda.png" alt="Control de Gestión 2">
             </div>
-            <p style="text-align: center; margin-top: 10px; font-size: 0.8rem; color: #00d2ff;">
-                (Posate aquí para enfocar los ejemplos)
+            <p style="text-align: center; margin-top: 15px; font-size: 0.85rem; color: #00d2ff; opacity: 0.8;">
+                (Deslice para enfocar ejemplos de monitoreo en tiempo real)
+            </p>
+            <br>
+            <p style="font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; font-style: italic;">
+                "La tecnología es el vehículo; la estrategia financiera es el motor que asegura el crecimiento sostenible."
             </p>
         </div>
 
