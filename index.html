@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pablo Solari | Gestión Estratégica</title>
+    <title>Pablo Solari | Estrategia & Gestión</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: 'Outfit', sans-serif;
-            /* Fondo azul grisáceo con carácter */
+            /* Fondo ajustado: un poco más de cuerpo que el original */
             background: linear-gradient(135deg, #cbd5e1 0%, #94a3b8 100%);
             color: #1e293b;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding-bottom: 40px;
+            overflow-x: hidden;
         }
 
         header { 
@@ -26,120 +26,122 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
+            padding: 12px 20px;
         }
 
-        .header-titles h1 { font-size: 1.8rem; font-weight: 700; color: #0f172a; }
-        .header-titles p { font-size: 0.75rem; letter-spacing: 2px; color: #475569; font-weight: 700; text-transform: uppercase; }
+        .header-titles h1 { font-size: 1.7rem; font-weight: 700; color: #0f172a; }
+        .header-titles p { font-size: 0.7rem; letter-spacing: 2px; color: #475569; font-weight: 700; text-transform: uppercase; }
         
         .btn-header {
             background: #16a34a;
             color: white;
-            padding: 12px 24px;
+            padding: 10px 20px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 700;
+            font-size: 0.85rem;
             transition: 0.3s ease;
-            box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
+            box-shadow: 0 4px 10px rgba(22, 163, 74, 0.2);
         }
-        .btn-header:hover { background: #15803d; transform: translateY(-2px); }
+        .btn-header:hover { background: #15803d; transform: translateY(-1px); }
 
         .clients-banner {
-            width: 90%;
-            max-width: 1100px;
-            padding: 12px;
+            width: 100%;
+            max-width: 1200px;
+            padding: 8px 20px;
             text-align: center;
-            background: rgba(255, 255, 255, 0.4);
-            border-radius: 50px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(255,255,255,0.5);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            margin-bottom: 10px;
         }
-        .clients-list { font-weight: 700; font-size: 0.95rem; color: #0f172a; }
+        .clients-banner span { font-size: 0.7rem; color: #475569; text-transform: uppercase; letter-spacing: 1px; margin-right: 12px; }
+        .clients-list { font-weight: 700; font-size: 0.85rem; color: #1e293b; display: inline-block; }
 
-        .hero { text-align: center; margin-bottom: 25px; padding: 0 20px; }
-        .hero h2 { font-size: clamp(2rem, 5vw, 3.2rem); color: #0f172a; line-height: 1.1; font-weight: 700; }
-        .hero span { color: #2563eb; }
+        .hero { text-align: center; margin-bottom: 15px; padding: 0 20px; }
+        .hero h2 { font-size: clamp(2rem, 4vw, 2.8rem); color: #0f172a; font-weight: 700; line-height: 1.1; }
+        .hero h2 span { color: #2563eb; }
 
         .main-layout {
             max-width: 1200px;
             width: 100%;
             display: grid;
-            grid-template-columns: 1.4fr 1fr; 
-            gap: 25px;
+            /* Video con más lugar (1.3fr) que los servicios */
+            grid-template-columns: 1.3fr 1fr;
+            gap: 15px;
             padding: 0 20px;
+            flex-grow: 1;
         }
 
         .bento-item {
-            background: #ffffff;
-            border-radius: 24px;
-            padding: 30px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            border-radius: 20px;
+            padding: 25px;
             border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
             display: flex;
             flex-direction: column;
+            justify-content: center;
         }
 
-        .video-container {
-            width: 100%;
-            border-radius: 15px;
+        .video-wrapper {
+            border-radius: 12px;
             overflow: hidden;
+            margin-bottom: 15px;
             background: #000;
-            margin-bottom: 20px;
             aspect-ratio: 16/9;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         video { width: 100%; height: 100%; object-fit: cover; }
 
+        .services-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+            margin: 15px 0;
+        }
         .service-tag {
             background: #f8fafc;
-            padding: 15px;
-            border-radius: 12px;
-            border-left: 6px solid #2563eb;
-            font-size: 1rem;
-            font-weight: 700;
-            margin-bottom: 12px;
+            padding: 12px;
+            border-radius: 10px;
+            border-left: 5px solid #2563eb;
+            font-size: 0.9rem;
             color: #334155;
+            font-weight: 700;
         }
 
         .preview-dashboards {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-top: auto;
-            padding-top: 20px;
+            gap: 10px;
+            filter: blur(4px);
+            opacity: 0.7;
+            transition: 0.5s ease;
         }
-        .preview-dashboards img { 
-            width: 100%; 
-            border-radius: 10px; 
-            border: 1px solid #cbd5e1;
-            transition: 0.4s ease;
-            max-height: 120px;
-            object-fit: cover;
-        }
+        .services-container:hover .preview-dashboards { filter: blur(0); opacity: 1; }
+        .preview-dashboards img { width: 100%; border-radius: 8px; max-height: 120px; object-fit: cover; border: 1px solid #f1f5f9; background: white; }
 
         .impact-section {
             max-width: 1200px;
             width: 100%;
-            margin-top: 30px;
+            margin-top: 20px;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            padding: 0 20px;
+            gap: 15px;
+            padding: 0 20px 25px 20px;
         }
         .impact-card {
             background: rgba(255,255,255,0.7);
-            padding: 25px;
-            border-radius: 20px;
+            padding: 18px;
+            border-radius: 15px;
             text-align: center;
-            border-bottom: 5px solid #2563eb;
+            border-bottom: 4px solid #2563eb;
         }
-        .impact-card h4 { font-size: 1.2rem; color: #0f172a; margin-bottom: 8px; font-weight: 700; }
-        .impact-card p { font-size: 0.9rem; line-height: 1.4; color: #475569; }
+        .impact-card h4 { font-size: 1.1rem; color: #0f172a; margin-bottom: 5px; font-weight: 700; }
+        .impact-card p { font-size: 0.85rem; color: #475569; line-height: 1.3; }
 
         @media (max-width: 850px) {
             .main-layout, .impact-section { grid-template-columns: 1fr; }
-            header { flex-direction: column; text-align: center; gap: 20px; }
-            .video-container { aspect-ratio: 4/3; }
+            header { flex-direction: column; text-align: center; gap: 15px; }
         }
     </style>
 </head>
@@ -148,16 +150,16 @@
     <header>
         <div class="header-titles">
             <h1>Pablo Solari</h1>
-            <p>Gestión Estratégica de Negocios</p>
+            <p>GESTIÓN ESTRATÉGICA DE NEGOCIOS</p>
         </div>
-        <a href="https://wa.me/5493512589176?text=Hola%20Pablo,%20vengo%20de%20tu%20web%20y%20quiero%20solicitar%20un%20diagnóstico." class="btn-header">Solicitar Diagnóstico →</a>
+        <a href="https://wa.me/5493512589176?text=Hola%20Pablo,%20vengo%20de%20tu%20web%20y%20quiero%20solicitar%20un%20diagnóstico%20de%20negocio." class="btn-header">
+            Solicitar Diagnóstico →
+        </a>
     </header>
 
     <div class="clients-banner">
-        <div class="clients-list">
-            <span style="color: #475569; font-weight: 400; font-size: 0.8rem; text-transform: uppercase;">Trayectoria en:</span> 
-            Arcor • Abea Neumáticos • Monarca Granollas • Footwork Lab
-        </div>
+        <span>Trayectoria en:</span>
+        <div class="clients-list">Arcor • Abea Neumáticos • Monarca Granollas • Footwork Lab</div>
     </div>
 
     <div class="hero">
@@ -166,40 +168,41 @@
 
     <div class="main-layout">
         <div class="bento-item">
-            <div class="video-container">
+            <div class="video-wrapper">
                 <video autoplay muted loop playsinline>
                     <source src="video.mp4" type="video/mp4">
                 </video>
             </div>
-            <h3 style="color:#2563eb; margin-bottom: 12px; font-size: 1.3rem;">Visión de Alta Dirección</h3>
-            <p style="font-size: 1.1rem; line-height: 1.6;">Aplico 18 años de experiencia corporativa para profesionalizar los costos y la toma de decisiones estratégicas en su negocio.</p>
+            <h3 style="color:#2563eb; font-size: 1.2rem; margin-bottom: 8px;">Visión de Alta Dirección</h3>
+            <p style="font-size: 1rem; line-height: 1.5;">18 años de ingeniería financiera corporativa aplicados a potenciar su estructura de costos y procesos.</p>
         </div>
 
-        <div class="bento-item">
-            <h3 style="color:#2563eb; margin-bottom: 20px; font-size: 1.3rem;">Soluciones de Gestión</h3>
-            <div class="service-tag">Ingeniería de Costos & Márgenes</div>
-            <div class="service-tag">Tableros de Comando (Power BI)</div>
-            <div class="service-tag">Estrategia & Control Interno</div>
-            
+        <div class="bento-item services-container">
+            <h3 style="color:#2563eb; font-size: 1.2rem; margin-bottom: 8px;">Soluciones BI & Gestión</h3>
+            <div class="services-list">
+                <div class="service-tag">Ingeniería de Costos & Márgenes</div>
+                <div class="service-tag">Tableros Power BI</div>
+                <div class="service-tag">Estrategia & Control Interno</div>
+            </div>
             <div class="preview-dashboards">
-                <img src="image_6cc62d.png" alt="Dashboard BI">
-                <img src="image_segunda.png" alt="Control de Gestión">
+                <img src="image_6cc62d.png" alt="BI">
+                <img src="image_segunda.png" alt="Gestión">
             </div>
         </div>
     </div>
 
     <div class="impact-section">
         <div class="impact-card">
-            <h4>Rentabilidad</h4>
-            <p>Optimización real de su estructura de beneficios y costos operativos.</p>
+            <h4>Rentabilidad Real</h4>
+            <p>Optimización genuina de márgenes y ahorro estratégico.</p>
         </div>
         <div class="impact-card">
-            <h4>Control</h4>
-            <p>Información precisa y en tiempo real para decidir con seguridad.</p>
+            <h4>Control de Datos</h4>
+            <p>Decisiones basadas en información confiable y real.</p>
         </div>
         <div class="impact-card">
-            <h4>Escala</h4>
-            <p>Procesos sólidos diseñados para un crecimiento corporativo sostenible.</p>
+            <h4>Escalabilidad</h4>
+            <p>Procesos sólidos listos para el crecimiento sostenido.</p>
         </div>
     </div>
 
