@@ -10,101 +10,96 @@
         
         body {
             font-family: 'Outfit', sans-serif;
-            /* FONDO: Azul grisáceo intermedio, profesional y con presencia */
             background: linear-gradient(135deg, #d1d9e6 0%, #aab7c4 100%);
             color: #1e293b;
-            min-height: 100vh;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            overflow-x: hidden;
-            padding-bottom: 20px;
+            overflow: hidden; /* Evita el scroll global */
+            padding-bottom: 10px;
         }
 
         header { 
             width: 100%;
-            max-width: 1200px;
+            max-width: 1100px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 20px;
+            padding: 10px 20px;
         }
 
-        .header-titles h1 { font-size: 1.7rem; font-weight: 700; color: #0f172a; }
-        .header-titles p { font-size: 0.65rem; letter-spacing: 2px; color: #475569; font-weight: 700; text-transform: uppercase; }
+        .header-titles h1 { font-size: 1.5rem; font-weight: 700; color: #0f172a; }
+        .header-titles p { font-size: 0.6rem; letter-spacing: 1.5px; color: #475569; font-weight: 700; text-transform: uppercase; }
         
         .btn-header {
             background: #16a34a;
             color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
+            padding: 8px 16px;
+            border-radius: 6px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 0.85rem;
-            box-shadow: 0 4px 10px rgba(22, 163, 74, 0.2);
+            font-size: 0.8rem;
         }
 
-        /* Sección Casos de Éxito */
         .clients-section {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1100px;
             text-align: center;
-            padding: 10px 20px;
-            margin-bottom: 15px;
+            padding: 5px 20px;
+            margin-bottom: 10px;
             border-bottom: 1px solid rgba(0,0,0,0.05);
         }
-        .clients-label { font-size: 0.75rem; font-weight: 700; color: #1e293b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
-        .clients-list { font-weight: 400; font-size: 0.9rem; color: #475569; }
+        .clients-label { font-size: 0.65rem; font-weight: 700; color: #1e293b; text-transform: uppercase; margin-bottom: 2px; }
+        .clients-list { font-size: 0.8rem; color: #475569; }
 
-        .hero { text-align: center; margin-bottom: 20px; }
-        .hero h2 { font-size: clamp(2rem, 4.5vw, 2.8rem); color: #0f172a; font-weight: 700; }
+        .hero { text-align: center; margin-bottom: 15px; }
+        .hero h2 { font-size: 2.2rem; color: #0f172a; font-weight: 700; }
         .hero h2 span { color: #2563eb; }
 
-        /* Estructura Bento */
         .main-layout {
-            max-width: 1200px;
+            max-width: 1100px;
             width: 100%;
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 20px;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 15px;
             padding: 0 20px;
+            flex: 1; /* Ocupa el espacio disponible */
         }
 
         .bento-item {
             background: rgba(255, 255, 255, 0.92);
-            border-radius: 20px;
-            padding: 25px;
+            border-radius: 18px;
+            padding: 15px 20px;
             border: 1px solid rgba(255,255,255,0.5);
-            box-shadow: 0 10px 15px rgba(0,0,0,0.05);
             display: flex;
             flex-direction: column;
+            justify-content: center;
         }
 
-        /* Ajuste Video: Más chico para que no obligue a hacer scroll */
         .video-wrapper {
-            border-radius: 12px;
+            border-radius: 10px;
             overflow: hidden;
             background: #000;
             aspect-ratio: 16/9;
-            max-width: 450px;
-            margin: 0 auto 15px auto;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 380px;
+            margin: 0 auto 10px auto;
         }
         video { width: 100%; height: 100%; object-fit: cover; }
 
-        /* Grid de 4 Tópicos */
         .topics-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin: 15px 0;
+            gap: 8px;
+            margin: 10px 0;
         }
         .topic-tag {
             background: #f1f5f9;
-            padding: 12px;
-            border-radius: 10px;
-            border-left: 4px solid #2563eb;
-            font-size: 0.85rem;
+            padding: 8px;
+            border-radius: 8px;
+            border-left: 3px solid #2563eb;
+            font-size: 0.75rem;
             color: #1e293b;
             font-weight: 700;
             text-align: center;
@@ -113,37 +108,35 @@
         .preview-dashboards {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-top: auto;
-            filter: blur(3px);
+            gap: 10px;
+            margin-top: 5px;
+            filter: blur(2px);
             opacity: 0.6;
-            transition: 0.5s ease;
         }
-        .services-container:hover .preview-dashboards { filter: blur(0); opacity: 1; }
-        .preview-dashboards img { width: 100%; border-radius: 8px; max-height: 100px; object-fit: cover; border: 1px solid #e2e8f0; }
+        .preview-dashboards img { width: 100%; border-radius: 6px; max-height: 80px; object-fit: cover; }
 
         .impact-section {
-            max-width: 1200px;
+            max-width: 1100px;
             width: 100%;
-            margin-top: 25px;
+            margin-top: 15px;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
+            gap: 12px;
             padding: 0 20px;
         }
         .impact-card {
-            background: rgba(255,255,255,0.7);
-            padding: 18px;
-            border-radius: 15px;
+            background: rgba(255,255,255,0.6);
+            padding: 10px;
+            border-radius: 12px;
             text-align: center;
-            border-bottom: 4px solid #2563eb;
+            border-bottom: 3px solid #2563eb;
         }
-        .impact-card h4 { font-size: 1rem; color: #0f172a; margin-bottom: 5px; }
-        .impact-card p { font-size: 0.8rem; color: #475569; line-height: 1.4; }
+        .impact-card h4 { font-size: 0.85rem; color: #0f172a; margin-bottom: 2px; }
+        .impact-card p { font-size: 0.7rem; color: #475569; line-height: 1.2; }
 
         @media (max-width: 850px) {
+            body { overflow-y: auto; height: auto; }
             .main-layout, .impact-section { grid-template-columns: 1fr; }
-            .video-wrapper { max-width: 100%; }
         }
     </style>
 </head>
@@ -154,7 +147,7 @@
             <h1>Pablo Solari</h1>
             <p>GESTIÓN ESTRATÉGICA DE NEGOCIOS</p>
         </div>
-        <a href="https://wa.me/5493512589176" class="btn-header">Solicitar Diagnóstico →</a>
+        <a href="https://wa.me/5493512589176" class="btn-header">Consultar →</a>
     </header>
 
     <div class="clients-section">
@@ -163,49 +156,4 @@
     </div>
 
     <div class="hero">
-        <h2>Tome el control de su <span>Rentabilidad.</span></h2>
-    </div>
-
-    <div class="main-layout">
-        <div class="bento-item">
-            <div class="video-wrapper">
-                <video autoplay muted loop playsinline>
-                    <source src="video.mp4" type="video/mp4">
-                </video>
-            </div>
-            <h3 style="color:#2563eb; font-size: 1.1rem; margin-bottom: 8px;">Visión de Alta Dirección</h3>
-            <p style="font-size: 0.9rem; line-height: 1.5; color: #334155;">18 años de ingeniería financiera corporativa aplicados a potenciar su estructura de costos y procesos.</p>
-        </div>
-
-        <div class="bento-item services-container">
-            <h3 style="color:#2563eb; font-size: 1.1rem; margin-bottom: 10px;">Soluciones BI & Gestión</h3>
-            <div class="topics-grid">
-                <div class="topic-tag">Costos & Márgenes</div>
-                <div class="topic-tag">Ingeniería de Costos</div>
-                <div class="topic-tag">Control de Gestión</div>
-                <div class="topic-tag">Business Intelligence</div>
-            </div>
-            <div class="preview-dashboards">
-                <img src="image_6cc62d.png" alt="BI 1">
-                <img src="image_segunda.png" alt="BI 2">
-            </div>
-        </div>
-    </div>
-
-    <div class="impact-section">
-        <div class="impact-card">
-            <h4>Rentabilidad Real</h4>
-            <p>Optimización genuina de márgenes y ahorro estratégico.</p>
-        </div>
-        <div class="impact-card">
-            <h4>Control de Datos</h4>
-            <p>Decisiones basadas en información confiable y real.</p>
-        </div>
-        <div class="impact-card">
-            <h4>Escalabilidad</h4>
-            <p>Procesos sólidos diseñados para el crecimiento sostenido.</p>
-        </div>
-    </div>
-
-</body>
-</html>
+        <h2>Tome el control de su <span>
