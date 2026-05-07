@@ -10,13 +10,14 @@
         
         body {
             font-family: 'Outfit', sans-serif;
+            /* Fondo azul grisáceo con carácter */
             background: linear-gradient(135deg, #cbd5e1 0%, #94a3b8 100%);
             color: #1e293b;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            overflow-x: hidden;
+            padding-bottom: 40px;
         }
 
         header { 
@@ -29,7 +30,7 @@
         }
 
         .header-titles h1 { font-size: 1.8rem; font-weight: 700; color: #0f172a; }
-        .header-titles p { font-size: 0.7rem; letter-spacing: 2px; color: #475569; font-weight: 700; text-transform: uppercase; }
+        .header-titles p { font-size: 0.75rem; letter-spacing: 2px; color: #475569; font-weight: 700; text-transform: uppercase; }
         
         .btn-header {
             background: #16a34a;
@@ -38,27 +39,26 @@
             border-radius: 8px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 0.9rem;
             transition: 0.3s ease;
-            box-shadow: 0 4px 12px rgba(22, 163, 74, 0.2);
+            box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
         }
-        .btn-header:hover { background: #15803d; transform: scale(1.02); }
+        .btn-header:hover { background: #15803d; transform: translateY(-2px); }
 
         .clients-banner {
-            width: 100%;
-            max-width: 1200px;
-            padding: 10px 20px;
+            width: 90%;
+            max-width: 1100px;
+            padding: 12px;
             text-align: center;
-            margin-bottom: 10px;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.4);
             border-radius: 50px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.5);
         }
-        .clients-banner span { font-size: 0.75rem; color: #475569; text-transform: uppercase; letter-spacing: 1px; margin-right: 10px; }
-        .clients-list { font-weight: 700; font-size: 0.9rem; color: #0f172a; display: inline-block; }
+        .clients-list { font-weight: 700; font-size: 0.95rem; color: #0f172a; }
 
-        .hero { text-align: center; margin-bottom: 25px; }
-        .hero h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: #0f172a; font-weight: 700; line-height: 1.1; }
-        .hero h2 span { color: #2563eb; }
+        .hero { text-align: center; margin-bottom: 25px; padding: 0 20px; }
+        .hero h2 { font-size: clamp(2rem, 5vw, 3.2rem); color: #0f172a; line-height: 1.1; font-weight: 700; }
+        .hero span { color: #2563eb; }
 
         .main-layout {
             max-width: 1200px;
@@ -70,48 +70,52 @@
         }
 
         .bento-item {
-            background: rgba(255, 255, 255, 0.9);
+            background: #ffffff;
             border-radius: 24px;
             padding: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
         }
 
-        .video-wrapper {
-            border-radius: 16px;
+        .video-container {
+            width: 100%;
+            border-radius: 15px;
             overflow: hidden;
-            margin-bottom: 20px;
             background: #000;
+            margin-bottom: 20px;
             aspect-ratio: 16/9;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
         }
         video { width: 100%; height: 100%; object-fit: cover; }
 
-        .services-list {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
-            margin-bottom: 20px;
-        }
         .service-tag {
-            background: #f1f5f9;
-            padding: 14px;
+            background: #f8fafc;
+            padding: 15px;
             border-radius: 12px;
             border-left: 6px solid #2563eb;
             font-size: 1rem;
-            color: #1e293b;
             font-weight: 700;
+            margin-bottom: 12px;
+            color: #334155;
         }
 
         .preview-dashboards {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            filter: blur(4px);
-            opacity: 0.7;
-            transition: 0.5s ease;
+            gap: 15px;
+            margin-top: auto;
+            padding-top: 20px;
         }
-        .services-container:hover .preview-dashboards { filter: blur(0); opacity: 1; }
-        .preview-dashboards img { width: 100%; border-radius: 10px; max-height: 130px; object-fit: cover; border: 1px solid #fff; }
+        .preview-dashboards img { 
+            width: 100%; 
+            border-radius: 10px; 
+            border: 1px solid #cbd5e1;
+            transition: 0.4s ease;
+            max-height: 120px;
+            object-fit: cover;
+        }
 
         .impact-section {
             max-width: 1200px;
@@ -120,22 +124,22 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
-            padding: 0 20px 40px 20px;
+            padding: 0 20px;
         }
         .impact-card {
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(255,255,255,0.7);
             padding: 25px;
             border-radius: 20px;
             text-align: center;
             border-bottom: 5px solid #2563eb;
         }
         .impact-card h4 { font-size: 1.2rem; color: #0f172a; margin-bottom: 8px; font-weight: 700; }
-        .impact-card p { font-size: 0.95rem; color: #334155; line-height: 1.4; }
+        .impact-card p { font-size: 0.9rem; line-height: 1.4; color: #475569; }
 
         @media (max-width: 850px) {
-            .main-layout { grid-template-columns: 1fr; }
-            .impact-section { grid-template-columns: 1fr; }
-            header { flex-direction: column; gap: 15px; text-align: center; }
+            .main-layout, .impact-section { grid-template-columns: 1fr; }
+            header { flex-direction: column; text-align: center; gap: 20px; }
+            .video-container { aspect-ratio: 4/3; }
         }
     </style>
 </head>
@@ -146,15 +150,58 @@
             <h1>Pablo Solari</h1>
             <p>Gestión Estratégica de Negocios</p>
         </div>
-        <a href="https://wa.me/5493512589176?text=Hola%20Pablo,%20vengo%20de%20tu%20web%20y%20quiero%20solicitar%20un%20diagnóstico." class="btn-header">
-            Solicitar Diagnóstico →
-        </a>
+        <a href="https://wa.me/5493512589176?text=Hola%20Pablo,%20vengo%20de%20tu%20web%20y%20quiero%20solicitar%20un%20diagnóstico." class="btn-header">Solicitar Diagnóstico →</a>
     </header>
 
     <div class="clients-banner">
-        <span>Trayectoria en:</span>
-        <div class="clients-list">Arcor • Abea Neumáticos • Monarca Granollas • Footwork Lab</div>
+        <div class="clients-list">
+            <span style="color: #475569; font-weight: 400; font-size: 0.8rem; text-transform: uppercase;">Trayectoria en:</span> 
+            Arcor • Abea Neumáticos • Monarca Granollas • Footwork Lab
+        </div>
     </div>
 
     <div class="hero">
         <h2>Tome el control de su <span>Rentabilidad.</span></h2>
+    </div>
+
+    <div class="main-layout">
+        <div class="bento-item">
+            <div class="video-container">
+                <video autoplay muted loop playsinline>
+                    <source src="video.mp4" type="video/mp4">
+                </video>
+            </div>
+            <h3 style="color:#2563eb; margin-bottom: 12px; font-size: 1.3rem;">Visión de Alta Dirección</h3>
+            <p style="font-size: 1.1rem; line-height: 1.6;">Aplico 18 años de experiencia corporativa para profesionalizar los costos y la toma de decisiones estratégicas en su negocio.</p>
+        </div>
+
+        <div class="bento-item">
+            <h3 style="color:#2563eb; margin-bottom: 20px; font-size: 1.3rem;">Soluciones de Gestión</h3>
+            <div class="service-tag">Ingeniería de Costos & Márgenes</div>
+            <div class="service-tag">Tableros de Comando (Power BI)</div>
+            <div class="service-tag">Estrategia & Control Interno</div>
+            
+            <div class="preview-dashboards">
+                <img src="image_6cc62d.png" alt="Dashboard BI">
+                <img src="image_segunda.png" alt="Control de Gestión">
+            </div>
+        </div>
+    </div>
+
+    <div class="impact-section">
+        <div class="impact-card">
+            <h4>Rentabilidad</h4>
+            <p>Optimización real de su estructura de beneficios y costos operativos.</p>
+        </div>
+        <div class="impact-card">
+            <h4>Control</h4>
+            <p>Información precisa y en tiempo real para decidir con seguridad.</p>
+        </div>
+        <div class="impact-card">
+            <h4>Escala</h4>
+            <p>Procesos sólidos diseñados para un crecimiento corporativo sostenible.</p>
+        </div>
+    </div>
+
+</body>
+</html>
