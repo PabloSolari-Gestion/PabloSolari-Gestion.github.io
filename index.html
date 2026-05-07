@@ -6,12 +6,10 @@
     <title>Pablo Solari | Gestión Estratégica</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        /* Reset total para evitar errores de renderizado */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: 'Outfit', sans-serif;
-            /* Fondo azul grisáceo intermedio */
             background: linear-gradient(135deg, #cbd5e1 0%, #94a3b8 100%);
             color: #1e293b;
             min-height: 100vh;
@@ -42,7 +40,9 @@
             font-weight: 700;
             font-size: 0.85rem;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
         }
+        .btn-header:hover { background: #15803d; transform: translateY(-2px); }
 
         .clients-banner {
             width: 100%;
@@ -59,7 +59,6 @@
         .hero h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); color: #0f172a; font-weight: 700; line-height: 1.1; }
         .hero h2 span { color: #2563eb; }
 
-        /* Contenedor Bento */
         .main-layout {
             max-width: 1100px;
             width: 100%;
@@ -79,7 +78,6 @@
             flex-direction: column;
         }
 
-        /* Ajuste del Video */
         .video-container {
             border-radius: 14px;
             overflow: hidden;
@@ -87,11 +85,9 @@
             aspect-ratio: 16/9;
             width: 100%;
             margin-bottom: 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         video { width: 100%; height: 100%; object-fit: cover; }
 
-        /* Cuadrícula de 4 Tópicos */
         .topics-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -120,7 +116,6 @@
         .card:hover .dashboards { filter: blur(0); opacity: 1; }
         .dashboards img { width: 100%; border-radius: 8px; max-height: 100px; object-fit: cover; }
 
-        /* Footer de Impacto */
         .impact-section {
             max-width: 1100px;
             width: 100%;
@@ -139,10 +134,8 @@
         .impact-box h4 { font-size: 1.1rem; color: #0f172a; margin-bottom: 5px; }
         .impact-box p { font-size: 0.85rem; color: #475569; line-height: 1.4; }
 
-        /* Responsivo para celulares */
         @media (max-width: 800px) {
             .main-layout, .impact-section { grid-template-columns: 1fr; }
-            .card { padding: 20px; }
         }
     </style>
 </head>
@@ -153,7 +146,7 @@
             <h1>Pablo Solari</h1>
             <p>GESTIÓN ESTRATÉGICA DE NEGOCIOS</p>
         </div>
-        <a href="https://wa.me/5493517300117" class="btn-header">Consultar →</a>
+        <a href="https://wa.me/5493512589176" class="btn-header">Consultar →</a>
     </header>
 
     <div class="clients-banner">
@@ -173,39 +166,11 @@
                 </video>
             </div>
             <h3 style="color:#2563eb; font-size: 1.2rem; margin-bottom: 8px;">Visión de Alta Dirección</h3>
-            <p style="font-size: 0.95rem; line-height: 1.5; color: #334155;">18 años de ingeniería financiera corporativa aplicados a potenciar sus costos y procesos.</p>
+            <p style="font-size: 0.95rem; line-height: 1.5; color: #334155;">18 años de ingeniería financiera corporativa aplicados a potenciar su estructura de costos y procesos.</p>
         </div>
 
         <div class="card">
             <h3 style="color:#2563eb; font-size: 1.2rem; margin-bottom: 10px;">Soluciones BI & Gestión</h3>
             <div class="topics-grid">
                 <div class="topic-item">Costos & Márgenes</div>
-                <div class="topic-item">Ingeniería de Costos</div>
-                <div class="topic-item">Control de Gestión</div>
-                <div class="topic-item">Business Intelligence</div>
-            </div>
-            <div class="dashboards">
-                <img src="image_6cc62d.png" alt="BI 1">
-                <img src="image_segunda.png" alt="BI 2">
-            </div>
-            <p style="font-size: 0.7rem; color: #64748b; margin-top: 15px; text-align: center;">(Deslice para enfocar ejemplos de monitoreo en tiempo real)</p>
-        </div>
-    </div>
-
-    <div class="impact-section">
-        <div class="impact-box">
-            <h4>Rentabilidad Real</h4>
-            <p>Optimización genuina de márgenes y ahorro estratégico.</p>
-        </div>
-        <div class="impact-box">
-            <h4>Control de Datos</h4>
-            <p>Decisiones basadas en información confiable y real.</p>
-        </div>
-        <div class="impact-box">
-            <h4>Escalabilidad</h4>
-            <p>Procesos sólidos diseñados para el crecimiento sostenido.</p>
-        </div>
-    </div>
-
-</body>
-</html>
+                <div class="topic-item">Ing
