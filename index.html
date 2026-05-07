@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pablo Solari | Consultoría de Negocios de Alto Impacto</title>
+    <title>Pablo Solari | Estrategia de Negocios</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         /* Reset y Base */
@@ -11,7 +11,9 @@
         
         body {
             font-family: 'Outfit', sans-serif;
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            /* Fondo más claro y profesional */
+            background: #334155; 
+            background: linear-gradient(135deg, #475569 0%, #1e293b 100%);
             color: #f8fafc;
             min-height: 100vh;
             padding: 20px;
@@ -20,19 +22,19 @@
             align-items: center;
         }
 
-        /* Header Dinámico */
+        /* Header con Botón Superior */
         header { 
             width: 100%;
             max-width: 1100px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             padding: 20px 0;
-            animation: fadeIn 1s ease-out;
         }
 
-        header h1 { font-size: 2rem; font-weight: 700; color: #fff; }
+        .header-titles h1 { font-size: 2.2rem; font-weight: 700; color: #fff; }
+        .header-titles p { font-size: 0.8rem; letter-spacing: 3px; opacity: 0.8; }
         
         .btn-header {
             background: #22c55e;
@@ -42,19 +44,18 @@
             text-decoration: none;
             font-weight: 700;
             transition: 0.3s;
-            box-shadow: 0 10px 20px rgba(34, 197, 94, 0.3);
+            box-shadow: 0 10px 20px rgba(34, 197, 94, 0.2);
         }
         .btn-header:hover { transform: scale(1.05); background: #16a34a; }
 
-        /* Sección Hero Comercial */
+        /* Hero Impacto */
         .hero {
             text-align: center;
-            max-width: 800px;
-            margin-bottom: 50px;
-            animation: fadeInUp 1s ease-out;
+            max-width: 900px;
+            margin: 40px 0 60px 0;
         }
-        .hero h2 { font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.1; margin-bottom: 20px; color: #00d2ff; }
-        .hero p { font-size: 1.2rem; opacity: 0.8; font-weight: 300; }
+        .hero h2 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.1; margin-bottom: 25px; color: #fff; }
+        .hero span { color: #00d2ff; }
 
         /* Bento Grid */
         .main-layout {
@@ -63,96 +64,90 @@
             display: grid;
             grid-template-columns: 1fr 1.5fr;
             gap: 25px;
-            margin-bottom: 50px;
         }
 
         .bento-item {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(15px);
-            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 28px;
             padding: 35px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
         }
-        .bento-item:hover { border-color: #00d2ff; transform: translateY(-5px); }
 
-        /* Video y Elementos Visuales */
         .video-wrapper {
-            border-radius: 20px;
+            border-radius: 18px;
             overflow: hidden;
-            margin-bottom: 25px;
-            border: 1px solid rgba(0, 210, 255, 0.2);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            margin-bottom: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
         }
         video { width: 100%; display: block; }
 
-        .service-tag {
-            background: rgba(0, 210, 255, 0.1);
-            padding: 15px;
-            border-radius: 15px;
-            border: 1px solid rgba(0, 210, 255, 0.2);
-            color: #fff;
-            font-weight: 400;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
+        /* Servicios y Dashboards */
         .services-list {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
-            margin: 30px 0;
+            margin: 25px 0;
+        }
+        .service-tag {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 14px;
+            border-left: 4px solid #00d2ff;
+            font-size: 0.95rem;
         }
 
         .preview-dashboards {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
-            filter: grayscale(100%) blur(5px);
+            filter: blur(5px);
             opacity: 0.4;
-            transition: 0.6s ease;
+            transition: 0.5s ease;
         }
-        .services-container:hover .preview-dashboards { filter: grayscale(0%) blur(0); opacity: 1; }
-        .preview-dashboards img { width: 100%; border-radius: 12px; }
+        .services-container:hover .preview-dashboards { filter: blur(0); opacity: 1; }
+        .preview-dashboards img { width: 100%; border-radius: 12px; background: white; }
 
-        /* Barra de Valor Comercial */
-        .value-bar {
-            width: 100%;
+        /* Nueva Sección de Pilares de Impacto */
+        .impact-section {
             max-width: 1100px;
+            width: 100%;
+            margin-top: 60px;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 20px;
+            gap: 30px;
         }
-        .value-card { text-align: center; padding: 20px; border-top: 2px solid #22c55e; }
-        .value-card span { display: block; font-size: 1.5rem; font-weight: 700; color: #22c55e; }
-        .value-card small { opacity: 0.7; text-transform: uppercase; letter-spacing: 1px; }
-
-        /* Animaciones */
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .impact-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            border-bottom: 4px solid #00d2ff;
+        }
+        .impact-card h4 { color: #00d2ff; font-size: 1.3rem; margin-bottom: 10px; }
+        .impact-card p { font-size: 0.9rem; opacity: 0.8; line-height: 1.5; }
 
         @media (max-width: 850px) {
             header { flex-direction: column; text-align: center; gap: 20px; }
-            .main-layout { grid-template-columns: 1fr; }
-            .value-bar { grid-template-columns: 1fr; }
+            .main-layout, .impact-section { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Pablo Solari</h1>
-        <a href="https://wa.me/5493512589176?text=Hola%20Pablo,%20quiero%20potenciar%20mi%20negocio.%20Solicito%20el%20diagnóstico." class="btn-header">
-            Quiero mi Diagnóstico →
+        <div class="header-titles">
+            <h1>Pablo Solari</h1>
+            <p>ESTRATEGIA & GESTIÓN</p>
+        </div>
+        <a href="https://wa.me/5493512589176?text=Hola%20Pablo,%20vengo%20de%20tu%20web%20y%20quiero%20solicitar%20un%20diagnóstico." class="btn-header">
+            Solicitar Diagnóstico →
         </a>
     </header>
 
     <div class="hero">
-        <h2>Transforme sus datos en rentabilidad.</h2>
-        <p>¿Toma decisiones por instinto o con información real? Profesionalice su gestión con 18 años de experiencia corporativa aplicada a su negocio.</p>
+        <h2>Deje de operar a ciegas. <br><span>Tome el control de su rentabilidad.</span></h2>
     </div>
 
     <div class="main-layout">
@@ -163,51 +158,48 @@
                     <source src="video.mp4" type="video/mp4">
                 </video>
             </div>
-            <h3 style="color:#00d2ff; margin-bottom:15px">Visión de Alta Dirección</h3>
-            <p>Dejé mi etapa en Arcor tras 18 años para aplicar procesos de multinacional en estructuras que buscan escala.</p>
-            <br>
-            <p><strong>Mi objetivo:</strong> Que usted recupere el control y el tiempo mientras su negocio crece sobre bases sólidas.</p>
+            <h3 style="margin-bottom:15px; color:#00d2ff">Experiencia que resuelve</h3>
+            <p>Tras 18 años en la dirección financiera de una multinacional líder, hoy aplico esa misma ingeniería de gestión en negocios que buscan solidez y escala.</p>
         </div>
 
         <div class="bento-item services-container">
-            <h3 style="color:#00d2ff; margin-bottom:15px">Soluciones que Escalan</h3>
-            <p>No solo consultoría; implementamos el motor financiero de su empresa.</p>
+            <h3 style="margin-bottom:15px; color:#00d2ff">Profesionalización 360°</h3>
+            <p>Convertimos sus datos en tableros de comando en tiempo real para decisiones estratégicas.</p>
             
             <div class="services-list">
                 <div class="service-tag">Ingeniería de Costos</div>
                 <div class="service-tag">Business Intelligence</div>
+                <div class="service-tag">Estrategia de Negocio</div>
                 <div class="service-tag">Control de Gestión</div>
-                <div class="service-tag">Estrategia Comercial</div>
             </div>
 
             <div class="preview-dashboards">
-                <img src="image_6cc62d.png" alt="Reporte">
-                <img src="image_segunda.png" alt="Dashboard">
+                <img src="image_6cc62d.png" alt="Análisis BI">
+                <img src="image_segunda.png" alt="Control de Gestión">
             </div>
-            <p style="text-align: center; margin-top: 15px; font-size: 0.8rem; color: #00d2ff;">
-                (Pase el cursor para ver la claridad de la información)
+            <p style="text-align: center; margin-top: 15px; font-size: 0.8rem; color: #00d2ff; opacity: 0.7;">
+                (Deslice o pase el cursor para ver la claridad de los datos)
             </p>
         </div>
-
     </div>
 
-    <div class="value-bar">
-        <div class="value-card">
-            <span>+ Rentabilidad</span>
-            <small>Optimización de márgenes</small>
+    <div class="impact-section">
+        <div class="impact-card">
+            <h4>Rentabilidad Real</h4>
+            <p>No solo vendemos más; optimizamos cada peso de su estructura para que el beneficio final sea genuino.</p>
         </div>
-        <div class="value-card">
-            <span>Control Total</span>
-            <small>Dashboards en tiempo real</small>
+        <div class="impact-card">
+            <h4>Control Absoluto</h4>
+            <p>Dashboards personalizados. Sepa qué está pasando en su negocio en cualquier momento y lugar.</p>
         </div>
-        <div class="value-card">
-            <span>Escalabilidad</span>
-            <small>Procesos profesionales</small>
+        <div class="impact-card">
+            <h4>Escalabilidad</h4>
+            <p>Preparamos su organización para crecer sin caos, con procesos probados en el mundo corporativo.</p>
         </div>
     </div>
 
-    <footer style="margin-top: 60px; opacity: 0.5; font-size: 0.9rem; text-align: center;">
-        <p>Córdoba, Argentina | Gestión y Estrategia</p>
+    <footer style="margin: 60px 0 20px 0; opacity: 0.4; font-size: 0.8rem;">
+        Córdoba, Argentina | Pablo Solari Gestión & Estrategia
     </footer>
 
 </body>
