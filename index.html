@@ -19,6 +19,7 @@
             padding: 20px 0;
         }
 
+        /* Encabezado */
         header { 
             width: 100%;
             max-width: 1100px;
@@ -27,11 +28,10 @@
             align-items: center;
             padding: 0 20px 15px 20px;
         }
-
         .header-titles h1 { font-size: 1.6rem; font-weight: 700; color: #0f172a; }
         .header-titles p { font-size: 0.65rem; letter-spacing: 2px; color: #475569; font-weight: 700; text-transform: uppercase; }
         
-        .btn-header {
+        .btn-whatsapp {
             background: #16a34a;
             color: white;
             padding: 10px 20px;
@@ -40,10 +40,9 @@
             font-weight: 700;
             font-size: 0.85rem;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: 0.3s;
         }
-        .btn-header:hover { background: #15803d; transform: translateY(-2px); }
 
+        /* Barra de Clientes */
         .clients-banner {
             width: 100%;
             max-width: 1100px;
@@ -55,87 +54,92 @@
         .clients-label { font-size: 0.7rem; font-weight: 700; color: #1e293b; text-transform: uppercase; margin-bottom: 4px; }
         .clients-list { font-size: 0.9rem; color: #334155; font-weight: 500; }
 
-        .hero { text-align: center; margin-bottom: 25px; }
-        .hero h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); color: #0f172a; font-weight: 700; line-height: 1.1; }
+        /* Titular Principal */
+        .hero { text-align: center; margin-bottom: 30px; padding: 0 20px; }
+        .hero h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); color: #0f172a; font-weight: 700; }
         .hero h2 span { color: #2563eb; }
 
+        /* Contenedor de Tarjetas (Bento) */
         .main-layout {
             max-width: 1100px;
             width: 100%;
             display: grid;
             grid-template-columns: 1fr 1.2fr;
-            gap: 20px;
+            gap: 25px;
             padding: 0 20px;
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.95);
+            background: white;
             border-radius: 24px;
-            padding: 25px;
-            border: 1px solid rgba(255,255,255,0.8);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
             display: flex;
             flex-direction: column;
         }
 
-        .video-container {
-            border-radius: 14px;
+        /* Bloque Video/Imagen */
+        .media-container {
+            border-radius: 16px;
             overflow: hidden;
-            background: #000;
+            background: #f1f5f9;
             aspect-ratio: 16/9;
             width: 100%;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            position: relative;
         }
-        video { width: 100%; height: 100%; object-fit: cover; }
+        .media-container video, .media-container img { width: 100%; height: 100%; object-fit: cover; }
 
-        .topics-grid {
+        /* Grid de Servicios (4 Tópicos) */
+        .services-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 12px;
-            margin: 15px 0;
+            margin: 20px 0;
         }
-        .topic-item {
+        .service-tag {
             background: #f1f5f9;
-            padding: 12px;
-            border-radius: 10px;
-            border-left: 4px solid #2563eb;
+            padding: 14px;
+            border-radius: 12px;
+            border-left: 5px solid #2563eb;
             font-size: 0.85rem;
             color: #1e293b;
             font-weight: 700;
         }
 
-        .dashboards {
+        /* Dashboards (Imágenes de muestra) */
+        .dashboards-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 12px;
             margin-top: auto;
-            filter: blur(3px);
-            opacity: 0.6;
-            transition: 0.4s ease;
+            opacity: 0.7;
         }
-        .card:hover .dashboards { filter: blur(0); opacity: 1; }
-        .dashboards img { width: 100%; border-radius: 8px; max-height: 100px; object-fit: cover; }
+        .dashboards-row img { width: 100%; border-radius: 10px; border: 1px solid #e2e8f0; }
 
+        /* Sección Inferior de Impacto */
         .impact-section {
             max-width: 1100px;
             width: 100%;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            padding: 30px 20px;
+            gap: 20px;
+            padding: 40px 20px;
         }
         .impact-box {
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.4);
             padding: 20px;
-            border-radius: 18px;
+            border-radius: 20px;
             text-align: center;
             border-bottom: 4px solid #2563eb;
         }
-        .impact-box h4 { font-size: 1.1rem; color: #0f172a; margin-bottom: 5px; }
+        .impact-box h4 { font-size: 1.1rem; color: #0f172a; margin-bottom: 8px; }
         .impact-box p { font-size: 0.85rem; color: #475569; line-height: 1.4; }
 
+        /* Ajustes para Celulares */
         @media (max-width: 800px) {
             .main-layout, .impact-section { grid-template-columns: 1fr; }
+            body { overflow-y: auto; }
         }
     </style>
 </head>
@@ -146,11 +150,11 @@
             <h1>Pablo Solari</h1>
             <p>GESTIÓN ESTRATÉGICA DE NEGOCIOS</p>
         </div>
-        <a href="https://wa.me/5493512589176" class="btn-header">Consultar →</a>
+        <a href="https://wa.me/5493512589176" class="btn-whatsapp">Consultar ahora →</a>
     </header>
 
     <div class="clients-banner">
-        <div class="clients-label">Casos de Éxito & Clientes:</div>
+        <div class="clients-label">CASOS DE ÉXITO & CLIENTES:</div>
         <div class="clients-list">Arcor • Abea Neumáticos • Monarca Granollas • Footwork Lab</div>
     </div>
 
@@ -160,17 +164,49 @@
 
     <div class="main-layout">
         <div class="card">
-            <div class="video-container">
+            <div class="media-container">
                 <video autoplay muted loop playsinline>
                     <source src="video.mp4" type="video/mp4">
                 </video>
             </div>
-            <h3 style="color:#2563eb; font-size: 1.2rem; margin-bottom: 8px;">Visión de Alta Dirección</h3>
-            <p style="font-size: 0.95rem; line-height: 1.5; color: #334155;">18 años de ingeniería financiera corporativa aplicados a potenciar su estructura de costos y procesos.</p>
+            <h3 style="color:#2563eb; font-size: 1.2rem; margin-bottom: 10px;">Visión de Alta Dirección</h3>
+            <p style="font-size: 0.95rem; line-height: 1.6; color: #334155;">
+                18 años de ingeniería financiera corporativa aplicados a potenciar su estructura de costos y procesos.
+            </p>
         </div>
 
         <div class="card">
-            <h3 style="color:#2563eb; font-size: 1.2rem; margin-bottom: 10px;">Soluciones BI & Gestión</h3>
-            <div class="topics-grid">
-                <div class="topic-item">Costos & Márgenes</div>
-                <div class="topic-item">Ing
+            <h3 style="color:#2563eb; font-size: 1.2rem; margin-bottom: 15px;">Soluciones BI & Gestión</h3>
+            <div class="services-grid">
+                <div class="service-tag">Costos & Márgenes</div>
+                <div class="service-tag">Ingeniería de Costos</div>
+                <div class="service-tag">Control de Gestión</div>
+                <div class="service-tag">Business Intelligence</div>
+            </div>
+            <div class="dashboards-row">
+                <img src="image_6cc62d.png" alt="BI 1">
+                <img src="image_segunda.png" alt="BI 2">
+            </div>
+            <p style="font-size: 0.7rem; color: #64748b; margin-top: 15px; text-align: center;">
+                (( Deslice para enfocar ejemplos de monitoreo en tiempo real ))
+            </p>
+        </div>
+    </div>
+
+    <div class="impact-section">
+        <div class="impact-box">
+            <h4>Rentabilidad</h4>
+            <p>Optimización real de márgenes y ahorro estratégico.</p>
+        </div>
+        <div class="impact-box">
+            <h4>Control</h4>
+            <p>Decisiones basadas en datos confiables y reales.</p>
+        </div>
+        <div class="impact-box">
+            <h4>Escala</h4>
+            <p>Procesos diseñados para el crecimiento sostenido.</p>
+        </div>
+    </div>
+
+</body>
+</html>
