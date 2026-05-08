@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pablo Solari | Gestión Estratégica</title>
+    <title>Pablo Solari | Estrategia & Gestión</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -16,10 +16,10 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 10px 0; /* Espaciado superior mínimo */
+            padding: 10px 0;
+            overflow: hidden; /* Mantiene todo en una sola pantalla */
         }
 
-        /* Encabezado Ajustado */
         header { 
             width: 100%;
             max-width: 1100px;
@@ -42,7 +42,6 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        /* Barra de Clientes Compacta */
         .clients-banner {
             width: 100%;
             max-width: 1100px;
@@ -54,12 +53,10 @@
         .clients-label { font-size: 0.65rem; font-weight: 700; color: #1e293b; text-transform: uppercase; }
         .clients-list { font-size: 0.85rem; color: #334155; font-weight: 500; }
 
-        /* Titular Ajustado */
         .hero { text-align: center; margin-bottom: 15px; padding: 0 20px; }
         .hero h2 { font-size: 2rem; color: #0f172a; font-weight: 700; }
         .hero h2 span { color: #2563eb; }
 
-        /* Layout Bento Compacto */
         .main-layout {
             max-width: 1100px;
             width: 100%;
@@ -76,6 +73,7 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.06);
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
         }
 
         .media-container {
@@ -84,22 +82,22 @@
             background: #f1f5f9;
             aspect-ratio: 16/9;
             width: 100%;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
         .media-container video { width: 100%; height: 100%; object-fit: cover; }
 
         .services-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin: 10px 0;
+            gap: 8px;
+            margin-bottom: 10px;
         }
         .service-tag {
             background: #f1f5f9;
             padding: 10px;
             border-radius: 10px;
             border-left: 4px solid #2563eb;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #1e293b;
             font-weight: 700;
         }
@@ -108,11 +106,9 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 10px;
-            margin-top: 5px;
         }
-        .dashboards-row img { width: 100%; border-radius: 8px; border: 1px solid #e2e8f0; max-height: 80px; object-fit: cover; }
+        .dashboards-row img { width: 100%; border-radius: 8px; border: 1px solid #e2e8f0; max-height: 75px; object-fit: cover; }
 
-        /* Sección de Impacto en Pantalla Principal */
         .impact-section {
             max-width: 1100px;
             width: 100%;
@@ -133,7 +129,7 @@
 
         @media (max-width: 800px) {
             .main-layout, .impact-section { grid-template-columns: 1fr; }
-            .header-titles h1 { font-size: 1.8rem; }
+            body { overflow-y: auto; }
         }
     </style>
 </head>
@@ -142,7 +138,7 @@
     <header>
         <div class="header-titles">
             <h1>Pablo Solari</h1>
-            <p>GESTIÓN ESTRATÉGICA DE NEGOCIOS</p>
+            <p>ESTRATEGIA & GESTIÓN DE NEGOCIOS</p>
         </div>
         <a href="https://wa.me/5493512589176" class="btn-whatsapp">Consultar ahora →</a>
     </header>
@@ -153,7 +149,7 @@
     </div>
 
     <div class="hero">
-        <h2>Tome el control de su <span>Rentabilidad.</span></h2>
+        <h2>Estrategia & Gestión para su <span>Negocio.</span></h2>
     </div>
 
     <div class="main-layout">
@@ -165,23 +161,24 @@
             </div>
             <h3 style="color:#2563eb; font-size: 1rem; margin-bottom: 5px;">Visión de Alta Dirección</h3>
             <p style="font-size: 0.85rem; line-height: 1.4; color: #334155;">
-                18 años de ingeniería financiera corporativa para potenciar sus costos y procesos.
+                18 años de experiencia corporativa aplicando ingeniería de costos y procesos para maximizar resultados.
             </p>
         </div>
 
         <div class="card">
-            <h3 style="color:#2563eb; font-size: 1rem; margin-bottom: 8px;">Soluciones BI & Gestión</h3>
+            <h3 style="color:#2563eb; font-size: 1rem; margin-bottom: 8px;">Ejes de Acción Estratégica</h3>
             <div class="services-grid">
                 <div class="service-tag">Costos & Márgenes</div>
-                <div class="service-tag">Ingeniería de Costos</div>
+                <div class="service-tag">Inversiones (CAPEX)</div>
                 <div class="service-tag">Control de Gestión</div>
-                <div class="service-tag">Business Intelligence</div>
+                <div class="service-tag">Gestión de Tesorería</div>
+                <div class="service-tag" style="grid-column: span 2; text-align: center;">Business Intelligence</div>
             </div>
             <div class="dashboards-row">
                 <img src="image_6cc62d.png" alt="BI 1">
                 <img src="image_segunda.png" alt="BI 2">
             </div>
-            <p style="font-size: 0.65rem; color: #64748b; margin-top: 8px; text-align: center;">
+            <p style="font-size: 0.6rem; color: #64748b; margin-top: 5px; text-align: center;">
                 (( Monitoreo en tiempo real ))
             </p>
         </div>
