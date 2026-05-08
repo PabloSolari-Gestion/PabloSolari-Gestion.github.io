@@ -16,130 +16,124 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px 0;
+            padding: 10px 0; /* Espaciado superior mínimo */
         }
 
-        /* Encabezado */
+        /* Encabezado Ajustado */
         header { 
             width: 100%;
             max-width: 1100px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 20px 15px 20px;
+            padding: 0 20px 5px 20px;
         }
-        .header-titles h1 { font-size: 1.6rem; font-weight: 700; color: #0f172a; }
-        .header-titles p { font-size: 0.65rem; letter-spacing: 2px; color: #475569; font-weight: 700; text-transform: uppercase; }
+        .header-titles h1 { font-size: 2.2rem; font-weight: 700; color: #0f172a; line-height: 1; }
+        .header-titles p { font-size: 0.6rem; letter-spacing: 1.5px; color: #475569; font-weight: 700; text-transform: uppercase; margin-top: 2px; }
         
         .btn-whatsapp {
             background: #16a34a;
             color: white;
-            padding: 10px 20px;
+            padding: 8px 18px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        /* Barra de Clientes */
+        /* Barra de Clientes Compacta */
         .clients-banner {
             width: 100%;
             max-width: 1100px;
             text-align: center;
-            padding: 10px 20px;
-            margin-bottom: 20px;
+            padding: 5px 20px;
+            margin-bottom: 10px;
             border-bottom: 1px solid rgba(0,0,0,0.05);
         }
-        .clients-label { font-size: 0.7rem; font-weight: 700; color: #1e293b; text-transform: uppercase; margin-bottom: 4px; }
-        .clients-list { font-size: 0.9rem; color: #334155; font-weight: 500; }
+        .clients-label { font-size: 0.65rem; font-weight: 700; color: #1e293b; text-transform: uppercase; }
+        .clients-list { font-size: 0.85rem; color: #334155; font-weight: 500; }
 
-        /* Titular Principal */
-        .hero { text-align: center; margin-bottom: 30px; padding: 0 20px; }
-        .hero h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); color: #0f172a; font-weight: 700; }
+        /* Titular Ajustado */
+        .hero { text-align: center; margin-bottom: 15px; padding: 0 20px; }
+        .hero h2 { font-size: 2rem; color: #0f172a; font-weight: 700; }
         .hero h2 span { color: #2563eb; }
 
-        /* Contenedor de Tarjetas (Bento) */
+        /* Layout Bento Compacto */
         .main-layout {
             max-width: 1100px;
             width: 100%;
             display: grid;
             grid-template-columns: 1fr 1.2fr;
-            gap: 25px;
+            gap: 15px;
             padding: 0 20px;
         }
 
         .card {
             background: white;
-            border-radius: 24px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            border-radius: 20px;
+            padding: 18px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
             display: flex;
             flex-direction: column;
         }
 
-        /* Bloque Video/Imagen */
         .media-container {
-            border-radius: 16px;
+            border-radius: 12px;
             overflow: hidden;
             background: #f1f5f9;
             aspect-ratio: 16/9;
             width: 100%;
-            margin-bottom: 20px;
-            position: relative;
+            margin-bottom: 12px;
         }
-        .media-container video, .media-container img { width: 100%; height: 100%; object-fit: cover; }
+        .media-container video { width: 100%; height: 100%; object-fit: cover; }
 
-        /* Grid de Servicios (4 Tópicos) */
         .services-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin: 20px 0;
+            gap: 10px;
+            margin: 10px 0;
         }
         .service-tag {
             background: #f1f5f9;
-            padding: 14px;
-            border-radius: 12px;
-            border-left: 5px solid #2563eb;
-            font-size: 0.85rem;
+            padding: 10px;
+            border-radius: 10px;
+            border-left: 4px solid #2563eb;
+            font-size: 0.8rem;
             color: #1e293b;
             font-weight: 700;
         }
 
-        /* Dashboards (Imágenes de muestra) */
         .dashboards-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-top: auto;
-            opacity: 0.7;
+            gap: 10px;
+            margin-top: 5px;
         }
-        .dashboards-row img { width: 100%; border-radius: 10px; border: 1px solid #e2e8f0; }
+        .dashboards-row img { width: 100%; border-radius: 8px; border: 1px solid #e2e8f0; max-height: 80px; object-fit: cover; }
 
-        /* Sección Inferior de Impacto */
+        /* Sección de Impacto en Pantalla Principal */
         .impact-section {
             max-width: 1100px;
             width: 100%;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            padding: 40px 20px;
+            gap: 12px;
+            padding: 15px 20px;
         }
         .impact-box {
             background: rgba(255, 255, 255, 0.4);
-            padding: 20px;
-            border-radius: 20px;
+            padding: 12px;
+            border-radius: 15px;
             text-align: center;
-            border-bottom: 4px solid #2563eb;
+            border-bottom: 3px solid #2563eb;
         }
-        .impact-box h4 { font-size: 1.1rem; color: #0f172a; margin-bottom: 8px; }
-        .impact-box p { font-size: 0.85rem; color: #475569; line-height: 1.4; }
+        .impact-box h4 { font-size: 0.95rem; color: #0f172a; margin-bottom: 3px; }
+        .impact-box p { font-size: 0.75rem; color: #475569; line-height: 1.2; }
 
-        /* Ajustes para Celulares */
         @media (max-width: 800px) {
             .main-layout, .impact-section { grid-template-columns: 1fr; }
-            body { overflow-y: auto; }
+            .header-titles h1 { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -169,14 +163,14 @@
                     <source src="video.mp4" type="video/mp4">
                 </video>
             </div>
-            <h3 style="color:#2563eb; font-size: 1.2rem; margin-bottom: 10px;">Visión de Alta Dirección</h3>
-            <p style="font-size: 0.95rem; line-height: 1.6; color: #334155;">
-                18 años de ingeniería financiera corporativa aplicados a potenciar su estructura de costos y procesos.
+            <h3 style="color:#2563eb; font-size: 1rem; margin-bottom: 5px;">Visión de Alta Dirección</h3>
+            <p style="font-size: 0.85rem; line-height: 1.4; color: #334155;">
+                18 años de ingeniería financiera corporativa para potenciar sus costos y procesos.
             </p>
         </div>
 
         <div class="card">
-            <h3 style="color:#2563eb; font-size: 1.2rem; margin-bottom: 15px;">Soluciones BI & Gestión</h3>
+            <h3 style="color:#2563eb; font-size: 1rem; margin-bottom: 8px;">Soluciones BI & Gestión</h3>
             <div class="services-grid">
                 <div class="service-tag">Costos & Márgenes</div>
                 <div class="service-tag">Ingeniería de Costos</div>
@@ -187,8 +181,8 @@
                 <img src="image_6cc62d.png" alt="BI 1">
                 <img src="image_segunda.png" alt="BI 2">
             </div>
-            <p style="font-size: 0.7rem; color: #64748b; margin-top: 15px; text-align: center;">
-                (( Deslice para enfocar ejemplos de monitoreo en tiempo real ))
+            <p style="font-size: 0.65rem; color: #64748b; margin-top: 8px; text-align: center;">
+                (( Monitoreo en tiempo real ))
             </p>
         </div>
     </div>
@@ -196,15 +190,15 @@
     <div class="impact-section">
         <div class="impact-box">
             <h4>Rentabilidad</h4>
-            <p>Optimización real de márgenes y ahorro estratégico.</p>
+            <p>Optimización real de márgenes.</p>
         </div>
         <div class="impact-box">
             <h4>Control</h4>
-            <p>Decisiones basadas en datos confiables y reales.</p>
+            <p>Datos confiables para decidir.</p>
         </div>
         <div class="impact-box">
             <h4>Escala</h4>
-            <p>Procesos diseñados para el crecimiento sostenido.</p>
+            <p>Crecimiento sólido y sostenido.</p>
         </div>
     </div>
 
