@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pablo Solari | Estrategia & Gestión</title>
+    <title>Pablo Solari | Gestión Estratégica</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -16,8 +16,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 10px 0;
-            overflow: hidden; /* Mantiene todo en una sola pantalla */
+            padding: 15px 0;
         }
 
         header { 
@@ -26,110 +25,120 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 20px 5px 20px;
+            padding: 10px 20px;
         }
-        .header-titles h1 { font-size: 2.2rem; font-weight: 700; color: #0f172a; line-height: 1; }
-        .header-titles p { font-size: 0.6rem; letter-spacing: 1.5px; color: #475569; font-weight: 700; text-transform: uppercase; margin-top: 2px; }
+
+        .header-titles h1 { font-size: 2.6rem; font-weight: 700; color: #0f172a; line-height: 1; }
+        .header-titles p { font-size: 0.65rem; letter-spacing: 2px; color: #475569; font-weight: 700; text-transform: uppercase; margin-top: 5px; }
         
         .btn-whatsapp {
             background: #16a34a;
             color: white;
-            padding: 8px 18px;
-            border-radius: 8px;
+            padding: 10px 22px;
+            border-radius: 10px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 0.8rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            font-size: 0.85rem;
+            box-shadow: 0 4px 12px rgba(22, 163, 74, 0.2);
         }
 
         .clients-banner {
             width: 100%;
             max-width: 1100px;
             text-align: center;
-            padding: 5px 20px;
-            margin-bottom: 10px;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 8px 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(15, 23, 42, 0.08);
         }
-        .clients-label { font-size: 0.65rem; font-weight: 700; color: #1e293b; text-transform: uppercase; }
-        .clients-list { font-size: 0.85rem; color: #334155; font-weight: 500; }
+        .clients-label { font-size: 0.65rem; font-weight: 700; color: #1e293b; text-transform: uppercase; margin-bottom: 4px; }
+        .clients-list { font-size: 0.9rem; color: #334155; font-weight: 500; }
 
-        .hero { text-align: center; margin-bottom: 15px; padding: 0 20px; }
-        .hero h2 { font-size: 2rem; color: #0f172a; font-weight: 700; }
+        .hero { text-align: center; margin-bottom: 25px; padding: 0 20px; }
+        .hero h2 { font-size: 2.3rem; color: #0f172a; font-weight: 700; }
         .hero h2 span { color: #2563eb; }
 
         .main-layout {
             max-width: 1100px;
             width: 100%;
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 15px;
+            grid-template-columns: 1.3fr 0.8fr 1fr;
+            gap: 18px;
             padding: 0 20px;
         }
 
         .card {
             background: white;
-            border-radius: 20px;
-            padding: 18px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            border-radius: 24px;
+            padding: 22px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
         }
 
-        .media-container {
-            border-radius: 12px;
+        .video-container {
+            border-radius: 16px;
             overflow: hidden;
-            background: #f1f5f9;
+            background: #000;
             aspect-ratio: 16/9;
             width: 100%;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
-        .media-container video { width: 100%; height: 100%; object-fit: cover; }
+        video { width: 100%; height: 100%; object-fit: cover; }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8px;
-            margin-bottom: 10px;
-        }
-        .service-tag {
-            background: #f1f5f9;
-            padding: 10px;
-            border-radius: 10px;
-            border-left: 4px solid #2563eb;
-            font-size: 0.75rem;
-            color: #1e293b;
-            font-weight: 700;
-        }
-
-        .dashboards-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+        .ejes-list {
+            display: flex;
+            flex-direction: column;
             gap: 10px;
+            height: 100%;
+            justify-content: center;
         }
-        .dashboards-row img { width: 100%; border-radius: 8px; border: 1px solid #e2e8f0; max-height: 75px; object-fit: cover; }
+        .eje-item {
+            background: #f8fafc;
+            padding: 14px;
+            border-radius: 12px;
+            border-left: 5px solid #2563eb;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #0f172a;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
 
-        .impact-section {
+        .bi-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 10px;
+        }
+        .bi-stack img {
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            height: 105px;
+            object-fit: cover;
+        }
+
+        .impact-footer {
             max-width: 1100px;
             width: 100%;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            padding: 15px 20px;
+            gap: 18px;
+            padding: 30px 20px;
         }
         .impact-box {
-            background: rgba(255, 255, 255, 0.4);
-            padding: 12px;
-            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.45);
+            padding: 18px;
+            border-radius: 20px;
             text-align: center;
-            border-bottom: 3px solid #2563eb;
+            border-bottom: 4px solid #2563eb;
         }
-        .impact-box h4 { font-size: 0.95rem; color: #0f172a; margin-bottom: 3px; }
-        .impact-box p { font-size: 0.75rem; color: #475569; line-height: 1.2; }
+        .impact-box h4 { font-size: 1.05rem; color: #0f172a; margin-bottom: 6px; }
+        .impact-box p { font-size: 0.8rem; color: #475569; line-height: 1.4; }
 
-        @media (max-width: 800px) {
-            .main-layout, .impact-section { grid-template-columns: 1fr; }
-            body { overflow-y: auto; }
+        @media (max-width: 950px) {
+            .main-layout { grid-template-columns: 1fr; }
+            .impact-footer { grid-template-columns: 1fr; }
+            .header-titles h1 { font-size: 2.1rem; }
         }
     </style>
 </head>
@@ -138,64 +147,65 @@
     <header>
         <div class="header-titles">
             <h1>Pablo Solari</h1>
-            <p>ESTRATEGIA & GESTIÓN DE NEGOCIOS</p>
+            <p>Estrategia • Negocios • Gestión</p>
         </div>
         <a href="https://wa.me/5493512589176" class="btn-whatsapp">Consultar ahora →</a>
     </header>
 
     <div class="clients-banner">
-        <div class="clients-label">CASOS DE ÉXITO & CLIENTES:</div>
+        <div class="clients-label">Casos de éxito & Clientes:</div>
         <div class="clients-list">Arcor • Abea Neumáticos • Monarca Granollas • Footwork Lab</div>
     </div>
 
     <div class="hero">
-        <h2>Estrategia & Gestión para su <span>Negocio.</span></h2>
+        <h2>Tome el control de su <span>Gestión & Finanzas.</span></h2>
     </div>
 
     <div class="main-layout">
         <div class="card">
-            <div class="media-container">
+            <div class="video-container">
                 <video autoplay muted loop playsinline>
                     <source src="video.mp4" type="video/mp4">
                 </video>
             </div>
-            <h3 style="color:#2563eb; font-size: 1rem; margin-bottom: 5px;">Visión de Alta Dirección</h3>
-            <p style="font-size: 0.85rem; line-height: 1.4; color: #334155;">
-                18 años de experiencia corporativa aplicando ingeniería de costos y procesos para maximizar resultados.
-            </p>
+            <h3 style="color:#2563eb; font-size: 1.05rem; margin-bottom: 8px;">Visión de Alta Dirección</h3>
+            <p style="font-size: 0.9rem; color: #475569; line-height: 1.5;">18 años de trayectoria corporativa aplicados a potenciar la rentabilidad de su negocio.</p>
+        </div>
+
+        <div class="card" style="background: #ffffff;">
+            <div class="ejes-list">
+                <div class="eje-item">Costos & Márgenes</div>
+                <div class="eje-item">Análisis de Inversiones</div>
+                <div class="eje-item">Control de Gestión</div>
+                <div class="eje-item">Estrategia de Negocios</div>
+                <div class="eje-item">Business Intelligence</div>
+            </div>
         </div>
 
         <div class="card">
-            <h3 style="color:#2563eb; font-size: 1rem; margin-bottom: 8px;">Ejes de Acción Estratégica</h3>
-            <div class="services-grid">
-                <div class="service-tag">Costos & Márgenes</div>
-                <div class="service-tag">Inversiones (CAPEX)</div>
-                <div class="service-tag">Control de Gestión</div>
-                <div class="service-tag">Gestión de Tesorería</div>
-                <div class="service-tag" style="grid-column: span 2; text-align: center;">Business Intelligence</div>
+            <h3 style="color:#2563eb; font-size: 1rem; margin-bottom: 12px; text-align: center;">Soluciones de Datos</h3>
+            <div class="bi-stack">
+                <img src="image_6cc62d.png" alt="Dashboard BI 1">
+                <img src="image_segunda.png" alt="Dashboard BI 2">
             </div>
-            <div class="dashboards-row">
-                <img src="image_6cc62d.png" alt="BI 1">
-                <img src="image_segunda.png" alt="BI 2">
-            </div>
-            <p style="font-size: 0.6rem; color: #64748b; margin-top: 5px; text-align: center;">
-                (( Monitoreo en tiempo real ))
+            <p style="font-size: 0.65rem; color: #64748b; margin-top: 15px; text-align: center; font-weight: 600;">
+                (( Monitoreo y Reporting en Tiempo Real ))
             </p>
         </div>
     </div>
 
-    <div class="impact-section">
+    <div class="impact-footer">
         <div class="impact-box">
-            <h4>Rentabilidad</h4>
-            <p>Optimización real de márgenes.</p>
+            <h4>Rentabilidad Real</h4>
+            <p>Optimización estratégica para maximizar sus márgenes operativos.</p>
         </div>
         <div class="impact-box">
-            <h4>Control</h4>
-            <p>Datos confiables para decidir.</p>
+            <h4>Control de Datos</h4>
+            <p>Información confiable y tableros dinámicos para decidir con seguridad.</p>
         </div>
         <div class="impact-box">
-            <h4>Escala</h4>
-            <p>Crecimiento sólido y sostenido.</p>
+            <h4>Escalabilidad</h4>
+            <p>Procesos y estructuras diseñadas para soportar el crecimiento sostenido.</p>
         </div>
     </div>
 
