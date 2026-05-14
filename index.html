@@ -10,7 +10,7 @@
         
         body {
             font-family: 'Outfit', sans-serif;
-            background-color: #cbd5e1; /* Color de respaldo */
+            background-color: #cbd5e1;
             color: #1e293b;
             min-height: 100vh;
             display: flex;
@@ -21,24 +21,23 @@
             overflow-x: hidden;
         }
 
-        /* CONFIGURACIÓN DEFINITIVA DE LA IMAGEN */
+        /* FONDO: Tu foto Perfil.png con posición ajustada */
         body::before {
             content: "";
             position: fixed;
             top: 0;
-            right: 0; /* La pegamos a la derecha */
+            left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('Perfil.png'); /* Nombre exacto de tu GitHub */
+            background-image: url('Perfil.png');
             background-repeat: no-repeat;
-            /* 'contain' para que no se corte la cabeza y 'right top' para ubicarte en el hueco */
             background-size: contain;
             background-position: right top; 
-            opacity: 0.45; /* Un poco más fuerte para que se note */
+            opacity: 0.5; /* Subimos un poco para que se vea más nítida */
             z-index: -1;
         }
 
-        /* Degradado de fondo para que no quede el gris seco */
+        /* Capa de color para amalgamar todo */
         body::after {
             content: "";
             position: fixed;
@@ -46,7 +45,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(203, 213, 225, 0.7) 0%, rgba(148, 163, 184, 0.9) 100%);
+            background: linear-gradient(135deg, rgba(203, 213, 225, 0.6) 0%, rgba(148, 163, 184, 0.8) 100%);
             z-index: -2;
         }
 
@@ -57,10 +56,11 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 20px;
-            background: rgba(255,255,255,0.2);
-            backdrop-filter: blur(5px);
-            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.3); /* Cabecera traslúcida */
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
             margin-bottom: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .header-titles h1 { font-size: 2.6rem; font-weight: 700; color: #0f172a; line-height: 1; }
@@ -70,20 +70,22 @@
             background: #16a34a;
             color: white;
             padding: 10px 22px;
-            border-radius: 10px;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: 700;
             font-size: 0.85rem;
+            transition: transform 0.2s;
         }
+        .btn-whatsapp:hover { transform: scale(1.05); }
 
         .clients-banner {
             width: 100%;
             max-width: 1100px;
             text-align: center;
-            padding: 8px 20px;
-            margin-bottom: 20px;
-            border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+            padding: 10px;
+            margin-bottom: 15px;
         }
+        .clients-list { font-size: 0.85rem; color: #334155; font-weight: 600; letter-spacing: 0.5px; }
 
         .hero { text-align: center; margin-bottom: 25px; padding: 0 20px; }
         .hero h2 { font-size: 2.3rem; color: #0f172a; font-weight: 700; }
@@ -98,41 +100,43 @@
             padding: 0 20px;
         }
 
+        /* EFECTO MÁS TRANSPARENTE EN LAS CARDS */
         .card {
-            background: rgba(255, 255, 255, 0.85); 
-            backdrop-filter: blur(10px); 
-            border-radius: 24px;
-            padding: 22px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            background: rgba(255, 255, 255, 0.45); /* Mucho más transparente */
+            backdrop-filter: blur(15px); /* Desenfoque más fuerte para leer bien */
+            border-radius: 28px;
+            padding: 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
             display: flex;
             flex-direction: column;
-            border: 1px solid rgba(255,255,255,0.4);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .video-container {
-            border-radius: 16px;
+            border-radius: 18px;
             overflow: hidden;
             background: #000;
             aspect-ratio: 16/9;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
         video { width: 100%; height: 100%; object-fit: cover; }
 
         .eje-item {
-            background: rgba(248, 250, 252, 0.7);
-            padding: 12px 14px;
-            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 14px;
+            border-radius: 15px;
             border-left: 5px solid #2563eb;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            font-size: 0.85rem;
         }
 
         .bi-stack img {
             width: 100%;
-            border-radius: 12px;
-            height: 100px;
+            border-radius: 15px;
+            height: 105px;
             object-fit: cover;
-            margin-bottom: 10px;
-            border: 1px solid #e2e8f0;
+            margin-bottom: 12px;
+            border: 1px solid rgba(255,255,255,0.4);
         }
 
         @media (max-width: 950px) {
@@ -152,7 +156,7 @@
     </header>
 
     <div class="clients-banner">
-        <p style="font-size: 0.9rem; color: #334155; font-weight: 500;">Arcor • Abea Neumáticos • Monarca Granollas • Footwork Lab</p>
+        <p class="clients-list">ARCOR • ABEA NEUMÁTICOS • MONARCA GRANOLLAS • FOOTWORK LAB</p>
     </div>
 
     <div class="hero">
@@ -164,8 +168,8 @@
             <div class="video-container">
                 <video autoplay muted loop playsinline><source src="video.mp4" type="video/mp4"></video>
             </div>
-            <h3 style="color:#2563eb; font-size: 1.05rem;">Visión de Alta Dirección</h3>
-            <p style="font-size: 0.85rem; color: #475569;">18 años de trayectoria corporativa potenciando decisiones empresariales.</p>
+            <h3 style="color:#2563eb; font-size: 1.1rem; margin-bottom: 5px;">Visión de Alta Dirección</h3>
+            <p style="font-size: 0.9rem; color: #334155; line-height: 1.4;">Trayectoria corporativa para profesionalizar su toma de decisiones.</p>
         </div>
 
         <div class="card">
@@ -176,12 +180,12 @@
         </div>
 
         <div class="card">
-            <h3 style="color:#2563eb; font-size: 1rem; text-align: center; margin-bottom: 10px;">Reporting Gerencial</h3>
+            <h3 style="color:#2563eb; font-size: 1rem; text-align: center; margin-bottom: 15px;">Reporting Gerencial</h3>
             <div class="bi-stack">
                 <img src="image_6cc62d.png" alt="BI 1">
                 <img src="image_segunda.png" alt="BI 2">
             </div>
-            <p style="font-size: 0.6rem; text-align: center; font-weight: 700;">(( Soluciones BI en Tiempo Real ))</p>
+            <p style="font-size: 0.65rem; text-align: center; font-weight: 700; color: #475569;">(( Business Intelligence en Tiempo Real ))</p>
         </div>
     </div>
 
