@@ -10,7 +10,7 @@
         
         body {
             font-family: 'Outfit', sans-serif;
-            background: linear-gradient(135deg, #cbd5e1 0%, #94a3b8 100%);
+            background-color: #cbd5e1; /* Color de respaldo */
             color: #1e293b;
             min-height: 100vh;
             display: flex;
@@ -18,23 +18,36 @@
             align-items: center;
             padding: 15px 0;
             position: relative;
+            overflow-x: hidden;
         }
 
-        /* AJUSTE FINAL DE IMAGEN DE FONDO */
+        /* CONFIGURACIÓN DEFINITIVA DE LA IMAGEN */
         body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            right: 0; /* La pegamos a la derecha */
+            width: 100%;
+            height: 100%;
+            background-image: url('Perfil.png'); /* Nombre exacto de tu GitHub */
+            background-repeat: no-repeat;
+            /* 'contain' para que no se corte la cabeza y 'right top' para ubicarte en el hueco */
+            background-size: contain;
+            background-position: right top; 
+            opacity: 0.45; /* Un poco más fuerte para que se note */
+            z-index: -1;
+        }
+
+        /* Degradado de fondo para que no quede el gris seco */
+        body::after {
             content: "";
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            /* El ?v=2 obliga a GitHub a refrescar la imagen */
-            background-image: url('Foto%20Perfil.png?v=2'); 
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center 5%; /* Bajamos la imagen para que se vea tu cara */
-            opacity: 0.35; /* Un poco más de fuerza para que se note el cambio */
-            z-index: -1;
+            background: linear-gradient(135deg, rgba(203, 213, 225, 0.7) 0%, rgba(148, 163, 184, 0.9) 100%);
+            z-index: -2;
         }
 
         header { 
@@ -43,7 +56,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
+            padding: 15px 20px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(5px);
+            border-radius: 15px;
+            margin-bottom: 10px;
         }
 
         .header-titles h1 { font-size: 2.6rem; font-weight: 700; color: #0f172a; line-height: 1; }
@@ -57,7 +74,6 @@
             text-decoration: none;
             font-weight: 700;
             font-size: 0.85rem;
-            box-shadow: 0 4px 12px rgba(22, 163, 74, 0.2);
         }
 
         .clients-banner {
@@ -68,8 +84,6 @@
             margin-bottom: 20px;
             border-bottom: 1px solid rgba(15, 23, 42, 0.1);
         }
-        .clients-label { font-size: 0.65rem; font-weight: 700; color: #1e293b; text-transform: uppercase; margin-bottom: 4px; }
-        .clients-list { font-size: 0.9rem; color: #334155; font-weight: 500; }
 
         .hero { text-align: center; margin-bottom: 25px; padding: 0 20px; }
         .hero h2 { font-size: 2.3rem; color: #0f172a; font-weight: 700; }
@@ -85,15 +99,14 @@
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.82); 
+            background: rgba(255, 255, 255, 0.85); 
             backdrop-filter: blur(10px); 
             border-radius: 24px;
             padding: 22px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.06);
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255,255,255,0.4);
         }
 
         .video-container {
@@ -101,65 +114,30 @@
             overflow: hidden;
             background: #000;
             aspect-ratio: 16/9;
-            width: 100%;
             margin-bottom: 12px;
         }
         video { width: 100%; height: 100%; object-fit: cover; }
 
-        .ejes-list {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            height: 100%;
-            justify-content: center;
-        }
         .eje-item {
             background: rgba(248, 250, 252, 0.7);
             padding: 12px 14px;
             border-radius: 12px;
             border-left: 5px solid #2563eb;
+            margin-bottom: 10px;
         }
-        .eje-title { font-size: 0.85rem; font-weight: 700; color: #0f172a; margin-bottom: 2px; }
-        .eje-desc { font-size: 0.7rem; color: #64748b; line-height: 1.3; }
 
-        .bi-stack {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: 5px;
-        }
         .bi-stack img {
             width: 100%;
             border-radius: 12px;
-            border: 1px solid #e2e8f0;
             height: 100px;
             object-fit: cover;
+            margin-bottom: 10px;
+            border: 1px solid #e2e8f0;
         }
-
-        .impact-footer {
-            max-width: 1100px;
-            width: 100%;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-            padding: 30px 20px;
-        }
-        .impact-box {
-            background: rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(6px);
-            padding: 18px;
-            border-radius: 20px;
-            text-align: center;
-            border-bottom: 4px solid #2563eb;
-        }
-        .impact-box h4 { font-size: 1.05rem; color: #0f172a; margin-bottom: 6px; }
-        .impact-box p { font-size: 0.8rem; color: #475569; line-height: 1.4; }
 
         @media (max-width: 950px) {
             .main-layout { grid-template-columns: 1fr; }
-            .impact-footer { grid-template-columns: 1fr; }
-            .header-titles h1 { font-size: 2.1rem; }
-            body::before { background-position: center 10%; }
+            body::before { background-position: center top; background-size: cover; opacity: 0.2; }
         }
     </style>
 </head>
@@ -174,8 +152,7 @@
     </header>
 
     <div class="clients-banner">
-        <div class="clients-label">Casos de éxito & Clientes:</div>
-        <div class="clients-list">Arcor • Abea Neumáticos • Monarca Granollas • Footwork Lab</div>
+        <p style="font-size: 0.9rem; color: #334155; font-weight: 500;">Arcor • Abea Neumáticos • Monarca Granollas • Footwork Lab</p>
     </div>
 
     <div class="hero">
@@ -185,59 +162,26 @@
     <div class="main-layout">
         <div class="card">
             <div class="video-container">
-                <video autoplay muted loop playsinline>
-                    <source src="video.mp4" type="video/mp4">
-                </video>
+                <video autoplay muted loop playsinline><source src="video.mp4" type="video/mp4"></video>
             </div>
-            <h3 style="color:#2563eb; font-size: 1.05rem; margin-bottom: 8px;">Visión de Alta Dirección</h3>
-            <p style="font-size: 0.85rem; color: #475569; line-height: 1.5;">18 años de trayectoria corporativa aplicados a potenciar las decisiones de su empresa.</p>
+            <h3 style="color:#2563eb; font-size: 1.05rem;">Visión de Alta Dirección</h3>
+            <p style="font-size: 0.85rem; color: #475569;">18 años de trayectoria corporativa potenciando decisiones empresariales.</p>
         </div>
 
         <div class="card">
-            <div class="ejes-list">
-                <div class="eje-item">
-                    <div class="eje-title">Finanzas & Tesorería</div>
-                    <div class="eje-desc">Flujos de caja y gestión de políticas de cobranza eficientes.</div>
-                </div>
-                <div class="eje-item">
-                    <div class="eje-title">Control de Gestión</div>
-                    <div class="eje-desc">Estandarización de criterios y auditoría de indicadores clave.</div>
-                </div>
-                <div class="eje-item">
-                    <div class="eje-title">Mapeo de Procesos</div>
-                    <div class="eje-desc">Mitigación de riesgos y mejora continua operativa.</div>
-                </div>
-                <div class="eje-item">
-                    <div class="eje-title">Diagnóstico & Inversiones</div>
-                    <div class="eje-desc">Evaluación estratégica de rentabilidad y proyectos.</div>
-                </div>
-            </div>
+            <div class="eje-item"><strong>Finanzas:</strong> Flujos de caja y cobranzas.</div>
+            <div class="eje-item"><strong>Control:</strong> Auditoría e indicadores clave.</div>
+            <div class="eje-item"><strong>Procesos:</strong> Mejora operativa continua.</div>
+            <div class="eje-item"><strong>Inversiones:</strong> Evaluación de rentabilidad.</div>
         </div>
 
         <div class="card">
-            <h3 style="color:#2563eb; font-size: 1rem; margin-bottom: 12px; text-align: center;">Reporting Gerencial</h3>
+            <h3 style="color:#2563eb; font-size: 1rem; text-align: center; margin-bottom: 10px;">Reporting Gerencial</h3>
             <div class="bi-stack">
-                <img src="image_6cc62d.png" alt="Dashboard 1">
-                <img src="image_segunda.png" alt="Dashboard 2">
+                <img src="image_6cc62d.png" alt="BI 1">
+                <img src="image_segunda.png" alt="BI 2">
             </div>
-            <p style="font-size: 0.6rem; color: #64748b; margin-top: 15px; text-align: center; font-weight: 600;">
-                (( Soluciones BI en Tiempo Real ))
-            </p>
-        </div>
-    </div>
-
-    <div class="impact-footer">
-        <div class="impact-box">
-            <h4>Rentabilidad Real</h4>
-            <p>Estrategias diseñadas para maximizar el margen operativo.</p>
-        </div>
-        <div class="impact-box">
-            <h4>Control de Datos</h4>
-            <p>Tableros dinámicos para decidir con información confiable.</p>
-        </div>
-        <div class="impact-box">
-            <h4>Escalabilidad</h4>
-            <p>Estructuras sólidas preparadas para el crecimiento sostenido.</p>
+            <p style="font-size: 0.6rem; text-align: center; font-weight: 700;">(( Soluciones BI en Tiempo Real ))</p>
         </div>
     </div>
 
