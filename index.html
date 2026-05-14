@@ -20,7 +20,7 @@
             position: relative;
         }
 
-        /* Foto de fondo vinculada al nombre exacto de tu GitHub */
+        /* AJUSTE FINAL DE IMAGEN DE FONDO */
         body::before {
             content: "";
             position: fixed;
@@ -28,10 +28,12 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('Foto%20Perfil.png'); /* Respeta tus mayúsculas y espacio */
+            /* El ?v=2 obliga a GitHub a refrescar la imagen */
+            background-image: url('Foto%20Perfil.png?v=2'); 
             background-size: cover;
-            background-position: center 15%;
-            opacity: 0.28; /* Subido para que tu rostro tenga más presencia */
+            background-repeat: no-repeat;
+            background-position: center 5%; /* Bajamos la imagen para que se vea tu cara */
+            opacity: 0.35; /* Un poco más de fuerza para que se note el cambio */
             z-index: -1;
         }
 
@@ -83,14 +85,15 @@
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.85); /* Traslúcido para integrar el fondo */
-            backdrop-filter: blur(8px); /* Efecto esmerilado elegante */
+            background: rgba(255, 255, 255, 0.82); 
+            backdrop-filter: blur(10px); 
             border-radius: 24px;
             padding: 22px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.06);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .video-container {
@@ -142,7 +145,7 @@
             padding: 30px 20px;
         }
         .impact-box {
-            background: rgba(255, 255, 255, 0.55);
+            background: rgba(255, 255, 255, 0.5);
             backdrop-filter: blur(6px);
             padding: 18px;
             border-radius: 20px;
@@ -156,6 +159,7 @@
             .main-layout { grid-template-columns: 1fr; }
             .impact-footer { grid-template-columns: 1fr; }
             .header-titles h1 { font-size: 2.1rem; }
+            body::before { background-position: center 10%; }
         }
     </style>
 </head>
@@ -186,26 +190,26 @@
                 </video>
             </div>
             <h3 style="color:#2563eb; font-size: 1.05rem; margin-bottom: 8px;">Visión de Alta Dirección</h3>
-            <p style="font-size: 0.85rem; color: #475569; line-height: 1.5;">18 años de trayectoria corporativa aplicados a estructurar y potenciar las decisiones de su empresa.</p>
+            <p style="font-size: 0.85rem; color: #475569; line-height: 1.5;">18 años de trayectoria corporativa aplicados a potenciar las decisiones de su empresa.</p>
         </div>
 
         <div class="card">
             <div class="ejes-list">
                 <div class="eje-item">
                     <div class="eje-title">Finanzas & Tesorería</div>
-                    <div class="eje-desc">Análisis de flujos de caja y gestión de políticas de cobranza eficientes.</div>
+                    <div class="eje-desc">Flujos de caja y gestión de políticas de cobranza eficientes.</div>
                 </div>
                 <div class="eje-item">
                     <div class="eje-title">Control de Gestión</div>
-                    <div class="eje-desc">Estandarización de criterios gerenciales y auditoría de indicadores clave.</div>
+                    <div class="eje-desc">Estandarización de criterios y auditoría de indicadores clave.</div>
                 </div>
                 <div class="eje-item">
                     <div class="eje-title">Mapeo de Procesos</div>
-                    <div class="eje-desc">Mitigación de riesgos y mejora continua en la segregación de funciones.</div>
+                    <div class="eje-desc">Mitigación de riesgos y mejora continua operativa.</div>
                 </div>
                 <div class="eje-item">
                     <div class="eje-title">Diagnóstico & Inversiones</div>
-                    <div class="eje-desc">Evaluación estratégica de rentabilidad y factibilidad de proyectos.</div>
+                    <div class="eje-desc">Evaluación estratégica de rentabilidad y proyectos.</div>
                 </div>
             </div>
         </div>
