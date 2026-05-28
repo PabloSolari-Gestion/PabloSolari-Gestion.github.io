@@ -1,257 +1,194 @@
-<!-- SECCIÓN HERO ORIGINAL REPARADA -->
-<section class="hero-retro-style">
-    <!-- Fondo Dinámico: Tu foto de perfil alineada a la derecha -->
-    <div class="hero-background-profile" style="background-image: url('Perfil.png');"></div>
-    
-    <!-- Contenedor de Contenido Completo (Capa Superior) -->
-    <div class="hero-overlay-container">
+"<!DOCTYPE html>
+<html lang=""es"">
+<head>
+    <meta charset=""UTF-8"">
+    <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
+    <title>Pablo Solari | Gestión Estratégica</title>
+    <link href=""https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap"" rel=""stylesheet"">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        <!-- Encabezado de Marca -->
-        <div class="brand-top">
-            <h1 class="brand-title">Pablo Solari</h1>
-            <p class="brand-tagline">ESTRATEGIA • NEGOCIOS • GESTIÓN</p>
-            <a href="#" class="btn-consultar-top">Consultar ahora →</a>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #cbd5e1;
+            color: #1e293b;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px 0;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* FONDO: Tu foto Perfil.png con posición ajustada */
+        body::before {
+            content: """";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('Perfil.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: right top; 
+            opacity: 0.5; /* Subimos un poco para que se vea más nítida */
+            z-index: -1;
+        }
+
+        /* Capa de color para amalgamar todo */
+        body::after {
+            content: """";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(203, 213, 225, 0.6) 0%, rgba(148, 163, 184, 0.8) 100%);
+            z-index: -2;
+        }
+
+        header { 
+            width: 100%;
+            max-width: 1100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.3); /* Cabecera traslúcida */
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin-bottom: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .header-titles h1 { font-size: 2.6rem; font-weight: 700; color: #0f172a; line-height: 1; }
+        .header-titles p { font-size: 0.65rem; letter-spacing: 2px; color: #475569; font-weight: 700; text-transform: uppercase; margin-top: 5px; }
+        
+        .btn-whatsapp {
+            background: #16a34a;
+            color: white;
+            padding: 10px 22px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: transform 0.2s;
+        }
+        .btn-whatsapp:hover { transform: scale(1.05); }
+
+        .clients-banner {
+            width: 100%;
+            max-width: 1100px;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        .clients-list { font-size: 0.85rem; color: #334155; font-weight: 600; letter-spacing: 0.5px; }
+
+        .hero { text-align: center; margin-bottom: 25px; padding: 0 20px; }
+        .hero h2 { font-size: 2.3rem; color: #0f172a; font-weight: 700; }
+        .hero h2 span { color: #2563eb; }
+
+        .main-layout {
+            max-width: 1100px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.3fr 0.8fr 1fr;
+            gap: 18px;
+            padding: 0 20px;
+        }
+
+        /* EFECTO MÁS TRANSPARENTE EN LAS CARDS */
+        .card {
+            background: rgba(255, 255, 255, 0.45); /* Mucho más transparente */
+            backdrop-filter: blur(15px); /* Desenfoque más fuerte para leer bien */
+            border-radius: 28px;
+            padding: 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .video-container {
+            border-radius: 18px;
+            overflow: hidden;
+            background: #000;
+            aspect-ratio: 16/9;
+            margin-bottom: 15px;
+        }
+        video { width: 100%; height: 100%; object-fit: cover; }
+
+        .eje-item {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 14px;
+            border-radius: 15px;
+            border-left: 5px solid #2563eb;
+            margin-bottom: 12px;
+            font-size: 0.85rem;
+        }
+
+        .bi-stack img {
+            width: 100%;
+            border-radius: 15px;
+            height: 105px;
+            object-fit: cover;
+            margin-bottom: 12px;
+            border: 1px solid rgba(255,255,255,0.4);
+        }
+
+        @media (max-width: 950px) {
+            .main-layout { grid-template-columns: 1fr; }
+            body::before { background-position: center top; background-size: cover; opacity: 0.2; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class=""header-titles"">
+            <h1>Pablo Solari</h1>
+            <p>Estrategia • Negocios • Gestión</p>
+        </div>
+        <a href=""https://wa.me/5493512589176"" class=""btn-whatsapp"">Consultar ahora →</a>
+    </header>
+
+    <div class=""clients-banner"">
+        <p class=""clients-list"">ARCOR • ABEA NEUMÁTICOS • MONARCA GRANOLLAS • FOOTWORK LAB</p>
+    </div>
+
+    <div class=""hero"">
+        <h2>Tome el control de su <span>Gestión & Finanzas.</span></h2>
+    </div>
+
+    <div class=""main-layout"">
+        <div class=""card"">
+            <div class=""video-container"">
+                <video autoplay muted loop playsinline><source src=""video.mp4"" type=""video/mp4""></video>
+            </div>
+            <h3 style=""color:#2563eb; font-size: 1.1rem; margin-bottom: 5px;"">Visión de Alta Dirección</h3>
+            <p style=""font-size: 0.9rem; color: #334155; line-height: 1.4;"">Trayectoria corporativa para profesionalizar su toma de decisiones.</p>
         </div>
 
-        <!-- Ticker de Empresas -->
-        <div class="ticker-brands">
-            ARCOR • ABEA NEUMÁTICOS • MONARCA GRANOLLAS • FOOTWORK LAB
+        <div class=""card"">
+            <div class=""eje-item""><strong>Finanzas:</strong> Flujos de caja y cobranzas.</div>
+            <div class=""eje-item""><strong>Control:</strong> Auditoría e indicadores clave.</div>
+            <div class=""eje-item""><strong>Procesos:</strong> Mejora operativa continua.</div>
+            <div class=""eje-item""><strong>Inversiones:</strong> Evaluación de rentabilidad.</div>
         </div>
 
-        <!-- Título Principal Impactante -->
-        <h2 class="hero-headline">Tome el control de su <span class="text-blue">Gestión & Finanzas.</span></h2>
-
-        <!-- Grilla de Tarjetas Originales -->
-        <div class="hero-grid-cards">
-            
-            <!-- Tarjeta Izquierda: Visión -->
-            <div class="glass-card card-left">
-                <div class="inner-image-box">
-                    <img src="image_6cc62d.png" alt="Gestión de problemas">
-                    <div class="floating-text">Te puedo ayudar con ese problema</div>
-                </div>
-                <h3>Visión de Alta Dirección</h3>
-                <p>Trayectoria corporativa para profesionalizar su toma de decisiones.</p>
+        <div class=""card"">
+            <h3 style=""color:#2563eb; font-size: 1rem; text-align: center; margin-bottom: 15px;"">Reporting Gerencial</h3>
+            <div class=""bi-stack"">
+                <img src=""image_6cc62d.png"" alt=""BI 1"">
+                <img src=""image_segunda.png"" alt=""BI 2"">
             </div>
-
-            <!-- Tarjeta Central: Pilares de Proceso -->
-            <div class="glass-card card-center">
-                <div class="list-row">
-                    <span class="blue-indicator"></span>
-                    <p><strong>Finanzas:</strong> Flujos de caja y cobranzas.</p>
-                </div>
-                <div class="list-row">
-                    <span class="blue-indicator"></span>
-                    <p><strong>Control:</strong> Auditoría e indicadores clave.</p>
-                </div>
-                <div class="list-row">
-                    <span class="blue-indicator"></span>
-                    <p><strong>Procesos:</strong> Mejora operativa continua.</p>
-                </div>
-                <div class="list-row">
-                    <span class="blue-indicator"></span>
-                    <p><strong>Inversiones:</strong> Evaluación de rentabilidad.</p>
-                </div>
-            </div>
-
-            <!-- Tarjeta Derecha: Reporting Gerencial -->
-            <div class="glass-card card-right">
-                <h3>Reporting Gerencial</h3>
-                <div class="bi-dashboard-box">
-                    <img src="image_segunda.png" alt="Power BI Dashboard">
-                </div>
-                <p class="bi-footer">(( Business Intelligence en Tiempo Real ))</p>
-            </div>
-
+            <p style=""font-size: 0.65rem; text-align: center; font-weight: 700; color: #475569;"">(( Business Intelligence en Tiempo Real ))</p>
         </div>
     </div>
-</section>
 
-<!-- ESTILOS INTERNOS PARA COPIAR Y PEGAR -->
-<style>
-    .hero-retro-style {
-        position: relative;
-        width: 100%;
-        min-height: 100vh;
-        background-color: #4a5568; /* Fondo base oscuro idéntico al tuyo */
-        overflow: hidden;
-        font-family: Arial, sans-serif;
-        display: flex;
-        flex-direction: column;
-    }
-
-    /* El Truco Clave: Colocamos tu foto de fondo fijada a la derecha y escalada */
-    .hero-background-profile {
-        position: absolute;
-        top: 0;
-        right: -5%; /* La tiramos un poco a la derecha para que no la tape la tarjeta de Power BI */
-        width: 55%;  /* Toma un poco más de la mitad de la pantalla */
-        height: 100%;
-        background-size: cover;
-        background-position: center top;
-        background-repeat: no-repeat;
-        z-index: 1; /* Queda detrás del texto, pero delante del fondo base */
-        opacity: 0.85; /* Un toque de opacidad para fundirse con el estilo */
-    }
-
-    /* Contenedor de elementos que flotan al frente */
-    .hero-overlay-container {
-        position: relative;
-        z-index: 2; /* Trae todo el texto y tarjetas adelante de tu foto */
-        width: 100%;
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 30px 40px;
-        box-sizing: border-box;
-    }
-
-    /* Barra Superior */
-    .brand-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
-    }
-    .brand-title {
-        font-size: 2.5rem;
-        color: #1a202c;
-        margin: 0;
-        font-weight: bold;
-    }
-    .brand-tagline {
-        font-size: 0.85rem;
-        letter-spacing: 2px;
-        color: #4a5568;
-        margin: 5px 0 0 0;
-    }
-    .btn-consultar-top {
-        background-color: #00a86b;
-        color: white;
-        text-decoration: none;
-        padding: 12px 24px;
-        border-radius: 25px;
-        font-weight: bold;
-        transition: 0.3s;
-    }
-
-    /* Ticker Horizontal */
-    .ticker-brands {
-        text-align: center;
-        font-size: 0.85rem;
-        font-weight: bold;
-        color: #2d3748;
-        letter-spacing: 1px;
-        margin-bottom: 30px;
-    }
-
-    /* Título Central */
-    .hero-headline {
-        text-align: center;
-        font-size: 2.8rem;
-        color: #1a202c;
-        margin-bottom: 40px;
-        font-weight: bold;
-    }
-    .text-blue {
-        color: #3182ce;
-    }
-
-    /* Grilla de 3 Tarjetas en Fila */
-    .hero-grid-cards {
-        display: flex;
-        justify-content: space-between;
-        gap: 25px;
-        align-items: stretch;
-    }
-
-    /* Tarjetas estilo Gris Translúcido (Efecto de tu captura) */
-    .glass-card {
-        background: rgba(226, 232, 240, 0.9); /* Gris semi-transparente para que se intuya el fondo */
-        border-radius: 20px;
-        padding: 25px;
-        flex: 1;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        border: 1px solid rgba(255,255,255,0.4);
-    }
-
-    /* Detalles Internos - Tarjeta 1 */
-    .inner-image-box {
-        position: relative;
-        border-radius: 12px;
-        overflow: hidden;
-        margin-bottom: 15px;
-    }
-    .inner-image-box img {
-        width: 100%;
-        display: block;
-    }
-    .floating-text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: rgba(0,0,0,0.7);
-        color: white;
-        padding: 8px 12px;
-        border-radius: 6px;
-        font-size: 0.85rem;
-        text-align: center;
-        width: 80%;
-    }
-
-    /* Detalles Internos - Tarjeta 2 (Lista) */
-    .card-center {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-    }
-    .list-row {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        background: rgba(255,255,255,0.5);
-        padding: 10px 15px;
-        border-radius: 10px;
-        margin-bottom: 10px;
-    }
-    .blue-indicator {
-        width: 6px;
-        height: 35px;
-        background: #3182ce;
-        border-radius: 3px;
-    }
-    .list-row p {
-        margin: 0;
-        font-size: 0.95rem;
-        color: #2d3748;
-    }
-
-    /* Detalles Internos - Tarjeta 3 (BI) */
-    .card-right h3 {
-        color: #3182ce;
-        text-align: center;
-        margin-top: 0;
-    }
-    .bi-dashboard-box img {
-        width: 100%;
-        border-radius: 10px;
-    }
-    .bi-footer {
-        text-align: center;
-        font-size: 0.8rem;
-        color: #718096;
-        margin-top: 10px;
-    }
-
-    /* Responsivo para pantallas chicas */
-    @media (max-width: 992px) {
-        .hero-grid-cards {
-            flex-direction: column;
-        }
-        .hero-background-profile {
-            width: 100%;
-            opacity: 0.3; /* Si entran de celular se atenúa la foto para priorizar la lectura */
-            right: 0;
-        }
-    }
-</style>
+</body>
+</html>
+"
