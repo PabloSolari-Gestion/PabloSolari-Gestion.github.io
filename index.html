@@ -1,193 +1,256 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pablo Solari | Gestión Estratégica</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Outfit', sans-serif;
-            background-color: #cbd5e1;
-            color: #1e293b;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 15px 0;
-            position: relative;
-            overflow-x: hidden;
-        }
+<!-- SECCIÓN PRINCIPAL: HERO (Dos columnas para destacar tu perfil) -->
+<section class="hero-section">
+    <div class="hero-container">
+        <!-- Columna Izquierda: Mensaje y Acción -->
+        <div class="hero-content">
+            <div class="brand-header">
+                <h1>Pablo Solari</h1>
+                <p class="subtitle">ESTRATEGIA • NEGOCIOS • GESTIÓN</p>
+            </div>
+            
+            <div class="clients-ticker">
+                ARCOR • ABEA NEUMÁTICOS • MONARCA GRANOLLAS • FOOTWORK LAB
+            </div>
 
-        /* FONDO: Tu foto Perfil.png con posición ajustada */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('Perfil.png');
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-position: right top; 
-            opacity: 0.5; /* Subimos un poco para que se vea más nítida */
-            z-index: -1;
-        }
+            <h2 class="main-headline">Tome el control de su <span class="highlight">Gestión & Finanzas</span>.</h2>
+            <p class="lead-text">Trayectoria corporativa y soluciones analíticas a medida para profesionalizar la toma de decisiones en su PyME.</p>
+            
+            <a href="#" class="btn-consultar">Consultar ahora →</a>
+        </div>
 
-        /* Capa de color para amalgamar todo */
-        body::after {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(203, 213, 225, 0.6) 0%, rgba(148, 163, 184, 0.8) 100%);
-            z-index: -2;
-        }
+        <!-- Columna Derecha: Tu Imagen de Perfil Limpia -->
+        <div class="hero-image-container">
+            <img src="Perfil.png" alt="Pablo Solari" class="profile-image">
+        </div>
+    </div>
+</section>
 
-        header { 
-            width: 100%;
-            max-width: 1100px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-            background: rgba(255, 255, 255, 0.3); /* Cabecera traslúcida */
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            margin-bottom: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
+<!-- SECCIÓN INFERIOR: SERVICIOS Y METRICAS -->
+<section class="services-section">
+    <div class="services-container">
+        <!-- Tarjeta 1: Visión de Alta Dirección -->
+        <div class="card card-wide">
+            <div class="card-image-placeholder">
+                <!-- Usamos la imagen técnica que tenías a la izquierda -->
+                <img src="image_6cc62d.png" alt="Análisis de datos">
+                <div class="image-overlay-text">Te puedo ayudar con ese problema</div>
+            </div>
+            <h3>Visión de Alta Dirección</h3>
+            <p>Trayectoria corporativa para profesionalizar su toma de decisiones.</p>
+        </div>
 
-        .header-titles h1 { font-size: 2.6rem; font-weight: 700; color: #0f172a; line-height: 1; }
-        .header-titles p { font-size: 0.65rem; letter-spacing: 2px; color: #475569; font-weight: 700; text-transform: uppercase; margin-top: 5px; }
-        
-        .btn-whatsapp {
-            background: #16a34a;
-            color: white;
-            padding: 10px 22px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.85rem;
-            transition: transform 0.2s;
-        }
-        .btn-whatsapp:hover { transform: scale(1.05); }
+        <!-- Tarjeta 2: Pilares de Gestión (Lista Central) -->
+        <div class="card card-list">
+            <div class="list-item">
+                <strong>Finanzas:</strong> Flujos de caja y cobranzas.
+            </div>
+            <div class="list-item">
+                <strong>Control:</strong> Auditoría e indicadores clave.
+            </div>
+            <div class="list-item">
+                <strong>Procesos:</strong> Mejora operativa continua.
+            </div>
+            <div class="list-item">
+                <strong>Inversiones:</strong> Evaluación de rentabilidad.
+            </div>
+        </div>
 
-        .clients-banner {
-            width: 100%;
-            max-width: 1100px;
+        <!-- Tarjeta 3: Reporting Gerencial (Power BI) -->
+        <div class="card card-reporting">
+            <h3>Reporting Gerencial</h3>
+            <div class="reporting-images">
+                <!-- Usamos la imagen segunda que contiene tus reportes -->
+                <img src="image_segunda.png" alt="Tableros de control Power BI" class="report-img">
+            </div>
+            <p class="reporting-footer">(( Business Intelligence en Tiempo Real ))</p>
+        </div>
+    </div>
+</section>
+
+<!-- ESTILOS CSS (Podés pegarlos dentro del <head> de tu index o en tu archivo .css si tenés uno aparte) -->
+<style>
+    /* Estilos Generales de la Sección Principal */
+    .hero-section {
+        background-color: #f4f6f9; /* Un fondo claro, limpio y profesional */
+        padding: 60px 20px;
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+    .hero-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-flex: center;
+        justify-content: space-between;
+        gap: 40px;
+    }
+    .hero-content {
+        flex: 1;
+        max-width: 650px;
+    }
+    
+    /* Encabezados y Texto */
+    .brand-header h1 {
+        font-size: 2.5rem;
+        margin: 0;
+        color: #1a202c;
+    }
+    .subtitle {
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+        color: #718096;
+        margin-top: 5px;
+    }
+    .clients-ticker {
+        font-size: 0.8rem;
+        font-weight: bold;
+        color: #4a5568;
+        margin: 25px 0 15px 0;
+        border-top: 1px solid #e2e8f0;
+        border-bottom: 1px solid #e2e8f0;
+        padding: 8px 0;
+    }
+    .main-headline {
+        font-size: 2.8rem;
+        color: #1a202c;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+    .highlight {
+        color: #2b6cb0; /* Azul profesional para destacar */
+    }
+    .lead-text {
+        font-size: 1.1rem;
+        color: #4a5568;
+        line-height: 1.6;
+        margin-bottom: 30px;
+    }
+
+    /* Botón de Acción Principal */
+    .btn-consultar {
+        display: inline-block;
+        background-color: #00a86b; /* El verde llamativo que tenías */
+        color: white;
+        text-decoration: none;
+        padding: 14px 28px;
+        border-radius: 30px;
+        font-weight: bold;
+        font-size: 1.05rem;
+        transition: background 0.3s ease;
+    }
+    .btn-consultar:hover {
+        background-color: #008f5a;
+    }
+
+    /* Contenedor de la Imagen de Perfil (Columna Derecha) */
+    .hero-image-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 450px;
+    }
+    .profile-image {
+        width: 100%;
+        max-width: 380px;
+        height: auto;
+        border-radius: 50%; /* Conserva el formato circular nítido */
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Sombra suave para darle volumen */
+        object-fit: cover;
+        border: 4px solid white;
+    }
+
+    /* Sección de Tarjetas Inferiores */
+    .services-section {
+        background-color: #e2e8f0;
+        padding: 50px 20px;
+    }
+    .services-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 25px;
+    }
+    .card {
+        background: white;
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+    
+    /* Detalles de las tarjetas específicas */
+    .card-wide .card-image-placeholder {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 15px;
+    }
+    .card-wide .card-image-placeholder img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .image-overlay-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0,0,0,0.6);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        text-align: center;
+        width: 80%;
+    }
+    
+    .card-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 12px;
+    }
+    .list-item {
+        background: #f7fafc;
+        border-left: 4px solid #2b6cb0;
+        padding: 12px 16px;
+        border-radius: 0 8px 8px 0;
+        font-size: 0.95rem;
+    }
+    
+    .card-reporting {
+        text-align: center;
+    }
+    .card-reporting h3 {
+        color: #2b6cb0;
+        margin-bottom: 15px;
+    }
+    .report-img {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+    .reporting-footer {
+        font-size: 0.85rem;
+        color: #718096;
+        font-style: italic;
+    }
+
+    /* Adaptación para pantallas de Celulares */
+    @media (max-width: 768px) {
+        .hero-container {
+            flex-direction: column-reverse; /* En celular, la foto pasa arriba del texto */
             text-align: center;
-            padding: 10px;
-            margin-bottom: 15px;
         }
-        .clients-list { font-size: 0.85rem; color: #334155; font-weight: 600; letter-spacing: 0.5px; }
-
-        .hero { text-align: center; margin-bottom: 25px; padding: 0 20px; }
-        .hero h2 { font-size: 2.3rem; color: #0f172a; font-weight: 700; }
-        .hero h2 span { color: #2563eb; }
-
-        .main-layout {
-            max-width: 1100px;
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1.3fr 0.8fr 1fr;
-            gap: 18px;
-            padding: 0 20px;
+        .clients-ticker {
+            font-size: 0.75rem;
         }
-
-        /* EFECTO MÁS TRANSPARENTE EN LAS CARDS */
-        .card {
-            background: rgba(255, 255, 255, 0.45); /* Mucho más transparente */
-            backdrop-filter: blur(15px); /* Desenfoque más fuerte para leer bien */
-            border-radius: 28px;
-            padding: 24px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
-            display: flex;
-            flex-direction: column;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+        .main-headline {
+            font-size: 2rem;
         }
-
-        .video-container {
-            border-radius: 18px;
-            overflow: hidden;
-            background: #000;
-            aspect-ratio: 16/9;
-            margin-bottom: 15px;
+        .hero-image-container {
+            max-width: 250px;
+            margin: 0 auto;
         }
-        video { width: 100%; height: 100%; object-fit: cover; }
-
-        .eje-item {
-            background: rgba(255, 255, 255, 0.3);
-            padding: 14px;
-            border-radius: 15px;
-            border-left: 5px solid #2563eb;
-            margin-bottom: 12px;
-            font-size: 0.85rem;
-        }
-
-        .bi-stack img {
-            width: 100%;
-            border-radius: 15px;
-            height: 105px;
-            object-fit: cover;
-            margin-bottom: 12px;
-            border: 1px solid rgba(255,255,255,0.4);
-        }
-
-        @media (max-width: 950px) {
-            .main-layout { grid-template-columns: 1fr; }
-            body::before { background-position: center top; background-size: cover; opacity: 0.2; }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="header-titles">
-            <h1>Pablo Solari</h1>
-            <p>Estrategia • Negocios • Gestión</p>
-        </div>
-        <a href="https://wa.me/5493512589176" class="btn-whatsapp">Consultar ahora →</a>
-    </header>
-
-    <div class="clients-banner">
-        <p class="clients-list">ARCOR • ABEA NEUMÁTICOS • MONARCA GRANOLLAS • FOOTWORK LAB</p>
-    </div>
-
-    <div class="hero">
-        <h2>Tome el control de su <span>Gestión & Finanzas.</span></h2>
-    </div>
-
-    <div class="main-layout">
-        <div class="card">
-            <div class="video-container">
-                <video autoplay muted loop playsinline><source src="video.mp4" type="video/mp4"></video>
-            </div>
-            <h3 style="color:#2563eb; font-size: 1.1rem; margin-bottom: 5px;">Visión de Alta Dirección</h3>
-            <p style="font-size: 0.9rem; color: #334155; line-height: 1.4;">Trayectoria corporativa para profesionalizar su toma de decisiones.</p>
-        </div>
-
-        <div class="card">
-            <div class="eje-item"><strong>Finanzas:</strong> Flujos de caja y cobranzas.</div>
-            <div class="eje-item"><strong>Control:</strong> Auditoría e indicadores clave.</div>
-            <div class="eje-item"><strong>Procesos:</strong> Mejora operativa continua.</div>
-            <div class="eje-item"><strong>Inversiones:</strong> Evaluación de rentabilidad.</div>
-        </div>
-
-        <div class="card">
-            <h3 style="color:#2563eb; font-size: 1rem; text-align: center; margin-bottom: 15px;">Reporting Gerencial</h3>
-            <div class="bi-stack">
-                <img src="image_6cc62d.png" alt="BI 1">
-                <img src="image_segunda.png" alt="BI 2">
-            </div>
-            <p style="font-size: 0.65rem; text-align: center; font-weight: 700; color: #475569;">(( Business Intelligence en Tiempo Real ))</p>
-        </div>
-    </div>
-
-</body>
-</html>
+    }
+</style>
