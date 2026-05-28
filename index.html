@@ -21,23 +21,7 @@
             overflow-x: hidden;
         }
 
-        /* FONDO: Tu foto Perfil.png con posición ajustada */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('Perfil.png');
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-position: right top; 
-            opacity: 0.5; /* Subimos un poco para que se vea más nítida */
-            z-index: -1;
-        }
-
-        /* Capa de color para amalgamar todo */
+        /* CAPA DE FONDO: Solamente el degradado para amalgamar */
         body::after {
             content: "";
             position: fixed;
@@ -45,8 +29,23 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(203, 213, 225, 0.6) 0%, rgba(148, 163, 184, 0.8) 100%);
+            background: linear-gradient(135deg, rgba(203, 213, 225, 0.7) 0%, rgba(148, 163, 184, 0.9) 100%);
             z-index: -2;
+        }
+
+        /* NUEVO CONTENEDOR PARA TU FOTO: Ahora es independiente, nítida y no se solapa */
+        .foto-perfil-background {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 35%; /* Ocupa el tercio derecho de la pantalla */
+            height: 100%;
+            background-image: url('Perfil.png');
+            background-repeat: no-repeat;
+            background-size: cover; /* Cambiado a cover para que se adapte perfectamente */
+            background-position: center top; 
+            opacity: 0.9; /* Opacidad alta para que te veas con total nitidez */
+            z-index: -1;
         }
 
         header { 
@@ -56,11 +55,12 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 20px;
-            background: rgba(255, 255, 255, 0.3); /* Cabecera traslúcida */
+            background: rgba(255, 255, 255, 0.3); 
             backdrop-filter: blur(10px);
             border-radius: 20px;
             margin-bottom: 10px;
             border: 1px solid rgba(255, 255, 255, 0.2);
+            z-index: 10;
         }
 
         .header-titles h1 { font-size: 2.6rem; font-weight: 700; color: #0f172a; line-height: 1; }
@@ -84,13 +84,15 @@
             text-align: center;
             padding: 10px;
             margin-bottom: 15px;
+            z-index: 10;
         }
         .clients-list { font-size: 0.85rem; color: #334155; font-weight: 600; letter-spacing: 0.5px; }
 
-        .hero { text-align: center; margin-bottom: 25px; padding: 0 20px; }
+        .hero { text-align: center; margin-bottom: 25px; padding: 0 20px; z-index: 10; }
         .hero h2 { font-size: 2.3rem; color: #0f172a; font-weight: 700; }
         .hero h2 span { color: #2563eb; }
 
+        /* MODIFICADO: Alineación desplazada a la izquierda para liberar tu rostro */
         .main-layout {
             max-width: 1100px;
             width: 100%;
@@ -98,12 +100,13 @@
             grid-template-columns: 1.3fr 0.8fr 1fr;
             gap: 18px;
             padding: 0 20px;
+            margin-right: 25%; /* Crea el "hueco" perfecto a la derecha para tu imagen */
+            z-index: 10;
         }
 
-        /* EFECTO MÁS TRANSPARENTE EN LAS CARDS */
         .card {
-            background: rgba(255, 255, 255, 0.45); /* Mucho más transparente */
-            backdrop-filter: blur(15px); /* Desenfoque más fuerte para leer bien */
+            background: rgba(255, 255, 255, 0.45); 
+            backdrop-filter: blur(15px); 
             border-radius: 28px;
             padding: 24px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
@@ -139,13 +142,17 @@
             border: 1px solid rgba(255,255,255,0.4);
         }
 
+        /* RESPONSIVO: Si entran desde celular, se acomoda solo */
         @media (max-width: 950px) {
-            .main-layout { grid-template-columns: 1fr; }
-            body::before { background-position: center top; background-size: cover; opacity: 0.2; }
+            .main-layout { grid-template-columns: 1fr; margin-right: 0; }
+            .foto-perfil-background { width: 100%; opacity: 0.25; background-position: center top; }
         }
     </style>
 </head>
 <body>
+
+    <!-- La capa exclusiva de tu foto -->
+    <div class="foto-perfil-background"></div>
 
     <header>
         <div class="header-titles">
